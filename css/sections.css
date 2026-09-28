@@ -881,6 +881,8 @@
 
 .app-titlebar .url {
   flex: 1;
+  width: 0;
+  min-width: 0;
   max-width: 300px;
   margin-inline: auto;
   background: #fff;
@@ -2116,6 +2118,21 @@
   display: grid;
   place-items: center;
   flex: none;
+}
+
+/* Intrinsic sizing safety: let flex/grid text children shrink below
+   their min-content so long words never stretch layouts on small screens */
+.lf-item,
+.lf-item > div,
+.sf-item,
+.sf-item > div,
+.lp,
+.lp > div,
+.t-person .who,
+.feature-head h3,
+.benefit-card > div,
+.lesson-cta .note {
+  min-width: 0;
 }
 
 .stats-band {

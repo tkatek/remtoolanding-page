@@ -297,6 +297,10 @@ svg.ic.ic-fill {
 
 .logo-mark svg { width: 20px; height: 20px; }
 
+.logo-word {
+  display: inline-block;
+}
+
 .logo em {
   font-style: normal;
   color: var(--blue);
