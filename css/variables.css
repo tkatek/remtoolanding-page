@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Remtoo Landing — Design Tokens
+   ========================================================================== */
+
+:root {
+  /* Brand colors */
+  --blue: #2563eb;
+  --blue-dark: #1d4ed8;
+  --blue-deep: #1e3a8a;
+  --blue-soft: #eaf1fd;
+  --blue-soft-2: #dcebfc;
+
+  --green: #16a34a;
+  --green-bright: #22c55e;
+  --green-dark: #047857;
+  --green-soft: #e7f8ef;
+  --mint: #e3f6ee;
+  --mint-deep: #d0efe1;
+
+  /* Ink / text */
+  --ink: #0f1d3d;
+  --ink-2: #1e293b;
+  --body: #46536e;
+  --muted: #64748b;
+  --faint: #8b98b0;
+
+  /* Level colors: A1 green, A2 blue, B1 amber, B2 pink, C1 purple */
+  --a1: #059669;      --a1-dark: #047857;   --a1-soft: #e7f8ef;   --a1-chip: #d1fae5;
+  --a2: #2563eb;      --a2-dark: #1d4ed8;   --a2-soft: #eaf2fd;   --a2-chip: #dbeafe;
+  --b1: #d97706;      --b1-dark: #b45309;   --b1-soft: #fdf4e0;   --b1-chip: #fdeec8;
+  --b2: #db2777;      --b2-dark: #be185d;   --b2-soft: #fceff5;   --b2-chip: #fbd0e5;
+  --c1: #7c3aed;      --c1-dark: #6d28d9;   --c1-soft: #f1ecfc;   --c1-chip: #e4d9fc;
+
+  /* Surfaces */
+  --bg: #ffffff;
+  --bg-alt: #f7faff;
+  --bg-soft: #f2f6fc;
+  --border: #e5eaf4;
+  --border-strong: #d6deee;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(15, 29, 61, 0.05);
+  --shadow-sm: 0 2px 10px rgba(15, 29, 61, 0.07);
+  --shadow-md: 0 10px 30px rgba(15, 29, 61, 0.10);
+  --shadow-lg: 0 24px 60px rgba(15, 29, 61, 0.14);
+  --shadow-blue: 0 12px 28px rgba(37, 99, 235, 0.28);
+  --shadow-green: 0 12px 28px rgba(22, 163, 74, 0.25);
+
+  /* Radii */
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 26px;
+  --r-pill: 999px;
+
+  /* Typography */
+  --font: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-hand: "Caveat", "Segoe Script", cursive;
+
+  --fs-hero: clamp(2.35rem, 1.6rem + 3.4vw, 4rem);
+  --fs-h2: clamp(1.8rem, 1.35rem + 1.9vw, 2.6rem);
+  --fs-h3: clamp(1.15rem, 1.02rem + 0.5vw, 1.35rem);
+  --fs-lead: clamp(1.02rem, 0.96rem + 0.35vw, 1.2rem);
+  --fs-body: 1rem;
+  --fs-small: 0.9rem;
+  --fs-tiny: 0.78rem;
+
+  /* Layout */
+  --container: 1200px;
+  --container-wide: 1320px;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --section-y: clamp(4rem, 8.5vw, 7rem);
+  --header-h: 76px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 0.55s;
+}
+
+/* Level utility tokens applied via classes .lv-a1 … .lv-c1 */
+.lv-a1 { --lv: var(--a1); --lv-dark: var(--a1-dark); --lv-soft: var(--a1-soft); --lv-chip: var(--a1-chip); }
+.lv-a2 { --lv: var(--a2); --lv-dark: var(--a2-dark); --lv-soft: var(--a2-soft); --lv-chip: var(--a2-chip); }
+.lv-b1 { --lv: var(--b1); --lv-dark: var(--b1-dark); --lv-soft: var(--b1-soft); --lv-chip: var(--b1-chip); }
+.lv-b2 { --lv: var(--b2); --lv-dark: var(--b2-dark); --lv-soft: var(--b2-soft); --lv-chip: var(--b2-chip); }
+.lv-c1 { --lv: var(--c1); --lv-dark: var(--c1-dark); --lv-soft: var(--c1-soft); --lv-chip: var(--c1-chip); }

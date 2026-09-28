@@ -1,0 +1,211 @@
+/* ==========================================================================
+   Remtoo Landing — Base: reset, typography, layout primitives
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: var(--body);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  user-select: none;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4 {
+  color: var(--ink);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+strong {
+  color: var(--ink-2);
+  font-weight: 700;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.55);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: var(--blue-soft-2);
+  color: var(--ink);
+}
+
+/* ---------- Layout primitives ---------- */
+
+.container {
+  width: min(100% - 2 * var(--gutter), var(--container));
+  margin-inline: auto;
+}
+
+.container-wide {
+  width: min(100% - 2 * var(--gutter), var(--container-wide));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-y);
+  position: relative;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+/* ---------- Section headers ---------- */
+
+.section-head {
+  max-width: 720px;
+  margin: 0 auto clamp(2.25rem, 4.5vw, 3.5rem);
+  text-align: center;
+}
+
+.section-head.left {
+  margin-inline: 0;
+  text-align: left;
+}
+
+.section-title {
+  font-size: var(--fs-h2);
+  margin-bottom: 0.75rem;
+}
+
+.section-sub {
+  font-size: var(--fs-lead);
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.section-head.left .section-sub {
+  max-width: 560px;
+}
+
+/* ---------- Reveal animation ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- Helpers ---------- */
+
+.text-blue { color: var(--blue); }
+.text-green { color: var(--green-dark); }
+
+.handwritten {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+  background: var(--blue);
+  color: #fff;
+  padding: 0.6rem 1.1rem;
+  border-radius: 0 0 var(--r-sm) 0;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
