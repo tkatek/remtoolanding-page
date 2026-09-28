@@ -135,9 +135,9 @@ strong {
   max-width: 560px;
 }
 
-/* ---------- Reveal animation ---------- */
+/* ---------- Reveal animation (only when JS is available) ---------- */
 
-.reveal {
+.js .reveal {
   opacity: 0;
   transform: translateY(26px);
   transition:
@@ -147,16 +147,21 @@ strong {
   will-change: opacity, transform;
 }
 
-.reveal.is-visible {
+.js .reveal.is-visible {
   opacity: 1;
   transform: none;
+}
+
+/* Smooth-scroll anchor offset below sticky header */
+section[id] {
+  scroll-margin-top: calc(var(--header-h) + 16px);
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  .reveal {
+  .js .reveal {
     opacity: 1;
     transform: none;
     transition: none;
