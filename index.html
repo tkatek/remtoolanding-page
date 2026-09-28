@@ -1,34 +1,1590 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Remtoo — A Complete English Curriculum. Ready to Teach.</title>
-    <meta
-      name="description"
-      content="Remtoo gives teachers and schools a complete, structured English curriculum from A1 to C1 — lessons, videos, activities, and assessments. Less preparation. More teaching."
-    />
-    <meta name="theme-color" content="#2563eb" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remtoo — A Complete English Curriculum. Ready to Teach.</title>
+  <meta name="description" content="Remtoo gives teachers and schools a complete, structured English curriculum from A1 to C1 — lessons, videos, activities, and assessments. Less preparation. More teaching." />
+  <meta name="theme-color" content="#2563eb" />
+  <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Remtoo — A Complete English Curriculum. Ready to Teach." />
+  <meta property="og:description" content="A structured A1–C1 English curriculum with ready-to-teach lessons, videos, activities, and assessments for teachers and schools." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Remtoo — A Complete English Curriculum. Ready to Teach." />
-    <meta
-      property="og:description"
-      content="A structured A1–C1 English curriculum with ready-to-teach lessons, videos, activities, and assessments for teachers and schools."
-    />
+  <!-- ============================== SVG ICON SPRITE ============================== -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <defs>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+      <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+      <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3.5v17a.7.7 0 0 0 1 .6l15-8.5a.7.7 0 0 0 0-1.2L7 2.9a.7.7 0 0 0-1 .6Z"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3L12 3Z"/></symbol>
+      <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.7 9a.6.6 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .7-1c2-.6 4.4-1.4 6.7-2.6a1.2 1.2 0 0 1 1.2 0c2.3 1.2 4.7 2 6.7 2.6a1 1 0 0 1 .7 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+      <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></symbol>
+      <symbol id="i-book-open" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-mountain" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+      <symbol id="i-file-text" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol>
+      <symbol id="i-video" viewBox="0 0 24 24"><path d="m16 13 5.2 3.1a.5.5 0 0 0 .8-.4V8.3a.5.5 0 0 0-.8-.4L16 11"/><rect x="2" y="6" width="14" height="12" rx="2"/></symbol>
+      <symbol id="i-message-circle" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+      <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></symbol>
+      <symbol id="i-clipboard-check" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+      <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.95 5.98 6.6.96-4.78 4.66 1.13 6.58L12 17.58l-5.9 3.1 1.13-6.58L2.45 9.44l6.6-.96L12 2.5Z"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+      <symbol id="i-package" viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></symbol>
+      <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></symbol>
+      <symbol id="i-trending-up" viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+      <symbol id="i-graduation-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><rect width="16" height="12" x="4" y="2" rx="1"/><path d="M2 22h20"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/><path d="M12 14h.01"/></symbol>
+      <symbol id="i-bar-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+      <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></symbol>
+      <symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 4.7a.7.7 0 0 1 1.2-.5L16 8h2.5a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H16l-3.8 3.8a.7.7 0 0 1-1.2-.5z"/><path d="M19.5 9.5a4 4 0 0 1 0 5"/></symbol>
+      <symbol id="i-maximize" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></symbol>
+      <symbol id="i-quote" viewBox="0 0 24 24"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+      <symbol id="i-twitter" viewBox="0 0 24 24"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+      <symbol id="i-plane" viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+      <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></symbol>
+      <symbol id="i-badge-check" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></symbol>
+      <symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5"/></symbol>
+      <symbol id="i-logo" viewBox="0 0 24 24"><path d="M22 9.5 12 4 2 9.5l10 5.5 10-5.5z"/><path d="M6 12.2V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.8"/></symbol>
+    </defs>
+  </svg>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Caveat:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <!-- ============================== HEADER ============================== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="Remtoo — home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg class="ic ic-fill"><use href="#i-logo"/></svg>
+        </span>
+        Rem<em>too</em>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="#curriculum">Curriculum</a></li>
+          <li><a class="nav-link" href="#whats-included">What&rsquo;s Included</a></li>
+          <li><a class="nav-link" href="#for-schools">For Schools</a></li>
+          <li><a class="nav-link" href="#for-teachers">For Teachers</a></li>
+          <li><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li><a class="nav-link" href="#free-sample">Free Sample</a></li>
+        </ul>
+        <a class="btn btn-primary btn-sm header-cta" href="#get-started">Book a Demo</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile navigation panel -->
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+    <ul>
+      <li><a class="nav-link" href="#curriculum">Curriculum <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
+      <li><a class="nav-link" href="#whats-included">What&rsquo;s Included <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
+      <li><a class="nav-link" href="#for-schools">For Schools <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
+      <li><a class="nav-link" href="#for-teachers">For Teachers <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
+      <li><a class="nav-link" href="#pricing">Pricing <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
+      <li><a class="nav-link" href="#free-sample">Free Sample <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
+    </ul>
+    <a class="btn btn-primary btn-block" href="#get-started">Book a Demo</a>
+  </nav>
+
+  <main id="main">
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true"><span class="hero-dots"></span></div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">
+            <svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg>
+            Teach English. Create Brighter Futures.
+          </p>
+          <h1 class="hero-title" id="hero-title">
+            A Complete<br />
+            English Curriculum.<br />
+            <span class="accent">Ready to Teach.</span>
+          </h1>
+          <p class="hero-lead">Everything teachers and schools need to teach English from A1 to C1.</p>
+          <p class="hero-text">
+            Remtoo gives you structured lessons, videos, activities, and assessments — organized
+            by level and ready to use in your very next class.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#free-sample">
+              Explore Free Lessons
+              <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
+            <a class="btn btn-outline" href="#curriculum">View Curriculum</a>
+          </div>
+          <ul class="hero-trust">
+            <li class="check-item">
+              <svg class="ic" aria-hidden="true"><use href="#i-shield-check"/></svg>
+              No credit card required
+            </li>
+            <li class="check-item">
+              <svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg>
+              A1–C1 levels
+            </li>
+            <li class="check-item">
+              <svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>
+              Trusted by teachers and schools
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-annotation" aria-hidden="true">
+            <span class="handwritten">Ready for your next class!</span>
+            <svg width="44" height="40" viewBox="0 0 44 40" fill="none">
+              <path d="M3 3c8 17 20 26 34 29" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.5 6"/>
+              <path d="M31 32.5 38 33l-1.5-6.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <figure class="hero-photo-frame">
+            <img
+              src="assets/images/hero/teacher-main.webp"
+              alt="Smiling English teacher holding a laptop, ready to teach her next class"
+              width="800" height="920" fetchpriority="high" decoding="async"
+            />
+          </figure>
+
+          <div class="hero-note-card" aria-hidden="true">
+            <p>Less preparation. More teaching. Happier students.</p>
+          </div>
+
+          <div class="hero-lesson-card">
+            <div class="lesson-card-head">
+              <span class="chip chip--level lv-a1">A1</span>
+              <h3>Lesson 1</h3>
+            </div>
+            <div class="lesson-video-row">
+              <span class="lesson-video-thumb">
+                <img src="assets/images/lessons/waving-woman.webp" alt="" width="88" height="55" loading="lazy" decoding="async" />
+                <span class="play" aria-hidden="true"><svg class="ic ic-fill"><use href="#i-play"/></svg></span>
+              </span>
+              <span class="meta">
+                <strong>Meet &amp; Greet</strong>
+                <span>Video · 6:24</span>
+              </span>
+            </div>
+            <ul class="lesson-checks">
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Video</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Vocabulary</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Grammar</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Speaking</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Activities</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Practice</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Review</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Assessment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <svg class="hero-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,52 C240,92 480,10 720,32 C960,54 1200,88 1440,44 L1440,90 L0,90 Z" fill="currentColor"/>
+      </svg>
+    </section>
+
+    <!-- ============================== LEVEL JOURNEY ============================== -->
+    <section class="journey" aria-labelledby="journey-title">
+      <h2 class="visually-hidden" id="journey-title">The learning journey from A1 to C1</h2>
+      <div class="container">
+        <div class="journey-cards">
+          <article class="journey-card lv-a1 reveal">
+            <span class="icon-badge icon-badge--lv" aria-hidden="true"><svg class="ic"><use href="#i-sprout"/></svg></span>
+            <p class="lv-name"><em>A1</em> Beginner</p>
+            <p class="lv-desc">Foundation English. First words and phrases.</p>
+          </article>
+          <span class="journey-arrow" aria-hidden="true"><svg class="ic" width="22" height="22"><use href="#i-arrow-right"/></svg></span>
+          <article class="journey-card lv-a2 reveal" style="--reveal-delay:.08s">
+            <span class="icon-badge icon-badge--lv" aria-hidden="true"><svg class="ic"><use href="#i-layers"/></svg></span>
+            <p class="lv-name"><em>A2</em> Elementary</p>
+            <p class="lv-desc">Everyday English. Simple conversations.</p>
+          </article>
+          <span class="journey-arrow" aria-hidden="true"><svg class="ic" width="22" height="22"><use href="#i-arrow-right"/></svg></span>
+          <article class="journey-card lv-b1 reveal" style="--reveal-delay:.16s">
+            <span class="icon-badge icon-badge--lv" aria-hidden="true"><svg class="ic"><use href="#i-book-open"/></svg></span>
+            <p class="lv-name"><em>B1</em> Intermediate</p>
+            <p class="lv-desc">Real-world topics. Growing confidence.</p>
+          </article>
+          <span class="journey-arrow" aria-hidden="true"><svg class="ic" width="22" height="22"><use href="#i-arrow-right"/></svg></span>
+          <article class="journey-card lv-b2 reveal" style="--reveal-delay:.24s">
+            <span class="icon-badge icon-badge--lv" aria-hidden="true"><svg class="ic"><use href="#i-users"/></svg></span>
+            <p class="lv-name"><em>B2</em> Upper-Int.</p>
+            <p class="lv-desc">Fluent discussions. Opinions and debates.</p>
+          </article>
+          <span class="journey-arrow" aria-hidden="true"><svg class="ic" width="22" height="22"><use href="#i-arrow-right"/></svg></span>
+          <article class="journey-card lv-c1 reveal" style="--reveal-delay:.32s">
+            <span class="icon-badge icon-badge--lv" aria-hidden="true"><svg class="ic"><use href="#i-mountain"/></svg></span>
+            <p class="lv-name"><em>C1</em> Advanced</p>
+            <p class="lv-desc">Near-native mastery. Nuance and precision.</p>
+          </article>
+        </div>
+        <p class="journey-caption reveal">
+          <svg class="ic" aria-hidden="true"><use href="#i-route"/></svg>
+          A structured learning journey from beginner to advanced.
+        </p>
+      </div>
+      <svg class="journey-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,46 C260,84 520,8 760,28 C1000,48 1240,80 1440,38 L1440,80 L0,80 Z" fill="currentColor"/>
+      </svg>
+    </section>
+
+    <!-- ============================== CURRICULUM ============================== -->
+    <section class="section" id="curriculum" aria-labelledby="curriculum-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="badge">
+            <svg class="ic" aria-hidden="true"><use href="#i-book-open"/></svg>
+            Our Curriculum
+          </p>
+          <h2 class="section-title" id="curriculum-title">One Curriculum. Five Levels.</h2>
+          <p class="section-sub">
+            A clear and structured learning path from beginner to advanced.
+            Real progress. Real results.
+          </p>
+        </div>
+
+        <!-- Decorative ascending path (desktop) -->
+        <div class="curriculum-path reveal" aria-hidden="true">
+          <svg viewBox="0 0 980 150" fill="none">
+            <path d="M18 132 C 180 128, 300 98, 460 86 C 620 74, 740 46, 950 28" stroke="#c9d6ef" stroke-width="2.5" stroke-dasharray="2 9" stroke-linecap="round"/>
+            <g font-family="'Plus Jakarta Sans',sans-serif" font-size="11.5" font-weight="800" text-anchor="middle">
+              <circle cx="55" cy="127" r="18" fill="#059669"/><text x="55" y="131" fill="#fff">A1</text>
+              <circle cx="265" cy="109" r="18" fill="#2563eb"/><text x="265" y="113" fill="#fff">A2</text>
+              <circle cx="470" cy="84" r="18" fill="#d97706"/><text x="470" y="88" fill="#fff">B1</text>
+              <circle cx="685" cy="49" r="18" fill="#db2777"/><text x="685" y="53" fill="#fff">B2</text>
+              <circle cx="905" cy="30" r="18" fill="#7c3aed"/><text x="905" y="34" fill="#fff">C1</text>
+            </g>
+            <g transform="translate(934 4) rotate(24)" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M0 14 14 0"/><path d="M14 0 9.5 13 4 8.5 0 14"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Compact indicator (smaller screens) -->
+        <div class="curriculum-dots" aria-hidden="true">
+          <span class="lv-a1" style="--dot:#059669"></span>
+          <span style="--dot:#2563eb"></span>
+          <span style="--dot:#d97706"></span>
+          <span style="--dot:#db2777"></span>
+          <span style="--dot:#7c3aed"></span>
+        </div>
+
+        <div class="levels-grid">
+          <!-- A1 -->
+          <article class="level-card lv-a1 reveal">
+            <div class="level-head">
+              <span class="chip chip--level">A1</span>
+              <span class="level-name">Beginner</span>
+            </div>
+            <p class="level-desc">First words and phrases for absolute beginners.</p>
+            <figure class="level-photo">
+              <img src="assets/images/curriculum/a1-woman.webp" alt="Beginner English student smiling" width="500" height="400" loading="lazy" decoding="async" />
+              <figcaption class="speech-bubble" aria-hidden="true">Hello!</figcaption>
+            </figure>
+            <ul class="level-checks">
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Greetings &amp; introductions</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Numbers, colors &amp; days</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Everyday classroom language</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>First simple conversations</li>
+            </ul>
+            <div class="sample-lesson">
+              <p class="sample-title">Lesson 1 — Meet &amp; Greet</p>
+              <div class="sample-row">
+                <span class="sample-thumb">
+                  <img src="assets/images/lessons/waving-woman.webp" alt="" width="76" height="48" loading="lazy" decoding="async" />
+                  <span class="play" aria-hidden="true"><svg class="ic ic-fill" width="12" height="12"><use href="#i-play"/></svg></span>
+                </span>
+                <a class="btn-link" href="#free-sample">View Lesson <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- A2 -->
+          <article class="level-card lv-a2 reveal" style="--reveal-delay:.08s">
+            <div class="level-head">
+              <span class="chip chip--level">A2</span>
+              <span class="level-name">Elementary</span>
+            </div>
+            <p class="level-desc">Everyday English for simple, real-life situations.</p>
+            <figure class="level-photo">
+              <img src="assets/images/curriculum/a2-man.webp" alt="Elementary English student" width="500" height="400" loading="lazy" decoding="async" />
+              <figcaption class="speech-bubble" aria-hidden="true">Nice to meet you!</figcaption>
+            </figure>
+            <ul class="level-checks">
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Daily routines &amp; free time</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Shopping, food &amp; travel</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Past, present &amp; future</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Short everyday dialogues</li>
+            </ul>
+            <div class="sample-lesson">
+              <p class="sample-title">Lesson 1 — Daily Routines</p>
+              <div class="sample-row">
+                <span class="sample-thumb">
+                  <img src="assets/images/lessons/pair-work.webp" alt="" width="76" height="48" loading="lazy" decoding="async" />
+                  <span class="play" aria-hidden="true"><svg class="ic ic-fill" width="12" height="12"><use href="#i-play"/></svg></span>
+                </span>
+                <a class="btn-link" href="#free-sample">View Lesson <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- B1 -->
+          <article class="level-card lv-b1 reveal" style="--reveal-delay:.16s">
+            <div class="level-head">
+              <span class="chip chip--level">B1</span>
+              <span class="level-name">Intermediate</span>
+            </div>
+            <p class="level-desc">Real-world topics with growing confidence.</p>
+            <figure class="level-photo">
+              <img src="assets/images/curriculum/b1-woman.webp" alt="Intermediate English student" width="500" height="400" loading="lazy" decoding="async" />
+              <figcaption class="speech-bubble" aria-hidden="true">How&rsquo;s it going?</figcaption>
+            </figure>
+            <ul class="level-checks">
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Opinions &amp; storytelling</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Work, travel &amp; technology</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Present perfect &amp; conditionals</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Longer, natural conversations</li>
+            </ul>
+            <div class="sample-lesson">
+              <p class="sample-title">Lesson 1 — Travel Stories</p>
+              <div class="sample-row">
+                <span class="sample-thumb">
+                  <img src="assets/images/lessons/classroom.webp" alt="" width="76" height="48" loading="lazy" decoding="async" />
+                  <span class="play" aria-hidden="true"><svg class="ic ic-fill" width="12" height="12"><use href="#i-play"/></svg></span>
+                </span>
+                <a class="btn-link" href="#free-sample">View Lesson <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- B2 -->
+          <article class="level-card lv-b2 reveal" style="--reveal-delay:.24s">
+            <div class="level-head">
+              <span class="chip chip--level">B2</span>
+              <span class="level-name">Upper-Int.</span>
+            </div>
+            <p class="level-desc">Fluent discussions on complex, engaging topics.</p>
+            <figure class="level-photo">
+              <img src="assets/images/curriculum/b2-man.webp" alt="Upper-intermediate English student" width="500" height="400" loading="lazy" decoding="async" />
+              <figcaption class="speech-bubble" aria-hidden="true">Great question!</figcaption>
+            </figure>
+            <ul class="level-checks">
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Debates &amp; discussions</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>News, media &amp; society</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Advanced grammar in context</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Clear, structured arguments</li>
+            </ul>
+            <div class="sample-lesson">
+              <p class="sample-title">Lesson 1 — News &amp; Media</p>
+              <div class="sample-row">
+                <span class="sample-thumb">
+                  <img src="assets/images/lessons/meeting.webp" alt="" width="76" height="48" loading="lazy" decoding="async" />
+                  <span class="play" aria-hidden="true"><svg class="ic ic-fill" width="12" height="12"><use href="#i-play"/></svg></span>
+                </span>
+                <a class="btn-link" href="#free-sample">View Lesson <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- C1 -->
+          <article class="level-card lv-c1 reveal" style="--reveal-delay:.32s">
+            <div class="level-head">
+              <span class="chip chip--level">C1</span>
+              <span class="level-name">Advanced</span>
+            </div>
+            <p class="level-desc">Near-native precision, nuance, and style.</p>
+            <figure class="level-photo">
+              <img src="assets/images/curriculum/c1-woman.webp" alt="Advanced English student" width="500" height="400" loading="lazy" decoding="async" />
+              <figcaption class="speech-bubble" aria-hidden="true">Absolutely!</figcaption>
+            </figure>
+            <ul class="level-checks">
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Academic &amp; professional English</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Idioms, nuance &amp; register</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Complex texts &amp; analysis</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Effortless, precise fluency</li>
+            </ul>
+            <div class="sample-lesson">
+              <p class="sample-title">Lesson 1 — Global Issues</p>
+              <div class="sample-row">
+                <span class="sample-thumb">
+                  <img src="assets/images/lessons/teacher-teaching.webp" alt="" width="76" height="48" loading="lazy" decoding="async" />
+                  <span class="play" aria-hidden="true"><svg class="ic ic-fill" width="12" height="12"><use href="#i-play"/></svg></span>
+                </span>
+                <a class="btn-link" href="#free-sample">View Lesson <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="curriculum-cta reveal">
+          <a class="btn btn-primary" href="#free-sample">
+            Explore the Curriculum
+            <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+
+        <div class="level-features">
+          <div class="lf-item reveal">
+            <span class="icon-badge icon-badge--blue" aria-hidden="true"><svg class="ic"><use href="#i-route"/></svg></span>
+            <div>
+              <h3>Structured learning path</h3>
+              <p>Every lesson builds on the last.</p>
+            </div>
+          </div>
+          <div class="lf-item reveal" style="--reveal-delay:.08s">
+            <span class="icon-badge icon-badge--green" aria-hidden="true"><svg class="ic"><use href="#i-globe"/></svg></span>
+            <div>
+              <h3>Real-world skills</h3>
+              <p>Language students actually use.</p>
+            </div>
+          </div>
+          <div class="lf-item reveal" style="--reveal-delay:.16s">
+            <span class="icon-badge icon-badge--amber" aria-hidden="true"><svg class="ic"><use href="#i-bar-chart"/></svg></span>
+            <div>
+              <h3>Measurable progress</h3>
+              <p>Clear outcomes for every level.</p>
+            </div>
+          </div>
+          <div class="lf-item reveal" style="--reveal-delay:.24s">
+            <span class="icon-badge icon-badge--pink" aria-hidden="true"><svg class="ic"><use href="#i-shield-check"/></svg></span>
+            <div>
+              <h3>Trusted by teachers</h3>
+              <p>Classroom-tested materials.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== HOW IT WORKS ============================== -->
+    <section class="section section-alt" id="how-it-works" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="badge">
+            <svg class="ic" aria-hidden="true"><use href="#i-route"/></svg>
+            How It Works
+          </p>
+          <h2 class="section-title" id="how-title">From Curriculum to Classroom in 3 Steps</h2>
+          <p class="section-sub">
+            Simple, fast, and ready to use. Spend less time preparing and more time teaching.
+          </p>
+        </div>
+
+        <div class="steps-row">
+          <article class="step-card reveal">
+            <span class="step-num" aria-hidden="true">1</span>
+            <h3>Choose the Level</h3>
+            <p class="step-text">Pick the level that matches your students — from A1 to C1.</p>
+            <div class="step-visual">
+              <div class="mock-levels" aria-hidden="true">
+                <span class="chip is-active">A1</span>
+                <span class="chip">A2</span>
+                <span class="chip">B1</span>
+                <span class="chip">B2</span>
+                <span class="chip">C1</span>
+              </div>
+            </div>
+          </article>
+
+          <span class="step-arrow" aria-hidden="true">
+            <svg class="ic" width="30" height="30"><use href="#i-arrow-right"/></svg>
+          </span>
+
+          <article class="step-card reveal" style="--reveal-delay:.12s">
+            <span class="step-num" aria-hidden="true">2</span>
+            <h3>Open the Lesson</h3>
+            <p class="step-text">Every lesson opens with a click — video, materials, and activities included.</p>
+            <div class="step-visual">
+              <div class="mock-lesson" aria-hidden="true">
+                <div class="mock-head">
+                  <span class="chip chip--level lv-a1">A1</span>
+                  <strong>Meet &amp; Greet</strong>
+                </div>
+                <div class="mock-video">
+                  <img src="assets/images/lessons/waving-woman.webp" alt="" width="640" height="328" loading="lazy" decoding="async" />
+                  <span class="play"><span><svg class="ic" width="15" height="15"><use href="#i-play"/></svg></span></span>
+                </div>
+                <div class="mock-progress"><i></i></div>
+              </div>
+            </div>
+          </article>
+
+          <span class="step-arrow" aria-hidden="true">
+            <svg class="ic" width="30" height="30"><use href="#i-arrow-right"/></svg>
+          </span>
+
+          <article class="step-card reveal" style="--reveal-delay:.24s">
+            <span class="step-num" aria-hidden="true">3</span>
+            <h3>Start Teaching</h3>
+            <p class="step-text">Walk into class with everything ready. Your students do the rest.</p>
+            <div class="step-visual">
+              <figure class="step-photo">
+                <img src="assets/images/lessons/teacher-teaching.webp" alt="Teacher leading an engaged English lesson" width="640" height="376" loading="lazy" decoding="async" />
+                <figcaption class="step-badge">
+                  <svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>
+                  Engaged students. Better results.
+                </figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+
+        <ul class="steps-benefits reveal">
+          <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Save time</li>
+          <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Teach with confidence</li>
+          <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Engage students</li>
+          <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Get better results</li>
+        </ul>
+
+        <div class="steps-cta reveal">
+          <a class="btn btn-primary" href="#curriculum">
+            Explore the Curriculum
+            <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+          <p class="note">Everything you need. Ready when you are.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== REAL LESSON ============================== -->
+    <section class="section" id="lesson" aria-labelledby="lesson-title">
+      <div class="container">
+        <div class="lesson-grid">
+          <div class="lesson-laptop-wrap reveal">
+            <div class="lesson-annotation" aria-hidden="true">
+              <span class="handwritten">Open. Teach. Inspire.</span>
+              <svg width="54" height="30" viewBox="0 0 54 30" fill="none">
+                <path d="M2 4c14 14 30 20 48 21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.5 6"/>
+                <path d="M44 25.5 51 25l-2-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <div class="app-window" role="img" aria-label="Preview of the Remtoo lesson platform showing a lesson video and key language list">
+              <div class="app-titlebar" aria-hidden="true">
+                <span class="dots"><i></i><i></i><i></i></span>
+                <span class="url">
+                  <svg class="ic" width="11" height="11"><use href="#i-shield-check"/></svg>
+                  app.remtoo.com/lessons/a1/meet-and-greet
+                </span>
+              </div>
+              <div class="app-body app-body--lesson">
+                <div class="app-sidebar" aria-hidden="true">
+                  <div class="sb-brand">
+                    <span class="logo-mark"><svg class="ic ic-fill"><use href="#i-logo"/></svg></span>
+                    Remtoo
+                  </div>
+                  <span class="sb-item"><svg class="ic"><use href="#i-list"/></svg>Lesson Overview</span>
+                  <span class="sb-item is-active"><svg class="ic"><use href="#i-video"/></svg>Video</span>
+                  <span class="sb-item"><svg class="ic"><use href="#i-book"/></svg>Vocabulary</span>
+                  <span class="sb-item"><svg class="ic"><use href="#i-pencil"/></svg>Grammar</span>
+                  <span class="sb-item"><svg class="ic"><use href="#i-mic"/></svg>Speaking</span>
+                  <span class="sb-item"><svg class="ic"><use href="#i-grid"/></svg>Activities</span>
+                  <span class="sb-item"><svg class="ic"><use href="#i-clipboard-check"/></svg>Practice</span>
+                  <span class="sb-item"><svg class="ic"><use href="#i-award"/></svg>Assessment</span>
+                  <span class="sb-item"><svg class="ic"><use href="#i-file-text"/></svg>Teacher Notes</span>
+                  <span class="sb-item"><svg class="ic"><use href="#i-download"/></svg>Student PDF</span>
+                </div>
+                <div class="app-main">
+                  <div class="lesson-titlebar">
+                    <span class="chip chip--level lv-a1">A1</span>
+                    <strong>A1 · Lesson 1 — Meet &amp; Greet</strong>
+                    <span class="duration">6:24</span>
+                  </div>
+                  <div class="lesson-player">
+                    <div class="player-video">
+                      <img src="assets/images/lessons/waving-woman.webp" alt="" width="640" height="400" loading="lazy" decoding="async" />
+                      <span class="overlay" aria-hidden="true"></span>
+                      <span class="play" aria-hidden="true"><span><svg class="ic" width="20" height="20"><use href="#i-play"/></svg></span></span>
+                      <span class="controls" aria-hidden="true">
+                        <svg class="ic" width="14" height="14"><use href="#i-volume"/></svg>
+                        <span class="bar"><i></i></span>
+                        <span class="time">0:00 / 6:24</span>
+                        <svg class="ic" width="14" height="14"><use href="#i-maximize"/></svg>
+                      </span>
+                    </div>
+                    <div class="key-language" aria-hidden="true">
+                      <h4>
+                        <svg class="ic" width="13" height="13"><use href="#i-book"/></svg>
+                        Key Language
+                        <span class="count">12</span>
+                      </h4>
+                      <ul>
+                        <li><svg class="ic"><use href="#i-message-circle"/></svg>Hello!<span class="phon">/həˈloʊ/</span></li>
+                        <li><svg class="ic"><use href="#i-message-circle"/></svg>Good morning</li>
+                        <li><svg class="ic"><use href="#i-message-circle"/></svg>Nice to meet you</li>
+                        <li><svg class="ic"><use href="#i-message-circle"/></svg>What&rsquo;s your name?</li>
+                        <li><svg class="ic"><use href="#i-message-circle"/></svg>My name is&hellip;<span class="phon">/maɪ neɪm ɪz/</span></li>
+                        <li><svg class="ic"><use href="#i-message-circle"/></svg>Where are you from?</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lesson-content reveal" style="--reveal-delay:.12s">
+            <p class="badge">
+              <svg class="ic" aria-hidden="true"><use href="#i-video"/></svg>
+              See a Real Lesson
+            </p>
+            <h2 class="section-title" id="lesson-title">See What a Real Lesson Looks Like</h2>
+            <div class="lesson-meta">
+              <span class="chip chip--level lv-a1">A1</span>
+              <span class="meta-title">A1 · Lesson 1 — Meet &amp; Greet</span>
+            </div>
+            <p>
+              A complete, structured lesson your teachers can open and use — video, key
+              language, activities, and practice included.
+            </p>
+            <div class="lesson-points">
+              <div class="lp">
+                <span class="icon-badge icon-badge--blue" aria-hidden="true"><svg class="ic"><use href="#i-clock"/></svg></span>
+                <div><strong>60-minute lesson</strong><span>A full class session, perfectly paced.</span></div>
+              </div>
+              <div class="lp">
+                <span class="icon-badge icon-badge--green" aria-hidden="true"><svg class="ic"><use href="#i-zap"/></svg></span>
+                <div><strong>Ready to teach</strong><span>No preparation needed. Open and go.</span></div>
+              </div>
+              <div class="lp">
+                <span class="icon-badge icon-badge--purple" aria-hidden="true"><svg class="ic"><use href="#i-file-text"/></svg></span>
+                <div><strong>Teacher + student materials</strong><span>Everything printable and shareable.</span></div>
+              </div>
+            </div>
+            <div class="lesson-cta">
+              <a class="btn btn-green" href="#free-sample">
+                Explore This Lesson Free
+                <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+              </a>
+              <p class="note">No signup required · See exactly what you&rsquo;re getting.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lesson-features">
+          <div class="lf-card reveal">
+            <span class="icon-badge icon-badge--blue" aria-hidden="true"><svg class="ic"><use href="#i-clipboard-check"/></svg></span>
+            <h3>Complete lesson plan</h3>
+            <p>Step-by-step teaching notes.</p>
+          </div>
+          <div class="lf-card reveal" style="--reveal-delay:.08s">
+            <span class="icon-badge icon-badge--green" aria-hidden="true"><svg class="ic"><use href="#i-file-text"/></svg></span>
+            <h3>Student materials</h3>
+            <p>Printable worksheets &amp; PDFs.</p>
+          </div>
+          <div class="lf-card reveal" style="--reveal-delay:.16s">
+            <span class="icon-badge icon-badge--amber" aria-hidden="true"><svg class="ic"><use href="#i-video"/></svg></span>
+            <h3>Engaging content</h3>
+            <p>Videos that keep focus.</p>
+          </div>
+          <div class="lf-card reveal" style="--reveal-delay:.24s">
+            <span class="icon-badge icon-badge--pink" aria-hidden="true"><svg class="ic"><use href="#i-award"/></svg></span>
+            <h3>Built-in assessment</h3>
+            <p>Check progress with quizzes.</p>
+          </div>
+        </div>
+
+        <p class="lesson-features-note reveal">
+          <span class="handwritten" aria-hidden="true">Better lessons. Brighter futures.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================== WHAT'S INCLUDED ============================== -->
+    <section class="section section-alt" id="whats-included" aria-labelledby="included-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="badge">
+            <svg class="ic" aria-hidden="true"><use href="#i-package"/></svg>
+            What You Get
+          </p>
+          <h2 class="section-title" id="included-title">Everything You Need to Teach</h2>
+          <p class="section-sub">
+            Complete, classroom-tested materials in every level — organized, consistent, and ready to use.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card reveal">
+            <div class="feature-head">
+              <span class="icon-badge icon-badge--blue" aria-hidden="true"><svg class="ic"><use href="#i-book-open"/></svg></span>
+              <h3>Ready-to-Teach Lessons</h3>
+              <svg class="ic chevron" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+            </div>
+            <div class="feature-mock" aria-hidden="true">
+              <div class="fm-row"><span class="fm-ic" style="background:#2563eb"><svg class="ic"><use href="#i-video"/></svg></span><span class="fm-lines"><i class="w60"></i><i class="w85"></i></span></div>
+              <div class="fm-row"><span class="fm-ic" style="background:#059669"><svg class="ic"><use href="#i-message-circle"/></svg></span><span class="fm-lines"><i class="w85"></i><i class="w45"></i></span></div>
+              <div class="fm-row"><span class="fm-ic" style="background:#d97706"><svg class="ic"><use href="#i-clipboard-check"/></svg></span><span class="fm-lines"><i class="w60"></i><i class="w45"></i></span></div>
+            </div>
+            <p>Full lesson plans from warm-up to wrap-up.</p>
+          </article>
+
+          <article class="feature-card reveal" style="--reveal-delay:.06s">
+            <div class="feature-head">
+              <span class="icon-badge icon-badge--green" aria-hidden="true"><svg class="ic"><use href="#i-video"/></svg></span>
+              <h3>Videos</h3>
+              <svg class="ic chevron" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+            </div>
+            <div class="feature-mock" aria-hidden="true">
+              <div class="fm-video">
+                <img src="assets/images/lessons/waving-woman.webp" alt="" width="640" height="320" loading="lazy" decoding="async" />
+                <span class="play"><span><svg class="ic" width="12" height="12"><use href="#i-play"/></svg></span></span>
+              </div>
+              <div class="mock-progress"><i style="width:52%"></i></div>
+            </div>
+            <p>Native-speaker videos for every lesson.</p>
+          </article>
+
+          <article class="feature-card reveal" style="--reveal-delay:.12s">
+            <div class="feature-head">
+              <span class="icon-badge icon-badge--amber" aria-hidden="true"><svg class="ic"><use href="#i-message-circle"/></svg></span>
+              <h3>Speaking Activities</h3>
+              <svg class="ic chevron" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+            </div>
+            <div class="feature-mock" aria-hidden="true">
+              <div class="fm-bubbles">
+                <span class="fm-bubble left">What&rsquo;s your name?</span>
+                <span class="fm-bubble right">My name is Sara!</span>
+              </div>
+            </div>
+            <p>Structured pair and group work.</p>
+          </article>
+
+          <article class="feature-card reveal" style="--reveal-delay:.18s">
+            <div class="feature-head">
+              <span class="icon-badge icon-badge--pink" aria-hidden="true"><svg class="ic"><use href="#i-book"/></svg></span>
+              <h3>Vocabulary &amp; Grammar</h3>
+              <svg class="ic chevron" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+            </div>
+            <div class="feature-mock" aria-hidden="true">
+              <div class="fm-chips">
+                <span class="hl">Hello</span><span>Goodbye</span><span>Please</span><span>Thank you</span>
+              </div>
+              <div class="fm-avatars">
+                <img src="assets/images/people/student.webp" alt="" width="30" height="30" loading="lazy" decoding="async" />
+                <img src="assets/images/people/doctor.webp" alt="" width="30" height="30" loading="lazy" decoding="async" />
+                <span>12 new words</span>
+              </div>
+            </div>
+            <p>Clear presentation and guided practice.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-head">
+              <span class="icon-badge icon-badge--purple" aria-hidden="true"><svg class="ic"><use href="#i-grid"/></svg></span>
+              <h3>Interactive Activities</h3>
+              <svg class="ic chevron" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+            </div>
+            <div class="feature-mock fm-quiz" aria-hidden="true">
+              <p class="q">She ___ a teacher.</p>
+              <div class="answers">
+                <span class="ans"><span class="dot">A</span>have</span>
+                <span class="ans correct"><span class="dot">B</span>is</span>
+                <span class="ans"><span class="dot">C</span>am</span>
+                <span class="ans"><span class="dot">D</span>be</span>
+              </div>
+            </div>
+            <p>Games and tasks that keep students engaged.</p>
+          </article>
+
+          <article class="feature-card reveal" style="--reveal-delay:.06s">
+            <div class="feature-head">
+              <span class="icon-badge icon-badge--blue" aria-hidden="true"><svg class="ic"><use href="#i-clipboard-check"/></svg></span>
+              <h3>Exercises &amp; Practice</h3>
+              <svg class="ic chevron" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+            </div>
+            <div class="feature-mock fm-checklist" aria-hidden="true">
+              <div class="fm-check"><span class="box done"><svg class="ic"><use href="#i-check"/></svg></span><span class="line w70"></span></div>
+              <div class="fm-check"><span class="box done"><svg class="ic"><use href="#i-check"/></svg></span><span class="line w70"></span></div>
+              <div class="fm-check"><span class="box todo"></span><span class="line"></span></div>
+            </div>
+            <p>Worksheets for class and homework.</p>
+          </article>
+
+          <article class="feature-card reveal" style="--reveal-delay:.12s">
+            <div class="feature-head">
+              <span class="icon-badge icon-badge--green" aria-hidden="true"><svg class="ic"><use href="#i-award"/></svg></span>
+              <h3>Tests &amp; Assessments</h3>
+              <svg class="ic chevron" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+            </div>
+            <div class="feature-mock" aria-hidden="true">
+              <div class="fm-test">
+                <span class="grade">A+</span>
+                <span class="t-lines"><i class="fill"></i><i></i><i></i></span>
+              </div>
+            </div>
+            <p>Unit tests and progress checks.</p>
+          </article>
+
+          <article class="feature-card reveal" style="--reveal-delay:.18s">
+            <div class="feature-head">
+              <span class="icon-badge icon-badge--amber" aria-hidden="true"><svg class="ic"><use href="#i-star"/></svg></span>
+              <h3>Reviews</h3>
+              <svg class="ic chevron" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+            </div>
+            <div class="feature-mock" aria-hidden="true">
+              <div class="fm-stars">
+                <svg class="ic ic-fill"><use href="#i-star"/></svg><svg class="ic ic-fill"><use href="#i-star"/></svg><svg class="ic ic-fill"><use href="#i-star"/></svg><svg class="ic ic-fill"><use href="#i-star"/></svg><svg class="ic ic-fill"><use href="#i-star"/></svg>
+              </div>
+              <p class="fm-review-text">Excellent work!</p>
+            </div>
+            <p>Regular review to lock in learning.</p>
+          </article>
+        </div>
+
+        <div class="features-cta reveal">
+          <a class="btn btn-primary" href="#curriculum">
+            See What&rsquo;s Included
+            <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+          <div class="trust-row">
+            <span class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Save hours of preparation</span>
+            <span class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Keep students engaged</span>
+            <span class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>See real progress</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== SCHOOLS ============================== -->
+    <section class="section schools" id="for-schools" aria-labelledby="schools-title">
+      <div class="container">
+        <div class="schools-grid">
+          <div class="schools-copy reveal">
+            <p class="badge">
+              <svg class="ic" aria-hidden="true"><use href="#i-building"/></svg>
+              Built for Schools
+            </p>
+            <h2 class="section-title" id="schools-title">One Curriculum. Every Teacher.</h2>
+            <p class="schools-title-note" aria-hidden="true">Same quality. Every class. Every teacher.</p>
+            <p>
+              Give your entire teaching team a structured A1–C1 English curriculum they can use
+              from day one. Consistent lessons, clear progression, and less time spent preparing.
+            </p>
+
+            <div class="school-books" aria-hidden="true">
+              <div class="book-stack">
+                <span class="book lv-c1" style="--bx:14px;background:#7c3aed">C1</span>
+                <span class="book lv-b2" style="--bx:-10px;background:#db2777">B2</span>
+                <span class="book lv-b1" style="--bx:8px;background:#d97706">B1</span>
+                <span class="book lv-a2" style="--bx:-6px;background:#2563eb">A2</span>
+                <span class="book lv-a1" style="--bx:0;background:#059669">A1 · English Curriculum</span>
+              </div>
+            </div>
+
+            <div class="schools-hand" aria-hidden="true">
+              <svg width="46" height="34" viewBox="0 0 46 34" fill="none">
+                <path d="M2 30c8-4 16-13 18-24" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.5 6"/>
+                <path d="M16.5 8 21 5.5 22 11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <p class="handwritten">Empower your teachers. Grow your impact.</p>
+            </div>
+
+            <div class="schools-actions">
+              <a class="btn btn-primary" href="#get-started">
+                Book a 15-Minute Demo
+                <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+              </a>
+              <a class="btn btn-outline" href="#how-it-works">
+                <svg class="ic ic-fill" aria-hidden="true"><use href="#i-play"/></svg>
+                See How It Works
+              </a>
+            </div>
+            <ul class="schools-trust">
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>No commitment</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>See the platform live</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Get your questions answered</li>
+            </ul>
+          </div>
+
+          <div class="dashboard-wrap reveal" style="--reveal-delay:.12s">
+            <div class="app-window" role="img" aria-label="Preview of the Remtoo school dashboard with classes, teachers, students, and lesson completion statistics">
+              <div class="app-titlebar" aria-hidden="true">
+                <span class="dots"><i></i><i></i><i></i></span>
+                <span class="url">Remtoo — School Dashboard</span>
+              </div>
+              <div class="app-body app-body--dashboard">
+                <div class="app-sidebar" aria-hidden="true">
+                  <div class="sb-brand">
+                    <span class="logo-mark"><svg class="ic ic-fill"><use href="#i-logo"/></svg></span>
+                    Remtoo
+                  </div>
+                  <span class="sb-item is-active"><svg class="ic"><use href="#i-home"/></svg>Dashboard</span>
+                  <span class="sb-item"><svg class="ic"><use href="#i-users"/></svg>Classes</span>
+                  <span class="sb-item"><svg class="ic"><use href="#i-graduation-cap"/></svg>Teachers</span>
+                  <span class="sb-item"><svg class="ic"><use href="#i-book-open"/></svg>Curriculum</span>
+                  <span class="sb-item"><svg class="ic"><use href="#i-bar-chart"/></svg>Progress</span>
+                  <span class="sb-item"><svg class="ic"><use href="#i-file-text"/></svg>Reports</span>
+                  <span class="sb-item"><svg class="ic"><use href="#i-package"/></svg>Resources</span>
+                </div>
+                <div class="app-main">
+                  <div class="dash-topbar" aria-hidden="true">
+                    <span class="dash-search">
+                      <svg class="ic"><use href="#i-search"/></svg>
+                      Search students, classes…
+                    </span>
+                    <span class="dash-bell"><svg class="ic"><use href="#i-bell"/></svg><i></i></span>
+                    <span class="dash-user">
+                      <span class="avatar">SD</span>
+                      <span class="who"><strong>Sarah</strong><span>School Director</span></span>
+                    </span>
+                  </div>
+
+                  <div class="dash-school-head">
+                    <h4>Your School — English Program</h4>
+                    <span class="dash-year">Academic Year 2025–2026 <svg class="ic" width="12" height="12"><use href="#i-chevron-down"/></svg></span>
+                  </div>
+
+                  <div class="dash-stats" aria-hidden="true">
+                    <div class="dash-stat"><p class="v">5</p><p class="l">Levels</p></div>
+                    <div class="dash-stat"><p class="v">12</p><p class="l">Teachers</p></div>
+                    <div class="dash-stat"><p class="v">240</p><p class="l">Students</p></div>
+                    <div class="dash-stat"><p class="v">92%</p><p class="l">Lesson Completion</p></div>
+                  </div>
+
+                  <div class="dash-classes-head">
+                    <h4>Active Classes</h4>
+                    <a href="#for-schools" aria-hidden="true" tabindex="-1">View All Classes <svg class="ic" width="12" height="12"><use href="#i-arrow-right"/></svg></a>
+                  </div>
+                  <div class="class-list" aria-hidden="true">
+                    <div class="class-row">
+                      <img src="assets/images/people/lina.webp" alt="" width="34" height="34" loading="lazy" decoding="async" />
+                      <span class="info"><strong>A1 Beginner — Ms. Lina</strong><span>12 students</span></span>
+                      <span class="schedule">Mon &amp; Wed</span>
+                      <span class="live"><i></i>Live Now</span>
+                    </div>
+                    <div class="class-row">
+                      <img src="assets/images/people/omar.webp" alt="" width="34" height="34" loading="lazy" decoding="async" />
+                      <span class="info"><strong>A2 Elementary — Mr. Omar</strong><span>14 students</span></span>
+                      <span class="schedule">Tue &amp; Thu</span>
+                    </div>
+                    <div class="class-row">
+                      <img src="assets/images/people/sarah.webp" alt="" width="34" height="34" loading="lazy" decoding="async" />
+                      <span class="info"><strong>B1 Intermediate — Ms. Sarah</strong><span>11 students</span></span>
+                      <span class="schedule">Mon &amp; Fri</span>
+                    </div>
+                    <div class="class-row">
+                      <img src="assets/images/people/youssef.webp" alt="" width="34" height="34" loading="lazy" decoding="async" />
+                      <span class="info"><strong>B2 Upper-Int. — Mr. Youssef</strong><span>10 students</span></span>
+                      <span class="schedule">Wed &amp; Fri</span>
+                    </div>
+                    <div class="class-row">
+                      <img src="assets/images/people/amina.webp" alt="" width="34" height="34" loading="lazy" decoding="async" />
+                      <span class="info"><strong>C1 Advanced — Ms. Amina</strong><span>8 students</span></span>
+                      <span class="schedule">Tue &amp; Sat</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schools-features">
+          <div class="sf-item reveal">
+            <span class="icon-badge icon-badge--blue" aria-hidden="true"><svg class="ic"><use href="#i-badge-check"/></svg></span>
+            <div><strong>Consistent Teaching</strong><span>Same quality in every classroom.</span></div>
+          </div>
+          <div class="sf-item reveal" style="--reveal-delay:.06s">
+            <span class="icon-badge icon-badge--green" aria-hidden="true"><svg class="ic"><use href="#i-zap"/></svg></span>
+            <div><strong>Faster Onboarding</strong><span>New teachers ready in days.</span></div>
+          </div>
+          <div class="sf-item reveal" style="--reveal-delay:.12s">
+            <span class="icon-badge icon-badge--amber" aria-hidden="true"><svg class="ic"><use href="#i-clock"/></svg></span>
+            <div><strong>Less Preparation</strong><span>Teachers focus on teaching.</span></div>
+          </div>
+          <div class="sf-item reveal" style="--reveal-delay:.18s">
+            <span class="icon-badge icon-badge--pink" aria-hidden="true"><svg class="ic"><use href="#i-trending-up"/></svg></span>
+            <div><strong>Easy to Scale</strong><span>From one class to a whole campus.</span></div>
+          </div>
+          <div class="sf-item reveal" style="--reveal-delay:.24s">
+            <span class="icon-badge icon-badge--purple" aria-hidden="true"><svg class="ic"><use href="#i-bar-chart"/></svg></span>
+            <div><strong>Clear Progression</strong><span>Track every student&rsquo;s growth.</span></div>
+          </div>
+          <div class="sf-item reveal" style="--reveal-delay:.3s">
+            <span class="icon-badge icon-badge--navy" aria-hidden="true"><svg class="ic"><use href="#i-building"/></svg></span>
+            <div><strong>Your School. Your Students.</strong><span>Your identity, your classrooms.</span></div>
+          </div>
+        </div>
+
+        <div class="schools-logos reveal">
+          <p class="logos-title">Trusted by Schools and Language Centers Worldwide</p>
+          <div class="logos-row">
+            <span class="client">Language Works<em>CANADA</em></span>
+            <span class="client serif">Global English Institute<em>USA</em></span>
+            <span class="client wide">Bright Future Academy<em>UK</em></span>
+            <span class="client script">Horizon Language Center<em>UAE</em></span>
+            <span class="client">New Horizons<em>TURKEY</em></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== BENEFITS ============================== -->
+    <section class="section section-alt" id="for-teachers" aria-labelledby="benefits-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="badge">
+            <svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg>
+            Why Choose Remtoo
+          </p>
+          <h2 class="section-title" id="benefits-title">Real Benefits for Schools and Teachers</h2>
+          <p class="section-sub">
+            Save time, deliver better lessons, and help your students achieve real results.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <article class="benefit-card reveal">
+            <span class="icon-badge icon-badge--blue" aria-hidden="true"><svg class="ic"><use href="#i-zap"/></svg></span>
+            <div>
+              <h3>Save Time</h3>
+              <p>Cut lesson preparation from hours to minutes.</p>
+            </div>
+            <svg class="ic chevron" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+          </article>
+          <article class="benefit-card reveal" style="--reveal-delay:.07s">
+            <span class="icon-badge icon-badge--green" aria-hidden="true"><svg class="ic"><use href="#i-trending-up"/></svg></span>
+            <div>
+              <h3>Better Student Results</h3>
+              <p>Structured lessons that build real skills.</p>
+            </div>
+            <svg class="ic chevron" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+          </article>
+          <article class="benefit-card reveal" style="--reveal-delay:.14s">
+            <span class="icon-badge icon-badge--amber" aria-hidden="true"><svg class="ic"><use href="#i-globe"/></svg></span>
+            <div>
+              <h3>Flexible for Any Setting</h3>
+              <p>Classrooms, online, or one-on-one.</p>
+            </div>
+            <svg class="ic chevron" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+          </article>
+          <article class="benefit-card reveal" style="--reveal-delay:.21s">
+            <span class="icon-badge icon-badge--pink" aria-hidden="true"><svg class="ic"><use href="#i-package"/></svg></span>
+            <div>
+              <h3>Complete Materials</h3>
+              <p>Everything included — nothing to hunt for.</p>
+            </div>
+            <svg class="ic chevron" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+          </article>
+          <article class="benefit-card reveal" style="--reveal-delay:.28s">
+            <span class="icon-badge icon-badge--purple" aria-hidden="true"><svg class="ic"><use href="#i-route"/></svg></span>
+            <div>
+              <h3>A1–C1 Curriculum</h3>
+              <p>A full path from first words to fluency.</p>
+            </div>
+            <svg class="ic chevron" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+          </article>
+          <article class="benefit-card reveal" style="--reveal-delay:.35s">
+            <span class="icon-badge icon-badge--navy" aria-hidden="true"><svg class="ic"><use href="#i-shield-check"/></svg></span>
+            <div>
+              <h3>Trusted by Educators</h3>
+              <p>Built with teachers, for teachers.</p>
+            </div>
+            <svg class="ic chevron" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== TESTIMONIALS ============================== -->
+    <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="handwritten-note" aria-hidden="true">Better Teachers. Brighter Learners.</span>
+          <h2 class="section-title" id="testimonials-title">What Teachers Are Saying</h2>
+          <p class="section-sub">Real feedback from real educators.</p>
+        </div>
+
+        <div class="carousel reveal" aria-roledescription="carousel" aria-label="Teacher testimonials">
+          <div class="carousel-track" id="testimonials-track" tabindex="0" aria-label="Testimonials (use arrow keys to browse)">
+            <article class="testimonial-card" aria-roledescription="slide" aria-label="1 of 3">
+              <div class="t-stars" aria-label="Rated 5 out of 5 stars">
+                <svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg>
+              </div>
+              <blockquote>
+                &ldquo;The lessons are so well structured that I walk into every class feeling prepared.
+                My students are more engaged than ever — and I finally get my evenings back.&rdquo;
+              </blockquote>
+              <div class="t-person">
+                <img src="assets/images/people/sarah.webp" alt="Portrait of Sarah K." width="48" height="48" loading="lazy" decoding="async" />
+                <div class="who"><strong>Sarah K.</strong><span>English Teacher · Canada</span></div>
+                <span class="t-badge icon-badge--blue" aria-hidden="true"><svg class="ic ic-fill"><use href="#i-quote"/></svg></span>
+              </div>
+            </article>
+
+            <article class="testimonial-card" aria-roledescription="slide" aria-label="2 of 3">
+              <div class="t-stars" aria-label="Rated 5 out of 5 stars">
+                <svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg>
+              </div>
+              <blockquote>
+                &ldquo;We rolled Remtoo out across our whole school in a week. Every teacher delivers the
+                same quality lesson, and we can finally track real progress across classes.&rdquo;
+              </blockquote>
+              <div class="t-person">
+                <img src="assets/images/people/david.webp" alt="Portrait of David M." width="48" height="48" loading="lazy" decoding="async" />
+                <div class="who"><strong>David M.</strong><span>Program Director · USA</span></div>
+                <span class="t-badge icon-badge--green" aria-hidden="true"><svg class="ic ic-fill"><use href="#i-quote"/></svg></span>
+              </div>
+            </article>
+
+            <article class="testimonial-card" aria-roledescription="slide" aria-label="3 of 3">
+              <div class="t-stars" aria-label="Rated 5 out of 5 stars">
+                <svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg>
+              </div>
+              <blockquote>
+                &ldquo;It&rsquo;s the complete package — videos, activities, tests. Our teachers stopped
+                searching for materials and started focusing on their students.&rdquo;
+              </blockquote>
+              <div class="t-person">
+                <img src="assets/images/people/amina.webp" alt="Portrait of Amina R." width="48" height="48" loading="lazy" decoding="async" />
+                <div class="who"><strong>Amina R.</strong><span>Language Center · Morocco</span></div>
+                <span class="t-badge icon-badge--amber" aria-hidden="true"><svg class="ic ic-fill"><use href="#i-quote"/></svg></span>
+              </div>
+            </article>
+          </div>
+
+          <div class="carousel-actions">
+            <button class="carousel-btn" id="t-prev" type="button" aria-label="Previous testimonial">
+              <svg class="ic" style="transform:rotate(180deg)" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </button>
+            <div class="carousel-dots" id="t-dots" role="tablist" aria-label="Choose testimonial"></div>
+            <button class="carousel-btn" id="t-next" type="button" aria-label="Next testimonial">
+              <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="stats-band">
+          <div class="stat reveal"><p class="v">1,000+</p><p class="l">Teachers using our materials</p></div>
+          <div class="stat reveal" style="--reveal-delay:.08s"><p class="v">50,000+</p><p class="l">Students learning worldwide</p></div>
+          <div class="stat reveal" style="--reveal-delay:.16s"><p class="v">100+</p><p class="l">Schools and language centers</p></div>
+          <div class="stat reveal" style="--reveal-delay:.24s"><p class="v">4.8/5</p><p class="l">Teacher satisfaction rating</p></div>
+        </div>
+
+        <div class="testimonials-cta reveal">
+          <a class="btn btn-primary" href="#free-sample">
+            Start Exploring Today
+            <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+          <p class="note">Join thousands of educators who trust Remtoo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== FREE SAMPLE ============================== -->
+    <section class="section section-alt" id="free-sample" aria-labelledby="sample-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="badge badge--green">
+            <svg class="ic" aria-hidden="true"><use href="#i-gift"/></svg>
+            Free Sample
+          </p>
+          <h2 class="section-title" id="sample-title">Try It Before You Buy It</h2>
+          <p class="section-sub">
+            Open real lessons from every level — no signup, no credit card, no commitment.
+          </p>
+        </div>
+
+        <div class="tabs sample-tabs reveal" role="tablist" aria-label="Choose a level">
+          <button class="tab is-active" type="button" role="tab" aria-selected="true" data-level="a1" style="--tab-color:#059669" id="tab-a1" aria-controls="sample-lessons">A1</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-level="a2" style="--tab-color:#2563eb" id="tab-a2" aria-controls="sample-lessons" tabindex="-1">A2</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-level="b1" style="--tab-color:#d97706" id="tab-b1" aria-controls="sample-lessons" tabindex="-1">B1</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-level="b2" style="--tab-color:#db2777" id="tab-b2" aria-controls="sample-lessons" tabindex="-1">B2</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-level="c1" style="--tab-color:#7c3aed" id="tab-c1" aria-controls="sample-lessons" tabindex="-1">C1</button>
+        </div>
+
+        <div class="sample-grid" id="sample-lessons" role="tabpanel" aria-labelledby="tab-a1">
+          <!-- A1 sample lessons (initial, no-JS fallback). Other levels render via js/main.js -->
+          <article class="sample-card">
+            <div class="sc-head">
+              <span class="chip chip--level lv-a1">A1 · Lesson 1</span>
+              <span class="free">FREE</span>
+            </div>
+            <h3>Meet &amp; Greet</h3>
+            <p class="sc-meta">
+              <span><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg>45 min</span>
+              <span><svg class="ic" aria-hidden="true"><use href="#i-file-text"/></svg>14 pages</span>
+            </p>
+            <div class="sc-thumb">
+              <img src="assets/images/lessons/waving-woman.webp" alt="Preview of the A1 lesson Meet and Greet" width="640" height="360" loading="lazy" decoding="async" />
+              <span class="play" aria-hidden="true"><span><svg class="ic ic-fill"><use href="#i-play"/></svg></span></span>
+              <span class="duration" aria-hidden="true">6:24</span>
+            </div>
+            <div class="sc-action">
+              <a class="btn btn-soft btn-block" href="#get-started">Try this lesson <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            </div>
+          </article>
+
+          <article class="sample-card">
+            <div class="sc-head">
+              <span class="chip chip--level lv-a1">A1 · Lesson 2</span>
+              <span class="free">FREE</span>
+            </div>
+            <h3>Introductions</h3>
+            <p class="sc-meta">
+              <span><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg>50 min</span>
+              <span><svg class="ic" aria-hidden="true"><use href="#i-file-text"/></svg>16 pages</span>
+            </p>
+            <div class="sc-thumb">
+              <img src="assets/images/lessons/pair-work.webp" alt="Preview of the A1 lesson Introductions" width="640" height="360" loading="lazy" decoding="async" />
+              <span class="play" aria-hidden="true"><span><svg class="ic ic-fill"><use href="#i-play"/></svg></span></span>
+              <span class="duration" aria-hidden="true">5:48</span>
+            </div>
+            <div class="sc-action">
+              <a class="btn btn-soft btn-block" href="#get-started">Try this lesson <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            </div>
+          </article>
+
+          <article class="sample-card">
+            <div class="sc-head">
+              <span class="chip chip--level lv-a1">A1 · Lesson 3</span>
+              <span class="free">FREE</span>
+            </div>
+            <h3>Everyday English</h3>
+            <p class="sc-meta">
+              <span><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg>45 min</span>
+              <span><svg class="ic" aria-hidden="true"><use href="#i-file-text"/></svg>12 pages</span>
+            </p>
+            <div class="sc-thumb">
+              <img src="assets/images/lessons/classroom.webp" alt="Preview of the A1 lesson Everyday English" width="640" height="360" loading="lazy" decoding="async" />
+              <span class="play" aria-hidden="true"><span><svg class="ic ic-fill"><use href="#i-play"/></svg></span></span>
+              <span class="duration" aria-hidden="true">7:12</span>
+            </div>
+            <div class="sc-action">
+              <a class="btn btn-soft btn-block" href="#get-started">Try this lesson <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            </div>
+          </article>
+
+          <article class="sample-card">
+            <div class="sc-head">
+              <span class="chip chip--level lv-a1">A1 · Lesson 4</span>
+              <span class="free">FREE</span>
+            </div>
+            <h3>Numbers &amp; Time</h3>
+            <p class="sc-meta">
+              <span><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg>40 min</span>
+              <span><svg class="ic" aria-hidden="true"><use href="#i-file-text"/></svg>11 pages</span>
+            </p>
+            <div class="sc-thumb">
+              <img src="assets/images/lessons/meeting.webp" alt="Preview of the A1 lesson Numbers and Time" width="640" height="360" loading="lazy" decoding="async" />
+              <span class="play" aria-hidden="true"><span><svg class="ic ic-fill"><use href="#i-play"/></svg></span></span>
+              <span class="duration" aria-hidden="true">4:56</span>
+            </div>
+            <div class="sc-action">
+              <a class="btn btn-soft btn-block" href="#get-started">Try this lesson <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+            </div>
+          </article>
+        </div>
+
+        <p class="sample-note reveal">
+          <svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>
+          No signup required — open and teach any sample lesson.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================== PRICING ============================== -->
+    <section class="section" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="badge">
+            <svg class="ic" aria-hidden="true"><use href="#i-tag"/></svg>
+            Pricing
+          </p>
+          <h2 class="section-title" id="pricing-title">Flexible Plans for Schools and Teachers</h2>
+          <p class="section-sub">Start free. Upgrade when you&rsquo;re ready. Cancel anytime.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="pricing-card reveal">
+            <h3 class="plan-name">Teacher Plan</h3>
+            <p class="plan-for">For individual teachers</p>
+            <div class="price-row">
+              <span class="amount">$19</span>
+              <span class="period">/month</span>
+            </div>
+            <p class="price-note">per teacher, billed monthly</p>
+            <ul class="plan-features">
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Full A1–C1 curriculum access</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Ready-to-teach lessons</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Videos &amp; interactive activities</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Student materials (PDF)</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Email support</li>
+            </ul>
+            <a class="btn btn-outline btn-block" href="#free-sample">Start with Free Lessons</a>
+          </article>
+
+          <article class="pricing-card pricing-card--popular reveal" style="--reveal-delay:.1s">
+            <p class="popular-tag">Most Popular</p>
+            <h3 class="plan-name">School Plan</h3>
+            <p class="plan-for">For schools &amp; language centers</p>
+            <div class="price-row">
+              <span class="amount">$99</span>
+              <span class="period">/month</span>
+            </div>
+            <p class="price-note">per school, up to 20 teachers</p>
+            <ul class="plan-features">
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Everything in Teacher Plan</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>School dashboard &amp; analytics</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Teacher &amp; class management</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Student progress tracking</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Team onboarding</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Priority support</li>
+            </ul>
+            <a class="btn btn-primary btn-block" href="#get-started">
+              Book a Demo
+              <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
+          </article>
+
+          <article class="pricing-card reveal" style="--reveal-delay:.2s">
+            <h3 class="plan-name">Custom Plan</h3>
+            <p class="plan-for">For large organizations</p>
+            <div class="price-row">
+              <span class="amount amount--text">Custom</span>
+            </div>
+            <p class="price-note">tailored to your needs</p>
+            <ul class="plan-features">
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Multi-campus licensing</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Custom curriculum alignment</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Dedicated account manager</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Training &amp; webinars</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Invoicing &amp; SLA</li>
+            </ul>
+            <a class="btn btn-outline btn-block" href="#get-started">Contact Sales</a>
+          </article>
+        </div>
+
+        <p class="pricing-note reveal">Prices in USD. Education discounts available for qualifying institutions.</p>
+      </div>
+    </section>
+
+    <!-- ============================== FINAL CTA ============================== -->
+    <section class="section final-cta" id="get-started" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="badge badge--white">
+            <svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg>
+            Get Started
+          </p>
+          <h2 class="section-title" id="cta-title">Ready to Make Teaching Easier?</h2>
+          <p class="section-sub">
+            Ready to make a bigger impact with English education? Start with free lessons
+            or book a live demo for your school.
+          </p>
+        </div>
+
+        <div class="cta-cards">
+          <article class="cta-card reveal">
+            <span class="icon-badge icon-badge--green" aria-hidden="true"><svg class="ic"><use href="#i-graduation-cap"/></svg></span>
+            <h3>For Teachers</h3>
+            <p>Get instant access to sample lessons and see the quality for yourself.</p>
+            <ul class="cta-checks">
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Full curriculum access</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Ready-to-teach materials</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>No credit card required</li>
+            </ul>
+            <a class="btn btn-green" href="#free-sample">
+              Explore Free Lessons
+              <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
+          </article>
+
+          <article class="cta-card reveal" style="--reveal-delay:.12s">
+            <span class="icon-badge icon-badge--blue" aria-hidden="true"><svg class="ic"><use href="#i-building"/></svg></span>
+            <h3>For Schools</h3>
+            <p>See how Remtoo works for your whole teaching team.</p>
+            <ul class="cta-checks">
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>School dashboard</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Teacher management</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Progress tracking</li>
+            </ul>
+            <a class="btn btn-white" href="#get-started">
+              Book a Demo
+              <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="#top" aria-label="Remtoo — back to top">
+            <span class="logo-mark" aria-hidden="true">
+              <svg class="ic ic-fill"><use href="#i-logo"/></svg>
+            </span>
+            Rem<em>too</em>
+          </a>
+          <p class="tagline">
+            A complete, structured English curriculum for teachers and schools — from A1 to C1.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Remtoo on Facebook"><svg class="ic"><use href="#i-facebook"/></svg></a>
+            <a href="#" aria-label="Remtoo on Instagram"><svg class="ic"><use href="#i-instagram"/></svg></a>
+            <a href="#" aria-label="Remtoo on Twitter"><svg class="ic"><use href="#i-twitter"/></svg></a>
+            <a href="#" aria-label="Remtoo on YouTube"><svg class="ic"><use href="#i-youtube"/></svg></a>
+            <a href="#" aria-label="Remtoo on LinkedIn"><svg class="ic"><use href="#i-linkedin"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Desktop link columns -->
+        <nav class="footer-col" aria-label="Product">
+          <h3>Product</h3>
+          <ul>
+            <li><a href="#curriculum">Curriculum</a></li>
+            <li><a href="#whats-included">What&rsquo;s Included</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#free-sample">Free Sample</a></li>
+            <li><a href="#get-started">Book a Demo</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Solutions">
+          <h3>Solutions</h3>
+          <ul>
+            <li><a href="#for-teachers">For Teachers</a></li>
+            <li><a href="#for-schools">For Schools</a></li>
+            <li><a href="#for-schools">For Language Centers</a></li>
+            <li><a href="#for-teachers">For Tutors</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Resources">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#how-it-works">Help Center</a></li>
+            <li><a href="#lesson">Teacher Guides</a></li>
+            <li><a href="#testimonials">Blog</a></li>
+            <li><a href="#get-started">Webinars</a></li>
+            <li><a href="#get-started">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Legal">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">GDPR</a></li>
+          </ul>
+        </nav>
+
+        <!-- Mobile accordion groups -->
+        <div class="footer-accordion" aria-label="Footer navigation">
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="fa-product">
+              Product <svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+            <div class="accordion-panel" id="fa-product">
+              <div>
+                <ul>
+                  <li><a href="#curriculum">Curriculum</a></li>
+                  <li><a href="#whats-included">What&rsquo;s Included</a></li>
+                  <li><a href="#pricing">Pricing</a></li>
+                  <li><a href="#free-sample">Free Sample</a></li>
+                  <li><a href="#get-started">Book a Demo</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="fa-solutions">
+              Solutions <svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+            <div class="accordion-panel" id="fa-solutions">
+              <div>
+                <ul>
+                  <li><a href="#for-teachers">For Teachers</a></li>
+                  <li><a href="#for-schools">For Schools</a></li>
+                  <li><a href="#for-schools">For Language Centers</a></li>
+                  <li><a href="#for-teachers">For Tutors</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="fa-resources">
+              Resources <svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+            <div class="accordion-panel" id="fa-resources">
+              <div>
+                <ul>
+                  <li><a href="#how-it-works">Help Center</a></li>
+                  <li><a href="#lesson">Teacher Guides</a></li>
+                  <li><a href="#testimonials">Blog</a></li>
+                  <li><a href="#get-started">Webinars</a></li>
+                  <li><a href="#get-started">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="fa-legal">
+              Legal <svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </button>
+            <div class="accordion-panel" id="fa-legal">
+              <div>
+                <ul>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Terms of Service</a></li>
+                  <li><a href="#">Cookie Policy</a></li>
+                  <li><a href="#">GDPR</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Remtoo. All rights reserved.</p>
+        <button class="footer-lang" type="button">
+          <svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>
+          English
+          <svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
 </html>

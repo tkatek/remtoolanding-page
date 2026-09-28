@@ -2,6 +2,55 @@
    Remtoo Landing — Reusable components
    ========================================================================== */
 
+/* ---------- Icon system (SVG sprite) ---------- */
+
+svg.ic {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+svg.ic:not(.ic-fill) {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+svg.ic.ic-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* Contextual icon sizes */
+.badge svg { width: 14px; height: 14px; }
+.hero-eyebrow svg { width: 15px; height: 15px; }
+.hero-trust .check-item svg { width: 16px; height: 16px; }
+.btn svg { width: 17px; height: 17px; }
+.journey-caption svg { width: 17px; height: 17px; }
+.journey-arrow svg { width: 22px; height: 22px; }
+.step-arrow svg { width: 30px; height: 30px; }
+.step-badge svg { width: 14px; height: 14px; }
+.mobile-menu .nav-link svg { width: 16px; height: 16px; }
+.carousel-btn svg { width: 20px; height: 20px; }
+.sample-lesson .btn-link svg { width: 14px; height: 14px; }
+.lesson-video-thumb .play svg { width: 12px; height: 12px; }
+.sample-thumb .play svg { width: 12px; height: 12px; }
+.mock-video .play svg { width: 15px; height: 15px; }
+.fm-video .play svg { width: 12px; height: 12px; }
+.player-video .play svg { width: 20px; height: 20px; }
+.player-video .controls svg { width: 14px; height: 14px; }
+.dash-classes-head a svg { width: 12px; height: 12px; }
+.sc-thumb .play svg { width: 16px; height: 16px; }
+.pricing-card .check-item svg { width: 16px; height: 16px; }
+.cta-card .check-item svg { width: 17px; height: 17px; }
+.schools-trust .check-item svg,
+.features-cta .check-item svg,
+.steps-benefits .check-item svg { width: 17px; height: 17px; }
+.footer-lang svg { width: 15px; height: 15px; }
+.t-badge svg { width: 18px; height: 18px; }
+
 /* ---------- Buttons ---------- */
 
 .btn {
