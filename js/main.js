@@ -6,6 +6,9 @@
 (() => {
   "use strict";
 
+  // Signal readiness to the head fail-safe (see inline script in each page).
+  window.__remtooReady = true;
+
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
@@ -91,11 +94,21 @@
      Accordions (footer groups + FAQ items)
   ------------------------------------------------------------------ */
   $$(".accordion-trigger").forEach((btn) => {
+    const panel = document.getElementById(btn.getAttribute("aria-controls"));
+    if (panel) {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      panel.inert = !expanded;
+      panel.setAttribute("aria-hidden", String(!expanded));
+    }
+
     btn.addEventListener("click", () => {
       const expanded = btn.getAttribute("aria-expanded") === "true";
       btn.setAttribute("aria-expanded", String(!expanded));
-      const panel = document.getElementById(btn.getAttribute("aria-controls"));
-      if (panel) panel.classList.toggle("is-open", !expanded);
+      if (panel) {
+        panel.classList.toggle("is-open", !expanded);
+        panel.inert = expanded;
+        panel.setAttribute("aria-hidden", String(expanded));
+      }
     });
   });
 
@@ -125,7 +138,13 @@
       return best;
     };
 
-    const setActive = (i) => dots.forEach((d, j) => d.classList.toggle("is-active", i === j));
+    const setActive = (i) =>
+      dots.forEach((d, j) => {
+        const active = i === j;
+        d.classList.toggle("is-active", active);
+        d.setAttribute("aria-selected", String(active));
+        d.setAttribute("tabindex", active ? "0" : "-1");
+      });
 
     const goTo = (i) => {
       const clamped = Math.max(0, Math.min(slides.length - 1, i));
@@ -140,7 +159,10 @@
       const dot = document.createElement("button");
       dot.type = "button";
       dot.className = "carousel-dot" + (i === 0 ? " is-active" : "");
+      dot.setAttribute("role", "tab");
       dot.setAttribute("aria-label", `Go to testimonial ${i + 1}`);
+      dot.setAttribute("aria-selected", String(i === 0));
+      dot.setAttribute("tabindex", i === 0 ? "0" : "-1");
       dot.addEventListener("click", () => goTo(i));
       dotsWrap.appendChild(dot);
       dots.push(dot);
@@ -244,7 +266,7 @@
         <span class="duration" aria-hidden="true">${l.dur}</span>
       </div>
       <div class="sc-action">
-        <a class="btn btn-soft btn-block" href="free-sample.html">Try this lesson <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn btn-soft btn-block" href="pricing.html">Unlock Full Lessons <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       </div>
     </article>`;
 
@@ -280,13 +302,86 @@
   });
 
   /* ------------------------------------------------------------------
-     Demo request form (For Schools page) — composes an email via
-     mailto: because this static site has no backend endpoint.
+     Impact metric count-up (For Schools page) — animates only the real
+     values already printed in the HTML. Skipped entirely under
+     prefers-reduced-motion or without IntersectionObserver, in which
+     case the final values simply stay visible.
+  ------------------------------------------------------------------ */
+  const counters = $$("[data-countup]");
+  if (counters.length && !reduceMotion && "IntersectionObserver" in window) {
+    const fmt = (n) => n.toLocaleString("en-US");
+    const animate = (el) => {
+      const target = Number(el.dataset.target || "0");
+      const suffix = el.dataset.suffix || "";
+      const dur = 1400;
+      const start = performance.now();
+      const tick = (now) => {
+        const p = Math.min(1, (now - start) / dur);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = fmt(Math.round(target * eased)) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    const cio = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animate(entry.target);
+            cio.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    counters.forEach((c) => cio.observe(c));
+  }
+
+  /* ------------------------------------------------------------------
+     Demo request form (For Schools page) — inline validation, then
+     composes an email via mailto: because this static site has no
+     backend endpoint.
   ------------------------------------------------------------------ */
   const demoForm = $("#demo-form");
   if (demoForm) {
+    const validators = [
+      { el: $("#df-name"), ok: (v) => v.trim().length > 1 },
+      { el: $("#df-school"), ok: (v) => v.trim().length > 1 },
+      {
+        el: $("#df-email"),
+        ok: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),
+      },
+    ].filter((f) => f.el);
+
+    const setError = (input, on) => {
+      input.setAttribute("aria-invalid", on ? "true" : "false");
+      const err = document.getElementById(`${input.id}-error`);
+      if (err) err.hidden = !on;
+    };
+
+    validators.forEach(({ el }) => {
+      el.addEventListener("input", () => setError(el, false));
+    });
+
     demoForm.addEventListener("submit", (e) => {
       e.preventDefault();
+      const summary = $("#demo-error");
+      let firstInvalid = null;
+
+      validators.forEach(({ el, ok }) => {
+        const valid = ok(el.value || "");
+        setError(el, !valid);
+        if (!valid && !firstInvalid) firstInvalid = el;
+      });
+
+      if (firstInvalid) {
+        if (summary) summary.hidden = false;
+        firstInvalid.focus();
+        return;
+      }
+
+      if (summary) summary.hidden = true;
+
       const data = new FormData(demoForm);
       const name = String(data.get("name") || "").trim();
       const school = String(data.get("school") || "").trim();
@@ -315,9 +410,8 @@
         subject
       )}&body=${encodeURIComponent(body)}`;
 
-      const success = $("#demo-success");
-      if (success) success.classList.add("is-shown");
-      demoForm.reset();
+      // A mailto: hand-off cannot confirm delivery. Keep the entered values in
+      // place so the user can retry if no local email application is configured.
     });
   }
 

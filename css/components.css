@@ -492,13 +492,14 @@ svg.ic.ic-fill { fill: currentColor; stroke: none; }
 .accordion-trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
 
 .accordion-panel {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.32s var(--ease);
+  display: block;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.34s var(--ease);
 }
 
-.accordion-panel.is-open { grid-template-rows: 1fr; }
-.accordion-panel > div { overflow: hidden; }
+.accordion-panel.is-open { max-height: 560px; }
+.accordion-panel > div { min-width: 0; }
 
 .accordion-panel ul { padding: 0.15rem 0.15rem 1.15rem; }
 
@@ -825,4 +826,125 @@ svg.ic.ic-fill { fill: currentColor; stroke: none; }
   font-size: 0.92rem;
   color: var(--muted);
   margin-top: 0.3rem;
+}
+
+/* ==========================================================================
+   HOME REBUILD additions — button variant, solid badge, light footer, chat
+   ========================================================================== */
+
+/* Blue-tinted outline button (hero secondary CTA) */
+.btn-outline-blue {
+  background: #fff;
+  border: 1.5px solid var(--blue);
+  color: var(--blue);
+}
+
+.btn-outline-blue:hover {
+  background: var(--blue-soft);
+  border-color: var(--blue-dark);
+  color: var(--blue-dark);
+}
+
+/* Solid-color icon badge (uses --ib custom property for the color) */
+.icon-badge--solid {
+  background: var(--ib, var(--blue));
+  color: #fff;
+}
+
+/* --- Light footer variant (reference design) --- */
+
+.site-footer--light {
+  background: #fff;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  padding-top: clamp(2.75rem, 5vw, 4rem);
+}
+
+.site-footer--light .footer-grid { padding-bottom: 2.25rem; }
+
+.site-footer--light .footer-brand .logo { color: var(--ink); }
+
+.site-footer--light .footer-brand .logo-word em { color: var(--blue); }
+
+.site-footer--light .footer-brand .tagline {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  font-size: 1.45rem;
+  color: var(--ink-2);
+  margin-bottom: 0.35rem;
+}
+
+.site-footer--light .footer-desc {
+  max-width: 300px;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.site-footer--light .footer-social a {
+  border-color: var(--border);
+  color: var(--ink-2);
+}
+
+.site-footer--light .footer-social a:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+
+.site-footer--light .footer-col h3 { color: var(--ink); }
+
+.site-footer--light .footer-col a { color: var(--muted); }
+
+.site-footer--light .footer-col a:hover { color: var(--blue); }
+
+.site-footer--light .footer-accordion .accordion-trigger { color: var(--ink); }
+
+.site-footer--light .footer-accordion .accordion-trigger svg { color: var(--ink-2); }
+
+.site-footer--light .footer-accordion a { color: var(--muted); }
+
+.site-footer--light .footer-accordion a:hover { color: var(--blue); }
+
+.site-footer--light .footer-bottom {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.site-footer--light .footer-lang {
+  border-color: var(--border-strong);
+  color: var(--ink-2);
+}
+
+.site-footer--light .footer-lang:hover { border-color: var(--blue); color: var(--blue); }
+
+/* --- Floating chat / contact bubble --- */
+
+.chat-bubble {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 80;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue) 0%, #1d4ed8 100%);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.42);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s ease;
+}
+
+.chat-bubble svg { width: 26px; height: 26px; }
+
+.chat-bubble:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 34px rgba(37, 99, 235, 0.5);
+}
+
+.chat-bubble:focus-visible {
+  outline: 3px solid var(--blue-dark);
+  outline-offset: 3px;
 }
