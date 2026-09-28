@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Remtoo Landing — Base: reset, typography, layout primitives
+   Remtoo — Base: reset, typography, layout, decoration system
    ========================================================================== */
 
 *,
@@ -20,7 +20,7 @@ html {
 body {
   font-family: var(--font);
   font-size: var(--fs-body);
-  line-height: 1.65;
+  line-height: 1.68;
   color: var(--body);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
@@ -33,10 +33,6 @@ video {
   display: block;
   max-width: 100%;
   height: auto;
-}
-
-img {
-  user-select: none;
 }
 
 a {
@@ -60,24 +56,19 @@ button {
 
 h1, h2, h3, h4 {
   color: var(--ink);
-  line-height: 1.18;
-  letter-spacing: -0.02em;
+  line-height: 1.14;
+  letter-spacing: -0.022em;
   font-weight: 800;
   text-wrap: balance;
 }
 
-p {
-  text-wrap: pretty;
-}
+p { text-wrap: pretty; }
 
-strong {
-  color: var(--ink-2);
-  font-weight: 700;
-}
+strong { color: var(--ink-2); font-weight: 700; }
 
 :focus-visible {
   outline: 3px solid rgba(37, 99, 235, 0.55);
-  outline-offset: 2px;
+  outline-offset: 3px;
   border-radius: 6px;
 }
 
@@ -91,11 +82,15 @@ strong {
 .container {
   width: min(100% - 2 * var(--gutter), var(--container));
   margin-inline: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .container-wide {
   width: min(100% - 2 * var(--gutter), var(--container-wide));
   margin-inline: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .section {
@@ -103,15 +98,17 @@ strong {
   position: relative;
 }
 
-.section-alt {
-  background: var(--bg-alt);
+/* Content always sits above decoration layers */
+.section > .decor,
+.decor {
+  z-index: 0;
 }
 
 /* ---------- Section headers ---------- */
 
 .section-head {
-  max-width: 720px;
-  margin: 0 auto clamp(2.25rem, 4.5vw, 3.5rem);
+  max-width: 780px;
+  margin: 0 auto clamp(2.5rem, 5vw, 4rem);
   text-align: center;
 }
 
@@ -122,24 +119,133 @@ strong {
 
 .section-title {
   font-size: var(--fs-h2);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
 }
 
 .section-sub {
   font-size: var(--fs-lead);
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.62;
 }
 
-.section-head.left .section-sub {
-  max-width: 560px;
+.section-head.left .section-sub { max-width: 600px; }
+
+/* ==========================================================================
+   DECORATION SYSTEM
+   Atmospheric CSS-only backgrounds: blobs, glass circles, rings, streaks.
+   Always pointer-events:none, always behind content, never cause overflow
+   (parent sections are overflow:hidden).
+   ========================================================================== */
+
+.decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-/* ---------- Reveal animation (only when JS is available) ---------- */
+.decor > * { position: absolute; }
+
+/* Blurred gradient blobs */
+.blob {
+  border-radius: 50%;
+  filter: blur(56px);
+}
+
+.blob--blue   { background: radial-gradient(closest-side, rgba(37, 99, 235, 0.16), transparent 72%); }
+.blob--cyan   { background: radial-gradient(closest-side, rgba(34, 211, 238, 0.16), transparent 72%); }
+.blob--green  { background: radial-gradient(closest-side, rgba(22, 163, 74, 0.14), transparent 72%); }
+.blob--teal   { background: radial-gradient(closest-side, rgba(13, 148, 136, 0.14), transparent 72%); }
+.blob--lav    { background: radial-gradient(closest-side, rgba(167, 139, 250, 0.16), transparent 72%); }
+.blob--pink   { background: radial-gradient(closest-side, rgba(219, 39, 119, 0.10), transparent 72%); }
+.blob--gold   { background: radial-gradient(closest-side, rgba(217, 119, 6, 0.11), transparent 72%); }
+.blob--deep   { background: radial-gradient(closest-side, rgba(37, 99, 235, 0.35), transparent 72%); }
+.blob--deepgreen { background: radial-gradient(closest-side, rgba(22, 163, 74, 0.32), transparent 72%); }
+
+/* Translucent glass circles */
+.glass {
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.06) 55%),
+    radial-gradient(closest-side at 30% 25%, rgba(255, 255, 255, 0.5), transparent 70%);
+  box-shadow:
+    inset 0 0 46px rgba(255, 255, 255, 0.35),
+    0 18px 44px rgba(14, 26, 60, 0.06);
+}
+
+.glass--blue {
+  border-color: rgba(37, 99, 235, 0.16);
+  background:
+    linear-gradient(135deg, rgba(232, 240, 254, 0.75) 0%, rgba(215, 230, 253, 0.12) 55%),
+    radial-gradient(closest-side at 30% 25%, rgba(255, 255, 255, 0.85), transparent 70%);
+}
+
+.glass--mint {
+  border-color: rgba(4, 120, 87, 0.14);
+  background:
+    linear-gradient(135deg, rgba(229, 247, 236, 0.8) 0%, rgba(201, 238, 219, 0.12) 55%),
+    radial-gradient(closest-side at 30% 25%, rgba(255, 255, 255, 0.85), transparent 70%);
+}
+
+/* Dashed orbit rings */
+.ring {
+  border-radius: 50%;
+  border: 1.5px dashed rgba(37, 99, 235, 0.20);
+}
+
+.ring--green { border-color: rgba(4, 120, 87, 0.18); }
+.ring--lav   { border-color: rgba(124, 58, 237, 0.18); }
+
+/* Soft light streaks */
+.streak {
+  height: 1.5px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.22), transparent);
+  transform: rotate(-16deg);
+}
+
+.streak--green {
+  background: linear-gradient(90deg, transparent, rgba(4, 120, 87, 0.2), transparent);
+}
+
+/* Dot grid */
+.dots {
+  background-image: radial-gradient(rgba(37, 99, 235, 0.20) 1.6px, transparent 1.6px);
+  background-size: 20px 20px;
+  opacity: 0.55;
+  mask-image: radial-gradient(closest-side, #000, transparent);
+  -webkit-mask-image: radial-gradient(closest-side, #000, transparent);
+}
+
+.dots--green {
+  background-image: radial-gradient(rgba(4, 120, 87, 0.2) 1.6px, transparent 1.6px);
+}
+
+/* Gentle floating animation (decor only, transform-based) */
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(12px, -16px, 0) scale(1.045); }
+}
+
+@keyframes drift-alt {
+  from { transform: translate3d(0, 0, 0) scale(1.03) rotate(0.001deg); }
+  to   { transform: translate3d(-14px, 10px, 0) scale(0.985) rotate(0.001deg); }
+}
+
+.float-slow     { animation: drift 26s ease-in-out infinite alternate; }
+.float-slower   { animation: drift-alt 34s ease-in-out infinite alternate; }
+
+@media (prefers-reduced-motion: reduce) {
+  .float-slow,
+  .float-slower { animation: none; }
+}
+
+/* ---------- Reveal animation (JS-gated) ---------- */
 
 .js .reveal {
   opacity: 0;
-  transform: translateY(26px);
+  transform: translateY(28px);
   transition:
     opacity var(--dur) var(--ease),
     transform var(--dur) var(--ease);
@@ -152,27 +258,7 @@ strong {
   transform: none;
 }
 
-/* Smooth-scroll anchor offset below sticky header */
-section[id] {
-  scroll-margin-top: calc(var(--header-h) + 16px);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  .js .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
+section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
 
 /* ---------- Helpers ---------- */
 
@@ -199,9 +285,7 @@ section[id] {
   font-weight: 700;
 }
 
-.skip-link:focus {
-  left: 0;
-}
+.skip-link:focus { left: 0; }
 
 .visually-hidden {
   position: absolute;

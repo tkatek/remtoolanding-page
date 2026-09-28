@@ -1,6 +1,6 @@
 /* ==========================================================================
-   Remtoo Landing — interactions
-   Vanilla JS only: mobile nav, carousel, tabs, accordions, reveal, helpers
+   Remtoo — shared site behavior (all pages)
+   Vanilla JS: navigation, reveal, tabs, carousel, accordions, forms, language
    ========================================================================== */
 
 (() => {
@@ -26,7 +26,7 @@
   const mobileMenu = $("#mobile-menu");
 
   const closeMenu = () => {
-    if (!mobileMenu.classList.contains("is-open")) return;
+    if (!mobileMenu || !mobileMenu.classList.contains("is-open")) return;
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.setAttribute("aria-label", "Open menu");
     mobileMenu.classList.remove("is-open");
@@ -43,15 +43,12 @@
       menuToggle.getAttribute("aria-expanded") === "true" ? closeMenu() : openMenu();
     });
 
-    // Close after selecting a navigation item
     $$("a", mobileMenu).forEach((a) => a.addEventListener("click", closeMenu));
 
-    // Close on Escape
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeMenu();
     });
 
-    // Close when clicking/tapping outside the panel
     document.addEventListener("click", (e) => {
       if (
         mobileMenu.classList.contains("is-open") &&
@@ -62,14 +59,13 @@
       }
     });
 
-    // Reset when resizing up to desktop
     window.addEventListener("resize", () => {
       if (window.innerWidth > 1080) closeMenu();
     });
   }
 
   /* ------------------------------------------------------------------
-     Reveal-on-scroll (subtle fade-up)
+     Reveal-on-scroll (subtle fade-up, staggered via --reveal-delay)
   ------------------------------------------------------------------ */
   const revealEls = $$(".reveal");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -92,7 +88,19 @@
   }
 
   /* ------------------------------------------------------------------
-     Testimonial carousel (scroll-snap + buttons + dots + keyboard)
+     Accordions (footer groups + FAQ items)
+  ------------------------------------------------------------------ */
+  $$(".accordion-trigger").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const expanded = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!expanded));
+      const panel = document.getElementById(btn.getAttribute("aria-controls"));
+      if (panel) panel.classList.toggle("is-open", !expanded);
+    });
+  });
+
+  /* ------------------------------------------------------------------
+     Testimonial carousel (when present)
   ------------------------------------------------------------------ */
   const track = $("#testimonials-track");
   const prevBtn = $("#t-prev");
@@ -142,7 +150,6 @@
 
     prevBtn.addEventListener("click", () => step(-1));
     nextBtn.addEventListener("click", () => step(1));
-
     track.addEventListener("scroll", () => setActive(activeIndex()), { passive: true });
 
     track.addEventListener("keydown", (e) => {
@@ -159,7 +166,7 @@
   }
 
   /* ------------------------------------------------------------------
-     Free sample — level tabs + lesson data
+     Free sample — level tabs + lesson data (when present)
   ------------------------------------------------------------------ */
   const sampleGrid = $("#sample-lessons");
   const tabs = $$(".tab[data-level]");
@@ -224,7 +231,7 @@
     <article class="sample-card">
       <div class="sc-head">
         <span class="chip chip--level lv-${level}">${LESSONS[level].code} · Lesson ${l.n}</span>
-        <span class="free">FREE</span>
+        <span class="free-chip">FREE</span>
       </div>
       <h3>${l.title.replace(/&/g, "&amp;")}</h3>
       <p class="sc-meta">
@@ -237,7 +244,7 @@
         <span class="duration" aria-hidden="true">${l.dur}</span>
       </div>
       <div class="sc-action">
-        <a class="btn btn-soft btn-block" href="#get-started">Try this lesson <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn btn-soft btn-block" href="free-sample.html">Try this lesson <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       </div>
     </article>`;
 
@@ -273,47 +280,91 @@
   });
 
   /* ------------------------------------------------------------------
-     Footer accordions (mobile)
+     Demo request form (For Schools page) — composes an email via
+     mailto: because this static site has no backend endpoint.
   ------------------------------------------------------------------ */
-  $$(".accordion-trigger").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", String(!expanded));
-      const panel = document.getElementById(btn.getAttribute("aria-controls"));
-      if (panel) panel.classList.toggle("is-open", !expanded);
+  const demoForm = $("#demo-form");
+  if (demoForm) {
+    demoForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(demoForm);
+      const name = String(data.get("name") || "").trim();
+      const school = String(data.get("school") || "").trim();
+      const email = String(data.get("email") || "").trim();
+      const size = String(data.get("size") || "").trim();
+      const message = String(data.get("message") || "").trim();
+
+      const subject = `Demo request — ${school || name || "School"}`;
+      const body = [
+        "Hello Remtoo team,",
+        "",
+        "I would like to book a 15-minute demo for our school.",
+        "",
+        `Name: ${name}`,
+        `School / organization: ${school}`,
+        `Email: ${email}`,
+        `Number of teachers: ${size || "—"}`,
+        message ? `Notes: ${message}` : "",
+        "",
+        "— Sent from the Remtoo website",
+      ]
+        .filter((line) => line !== "")
+        .join("\n");
+
+      window.location.href = `mailto:hello@remtoo.com?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+
+      const success = $("#demo-success");
+      if (success) success.classList.add("is-shown");
+      demoForm.reset();
     });
-  });
+  }
+
+  /* ------------------------------------------------------------------
+     Footer language dropdown (English active; more coming soon)
+  ------------------------------------------------------------------ */
+  const langBtn = $("#lang-btn");
+  const langMenu = $("#lang-menu");
+
+  if (langBtn && langMenu) {
+    const closeLang = () => {
+      langBtn.setAttribute("aria-expanded", "false");
+      langMenu.classList.remove("is-open");
+    };
+
+    langBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const expanded = langBtn.getAttribute("aria-expanded") === "true";
+      if (expanded) {
+        closeLang();
+      } else {
+        langBtn.setAttribute("aria-expanded", "true");
+        langMenu.classList.add("is-open");
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!langMenu.contains(e.target) && !langBtn.contains(e.target)) closeLang();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLang();
+    });
+
+    $$("button[role='menuitemradio']", langMenu).forEach((btn) => {
+      btn.addEventListener("click", () => {
+        $$("button[role='menuitemradio']", langMenu).forEach((b) =>
+          b.setAttribute("aria-checked", String(b === btn))
+        );
+        closeLang();
+      });
+    });
+  }
 
   /* ------------------------------------------------------------------
      Current year
   ------------------------------------------------------------------ */
   const yearEl = $("#year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-
-  /* ------------------------------------------------------------------
-     Active nav link highlighting while scrolling
-  ------------------------------------------------------------------ */
-  const navLinks = $$('.nav-list .nav-link[href^="#"]');
-  const sections = navLinks
-    .map((l) => document.getElementById(l.getAttribute("href").slice(1)))
-    .filter(Boolean);
-
-  if (sections.length && "IntersectionObserver" in window) {
-    const navIo = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            navLinks.forEach((l) =>
-              l.setAttribute(
-                "aria-current",
-                l.getAttribute("href") === `#${entry.target.id}` ? "true" : "false"
-              )
-            );
-          }
-        });
-      },
-      { rootMargin: "-40% 0px -55% 0px" }
-    );
-    sections.forEach((s) => navIo.observe(s));
-  }
 })();
