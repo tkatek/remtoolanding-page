@@ -23,11 +23,17 @@
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/curriculum.css" />
   <script>
-    // Progressive enhancement gate + fail-safe: if main.js has not signalled
-    // readiness within 1.5s, remove the gate so no content stays hidden.
+    // Progressive enhancement gate + fail-safe: release any unrevealed content
+    // after initialization so a delayed script can never leave the page blank.
     document.documentElement.classList.add("js");
     setTimeout(function () {
-      if (!window.__remtooReady) document.documentElement.classList.remove("js");
+      if (!window.__remtooReady) {
+        document.documentElement.classList.remove("js");
+        return;
+      }
+      document.querySelectorAll(".reveal:not(.is-visible)").forEach(function (element) {
+        element.classList.add("is-visible");
+      });
     }, 1500);
   </script>
 </head>
@@ -488,7 +494,7 @@
               <img
                 src="assets/images/lessons/pair-work.webp"
                 alt="Students working together during an English lesson"
-                width="640" height="427" loading="lazy" decoding="async"
+                width="640" height="427" decoding="async"
               />
             </div>
             <div class="ca-body">
@@ -510,7 +516,7 @@
               <img
                 src="assets/images/lessons/teacher-laptop.webp"
                 alt="English teacher preparing a lesson on her laptop"
-                width="960" height="540" loading="lazy" decoding="async"
+                width="960" height="540" decoding="async"
               />
             </div>
             <div class="ca-body">

@@ -215,12 +215,12 @@
 }
 
 .curriculum-page .hero-inner {
-  width: min(calc(100% - 44px), 1030px);
+  width: min(calc(100% - 44px), 980px);
   min-height: 383px;
   padding-bottom: 0;
   display: grid;
-  grid-template-columns: 485px 1fr;
-  gap: 8px;
+  grid-template-columns: 470px 1fr;
+  gap: 0;
   align-items: center;
 }
 
@@ -322,9 +322,9 @@
 .curriculum-page .hero-photo-frame > img {
   position: absolute;
   z-index: 1;
-  right: 67px;
-  bottom: -54px;
-  width: 354px;
+  right: -8px;
+  bottom: -36px;
+  width: 292px;
   height: auto;
   aspect-ratio: auto;
   object-fit: contain;
@@ -334,6 +334,7 @@
 }
 
 .curriculum-page .ch-annotation {
+  position: absolute;
   left: 78px;
   top: 7px;
   z-index: 5;
@@ -353,13 +354,15 @@
 }
 
 .curriculum-page .ch-feature-card {
-  left: 39px;
+  position: absolute;
+  left: 70px;
   bottom: 76px;
   z-index: 4;
-  width: 145px;
+  width: 155px;
   padding: 10px;
+  border: 1px solid rgba(220, 229, 241, 0.9);
   border-radius: 13px;
-  border-color: rgba(220, 229, 241, 0.9);
+  background: rgba(255, 255, 255, .96);
   box-shadow: 0 13px 28px rgba(27, 66, 117, .13);
 }
 
@@ -368,10 +371,16 @@
 }
 
 .curriculum-page .ch-feature-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
   gap: 5px;
 }
 
 .curriculum-page .ch-feature-card li {
+  display: flex;
+  align-items: center;
   gap: 6px;
   font-size: 8px;
 }
@@ -379,7 +388,12 @@
 .curriculum-page .ch-dot {
   width: 18px;
   height: 18px;
+  display: grid;
+  place-items: center;
+  flex: none;
   border-radius: 6px;
+  background: color-mix(in srgb, var(--d, var(--blue)) 13%, #fff);
+  color: var(--d, var(--blue));
 }
 
 .curriculum-page .ch-dot svg {
@@ -388,23 +402,51 @@
 }
 
 .curriculum-page .ch-video-card {
+  position: absolute;
   top: 84px;
-  right: 5px;
+  right: -108px;
+  z-index: 4;
   width: 142px;
   padding: 7px;
+  border: 1px solid rgba(220, 229, 241, .9);
   border-radius: 13px;
+  background: rgba(255, 255, 255, .97);
+  box-shadow: 0 13px 28px rgba(27, 66, 117, .15);
   transform: rotate(4deg);
   animation: ch-float-card 9s ease-in-out infinite alternate;
 }
 
 .curriculum-page .ch-video-thumb {
+  position: relative;
+  display: block;
   aspect-ratio: 16 / 9;
+  overflow: hidden;
   border-radius: 8px;
+}
+
+.curriculum-page .ch-video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.curriculum-page .ch-video-thumb .play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(9, 21, 72, .12);
 }
 
 .curriculum-page .ch-video-thumb .play span {
   width: 25px;
   height: 25px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--blue);
+  box-shadow: 0 3px 9px rgba(12, 39, 76, .2);
 }
 
 .curriculum-page .ch-video-card p {
@@ -414,9 +456,11 @@
 }
 
 .curriculum-page .ch-note-card {
+  position: absolute;
   top: auto;
-  right: 27px;
+  right: -105px;
   bottom: 39px;
+  z-index: 5;
   width: 128px;
   padding: 10px 12px;
   border: 0;
@@ -454,7 +498,7 @@
 }
 
 .curriculum-page .level-flow-wrap {
-  width: min(100%, 1140px);
+  width: min(100%, 1180px);
   margin-inline: auto;
 }
 
@@ -465,7 +509,7 @@
 }
 
 .curriculum-page .level-flow-card {
-  min-height: 214px;
+  min-height: 225px;
   padding: 18px 13px 14px;
   display: flex;
   flex-direction: column;
@@ -481,13 +525,16 @@
 .curriculum-page .level-flow-card .icon-badge--solid {
   width: 42px;
   height: 42px;
-  border-radius: 12px;
+  border-radius: 0;
   margin-bottom: 1px;
+  background: transparent;
+  color: var(--lv);
+  box-shadow: none;
 }
 
 .curriculum-page .level-flow-card .icon-badge--solid svg {
-  width: 21px;
-  height: 21px;
+  width: 27px;
+  height: 27px;
 }
 
 .curriculum-page .level-flow-card h3 {
@@ -515,9 +562,13 @@
   min-height: 0;
   margin-top: auto;
   padding: 6px 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: 4px;
   border: 0;
-  background: color-mix(in srgb, var(--lv) 10%, #fff);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--lv) 15%, #fff);
   color: var(--lv-dark);
   font-size: 8.5px;
   box-shadow: none;
@@ -556,8 +607,8 @@
 /* Included features -------------------------------------------------------- */
 
 .curriculum-page .curr-included {
-  min-height: 282px;
-  padding: 21px 0 30px;
+  min-height: 288px;
+  padding: 8px 0 35px;
   background: linear-gradient(180deg, #fff 0%, #f8fbff 100%);
 }
 
@@ -572,7 +623,7 @@
 }
 
 .curriculum-page .curr-feat-card {
-  min-height: 142px;
+  min-height: 156px;
   padding: 14px 13px 13px;
   display: flex;
   flex-direction: column;
@@ -580,8 +631,9 @@
   justify-content: flex-start;
   gap: 7px;
   text-align: left;
-  border-color: #edf1f8;
+  border: 1px solid #edf1f8;
   border-radius: 13px;
+  background: rgba(255, 255, 255, .96);
   box-shadow: 0 9px 26px rgba(38, 75, 126, .075);
 }
 
@@ -624,12 +676,13 @@
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 715px) minmax(280px, 1fr);
-  gap: 48px;
+  gap: 73px;
   align-items: center;
 }
 
 .curriculum-page .curr-laptop-wrap {
-  max-width: 715px;
+  max-width: 620px;
+  margin-left: 90px;
   padding-bottom: 12px;
 }
 
@@ -728,8 +781,15 @@
 .curriculum-page .curr-start-btn {
   margin-left: auto;
   padding: 5px 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: 3px;
+  border-radius: 999px;
+  background: var(--blue);
+  color: #fff;
   font-size: 7px;
+  line-height: 1;
 }
 
 .curriculum-page .curr-laptop .lesson-player {
@@ -918,7 +978,7 @@
 
 .curriculum-page .curr-audience-section {
   min-height: 226px;
-  padding: 17px 0 24px;
+  padding: 0 0 24px;
   overflow: hidden;
   background: #fff;
 }
@@ -930,13 +990,21 @@
 }
 
 .curriculum-page .ca-card {
-  height: 184px;
+  height: 200px;
   display: grid;
   grid-template-columns: 48% 52%;
   overflow: hidden;
   border: 0;
   border-radius: 15px;
   box-shadow: 0 10px 28px rgba(39, 77, 120, .07);
+}
+
+.curriculum-page .ca-card--students {
+  background: #ecfbf4;
+}
+
+.curriculum-page .ca-card--teachers {
+  background: #f5efff;
 }
 
 .curriculum-page .ca-photo {
@@ -962,6 +1030,8 @@
 .curriculum-page .ca-body {
   min-width: 0;
   padding: 23px 18px 18px;
+  display: flex;
+  flex-direction: column;
   gap: 6px;
   justify-content: center;
 }
@@ -984,6 +1054,7 @@
 }
 
 .curriculum-page .ca-body .checks {
+  display: grid;
   gap: 4px;
   margin-top: 1px;
 }
@@ -1008,8 +1079,8 @@
 /* Testimonials ------------------------------------------------------------- */
 
 .curriculum-page .testimonials {
-  min-height: 238px;
-  padding: 12px 0 27px;
+  min-height: 215px;
+  padding: 0 0 18px;
   overflow: hidden;
   background:
     radial-gradient(250px 180px at 95% 86%, rgba(213, 246, 231, .42), transparent 68%),
@@ -1150,7 +1221,7 @@
 
 .curriculum-page .final-banner-section {
   min-height: 184px;
-  padding: 18px 0 43px;
+  padding: 4px 0 35px;
   overflow: visible;
   background:
     radial-gradient(240px 190px at 4% 96%, rgba(166, 223, 255, .3), transparent 70%),
@@ -1160,21 +1231,25 @@
 .curriculum-page .final-banner {
   width: min(100% - 96px, 1120px);
   height: 132px;
-  margin-inline: auto;
+  margin-inline: 0 auto;
   padding: 23px 28px;
   overflow: visible;
   gap: 26px;
   border-radius: 20px;
   background:
     radial-gradient(430px 220px at 7% -10%, rgba(29, 129, 255, .44), transparent 68%),
-    radial-gradient(380px 240px at 100% 120%, rgba(14, 210, 205, .32), transparent 72%),
-    linear-gradient(110deg, #042d70 0%, #00468d 55%, #0061a5 100%);
+    radial-gradient(380px 240px at 100% 120%, rgba(14, 210, 205, .18), transparent 72%),
+    linear-gradient(110deg, #042d70 0%, #00468d 55%, #00519d 100%);
   box-shadow: 0 17px 34px rgba(12, 58, 117, .2);
 }
 
 .curriculum-page .final-banner > .decor {
   overflow: hidden;
   border-radius: inherit;
+}
+
+.curriculum-page .final-banner .glass {
+  display: none;
 }
 
 .curriculum-page .fb-content {
@@ -1241,6 +1316,10 @@
   .curriculum-page .fb-note {
     display: none;
   }
+
+  .curriculum-page .final-banner {
+    margin-inline: auto;
+  }
 }
 
 @media (max-width: 1180px) {
@@ -1254,7 +1333,19 @@
   }
 
   .curriculum-page .hero-photo-frame > img {
-    right: 52px;
+    right: clamp(-8px, calc((1180px - 100vw) * .35 - 8px), 52px);
+  }
+
+  .curriculum-page .ch-feature-card {
+    left: 18px;
+  }
+
+  .curriculum-page .ch-video-card {
+    right: 4px;
+  }
+
+  .curriculum-page .ch-note-card {
+    right: 20px;
   }
 
   .curriculum-page .level-flow {
@@ -1376,11 +1467,25 @@
   }
 
   .curriculum-page .testimonial-card {
+    flex: 0 0 calc((100% - 14px) / 2);
     width: calc((100% - 14px) / 2);
+    scroll-snap-align: start;
   }
 
   .curriculum-page .testimonial-card:nth-child(3) {
-    display: none;
+    display: grid;
+  }
+
+  .curriculum-page .carousel-track {
+    padding: 2px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .curriculum-page .carousel-actions #t-prev {
+    left: -13px;
+    display: grid;
+    transform: translateY(-50%);
   }
 
   .curriculum-page .final-banner {
@@ -1452,7 +1557,14 @@
   }
 
   .curriculum-page .carousel-actions #t-prev {
+    left: auto;
     display: grid;
+    transform: none;
+  }
+
+  .curriculum-page .carousel-actions #t-next {
+    right: auto;
+    transform: none;
   }
 
   .curriculum-page .carousel-dots {
@@ -1605,6 +1717,40 @@
     min-height: 125px;
   }
 
+  .curriculum-page .level-flow-card p {
+    font-size: 11.5px;
+  }
+
+  .curriculum-page .curr-levels .lf-cta {
+    font-size: 10.5px;
+  }
+
+  .curriculum-page .curr-feat-card h3 {
+    font-size: 13px;
+  }
+
+  .curriculum-page .curr-feat-card p,
+  .curriculum-page .ca-lead,
+  .curriculum-page .ca-body .checks .check-item {
+    font-size: 11.5px;
+  }
+
+  .curriculum-page .ca-body h3 {
+    font-size: 15px;
+  }
+
+  .curriculum-page .testimonial-card blockquote {
+    font-size: 11.5px;
+  }
+
+  .curriculum-page .testimonial-card .t-person .who strong {
+    font-size: 10px;
+  }
+
+  .curriculum-page .testimonial-card .t-person .who span {
+    font-size: 9px;
+  }
+
   .curriculum-page .curr-laptop-annotation {
     left: 0;
   }
@@ -1739,12 +1885,6 @@
   .curriculum-page .curr-feat-card .icon-badge--solid { grid-area: icon; }
   .curriculum-page .curr-feat-card h3 { grid-area: title; }
   .curriculum-page .curr-feat-card p { grid-area: copy; }
-}
-
-@media (min-width: 1600px) {
-  .curriculum-page .hero-inner {
-    width: 1060px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
