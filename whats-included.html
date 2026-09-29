@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="css/sections.css" />
   <link rel="stylesheet" href="css/pages.css" />
   <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/whats-included.css" />
   <script>
     // Progressive enhancement gate + fail-safe: if main.js has not signalled
     // readiness within 1.5s, remove the gate so no content stays hidden.
@@ -30,7 +31,7 @@
     }, 1500);
   </script>
 </head>
-<body id="top">
+<body class="whats-included-page" id="top">
   <a class="skip-link" href="#main">Skip to main content</a>
   <!-- ============================== SVG ICON SPRITE ============================== -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -112,7 +113,7 @@
           <li><a class="nav-link" href="pricing.html">Pricing</a></li>
           <li><a class="nav-link" href="free-sample.html">Free Sample</a></li>
         </ul>
-        <a class="btn btn-primary btn-sm header-cta" href="schools.html#demo">Book a Demo</a>
+        <a class="btn btn-primary btn-sm header-cta" href="schools.html#demo">Book a Demo <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
           <span></span>
         </button>
@@ -130,7 +131,7 @@
       <li><a class="nav-link" href="pricing.html">Pricing <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
       <li><a class="nav-link" href="free-sample.html">Free Sample <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
     </ul>
-    <a class="btn btn-primary btn-block" href="schools.html#demo">Book a Demo</a>
+    <a class="btn btn-primary btn-block" href="schools.html#demo">Book a Demo <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
   </nav>
 
   <main id="main">
@@ -139,10 +140,21 @@
       <div class="decor" aria-hidden="true">
         <span class="blob blob--blue float-slow" style="width:560px;height:480px;top:-180px;left:-140px"></span>
         <span class="blob blob--cyan float-slower" style="width:460px;height:400px;bottom:-160px;right:-140px;opacity:.8"></span>
-        <span class="glass glass--blue float-slow" style="width:96px;height:96px;top:14%;right:4%"></span>
+        <span class="glass glass--blue float-slow" style="width:80px;height:80px;top:5%;left:7.5%"></span>
         <span class="dots" style="width:190px;height:140px;bottom:14%;left:6%"></span>
+        <span class="wi-bg-orbit wi-bg-orbit--hero"></span>
+        <span class="wi-bg-dots wi-bg-dots--hero-right"></span>
+        <span class="wi-bg-orb wi-bg-orb--teacher"></span>
+        <span class="wi-bg-spark wi-bg-spark--hero"></span>
       </div>
       <div class="container page-hero-inner">
+        <div class="wi-hero-side-note" aria-hidden="true">
+          <span class="handwritten">Less prep.<br />More teaching.<br />Brighter futures.</span>
+          <svg width="58" height="42" viewBox="0 0 58 42" fill="none">
+            <path d="M4 4c2 19 15 29 42 30" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="m39 27 8 7-10 2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <div class="wi-hero-copy reveal">
           <p class="hero-eyebrow">
             <svg class="ic" aria-hidden="true"><use href="#i-package"/></svg>
@@ -171,9 +183,9 @@
           <div class="wi-hero-photo">
             <span class="wi-hero-circle" aria-hidden="true"></span>
             <img
-              src="assets/images/hero/teacher-main.webp"
+              src="assets/images/hero/teacher-included-optimized.png"
               alt="Smiling English teacher holding a tablet, ready for her next class"
-              width="800" height="1198" fetchpriority="high" decoding="async"
+              width="614" height="920" fetchpriority="high" decoding="async"
             />
             <div class="wi-hero-annotation" aria-hidden="true">
               <span class="handwritten">Great lessons happen here.</span>
@@ -183,8 +195,8 @@
               </svg>
             </div>
             <div class="wi-hero-badge">
-              <span class="whb-icon" aria-hidden="true"><svg class="ic ic-fill"><use href="#i-star"/></svg></span>
-              <p><strong>Trusted by teachers</strong><span>and schools worldwide</span></p>
+              <span class="whb-icon" aria-hidden="true"><svg class="ic"><use href="#i-users"/></svg></span>
+              <p><span>Trusted by</span><strong>10,000+ teachers</strong><span>worldwide</span></p>
             </div>
           </div>
         </div>
@@ -192,118 +204,136 @@
     </section>
 
     <!-- ============================== FEATURES ============================== -->
-    <section class="section" aria-labelledby="features-title">
+    <section class="section wi-features" id="included-features" aria-labelledby="features-title">
       <div class="decor" aria-hidden="true">
         <span class="blob blob--lav float-slower" style="width:420px;height:340px;top:-100px;right:-140px;opacity:.7"></span>
         <span class="blob blob--gold" style="width:340px;height:300px;bottom:-120px;left:-100px;opacity:.6"></span>
+        <span class="wi-bg-dots wi-bg-dots--features-left"></span>
+        <span class="wi-bg-dots wi-bg-dots--features-right"></span>
+        <span class="wi-bg-ring wi-bg-ring--features"></span>
       </div>
+      <span class="handwritten wi-features-note wi-features-note--left" aria-hidden="true">Designed for<br />real classrooms</span>
+      <span class="handwritten wi-features-note wi-features-note--right" aria-hidden="true">Engage. Practice.<br />Progress.</span>
       <div class="container">
-        <h2 class="visually-hidden" id="features-title">The eight components included in every level</h2>
+        <header class="wi-features-head reveal">
+          <p class="wi-features-eyebrow">What&rsquo;s Included</p>
+          <h2 id="features-title">Everything You Need to Teach, All in One Place</h2>
+          <p>
+            Engaging content, practical tools, and ready-to-use materials — so you can
+            spend less time preparing and more time teaching.
+          </p>
+        </header>
 
         <div class="features-grid">
           <!-- 1 — Ready-to-Teach Lessons: mini lesson plan with steps -->
-          <article class="feature-card reveal">
+          <article class="feature-card feature-card--plan reveal">
             <div class="feature-head">
               <span class="icon-badge icon-badge--blue" aria-hidden="true"><svg class="ic"><use href="#i-book-open"/></svg></span>
-              <h3>Ready-to-Teach Lessons</h3>
+              <div class="feature-title"><h3>Ready-to-Teach Lessons</h3><p>Full lesson plans from warm-up to wrap-up.</p></div>
             </div>
             <div class="feature-mock" aria-hidden="true">
               <div class="fm-plan">
                 <div class="fm-plan-head">
-                  <span class="fm-plan-thumb">
-                    <svg viewBox="0 0 48 36" fill="none">
-                      <rect width="48" height="36" rx="5" fill="#dbeafe"/>
-                      <circle cx="36" cy="9" r="4.5" fill="#fbbf24"/>
-                      <path d="M2 32 16 12l9 12" fill="#93b8f7"/>
-                      <path d="M13 32 27 15l19 17z" fill="#5b8ce0"/>
-                      <path d="M27 15l4 4.4-2.4 1.2z" fill="#fff"/>
-                      <path d="M6 32h38" stroke="#3b6fd0" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                  </span>
+                  <span class="fm-plan-unit">Unit 3</span>
                   <span class="fm-plan-title">
                     <strong>A Brighter Tomorrow</strong>
-                    <small>Level B1 &middot; Unit 3</small>
+                    <small>Level B1 &middot; Complete lesson</small>
                   </span>
-                  <span class="fm-plan-time"><svg class="ic"><use href="#i-clock"/></svg>45&rsquo;</span>
                 </div>
                 <ol class="fm-plan-steps">
-                  <li style="--c:#2563eb"><span class="fs-ic"><svg class="ic"><use href="#i-zap"/></svg></span>Warm-up<i>5&rsquo;</i></li>
-                  <li style="--c:#7c3aed"><span class="fs-ic"><svg class="ic"><use href="#i-book-open"/></svg></span>Presentation<i>10&rsquo;</i></li>
+                  <li style="--c:#2563eb"><span class="fs-ic"><svg class="ic"><use href="#i-zap"/></svg></span>Warm-up<i>10&rsquo;</i></li>
+                  <li style="--c:#7c3aed"><span class="fs-ic"><svg class="ic"><use href="#i-book-open"/></svg></span>Presentation<i>15&rsquo;</i></li>
                   <li style="--c:#d97706"><span class="fs-ic"><svg class="ic"><use href="#i-pencil"/></svg></span>Practice<i>15&rsquo;</i></li>
                   <li style="--c:#16a34a"><span class="fs-ic"><svg class="ic"><use href="#i-users"/></svg></span>Production<i>15&rsquo;</i></li>
                 </ol>
               </div>
             </div>
-            <p>Full lesson plans from warm-up to wrap-up.</p>
           </article>
 
           <!-- 2 — Videos: real lesson thumbnail + player treatment -->
-          <article class="feature-card reveal" style="--reveal-delay:.06s">
+          <article class="feature-card feature-card--video reveal" style="--reveal-delay:.06s">
             <div class="feature-head">
               <span class="icon-badge icon-badge--green" aria-hidden="true"><svg class="ic"><use href="#i-video"/></svg></span>
-              <h3>Videos</h3>
+              <div class="feature-title"><h3>Videos</h3><p>Native-speaker videos for every lesson.</p></div>
             </div>
             <div class="feature-mock" aria-hidden="true">
               <div class="fm-video">
-                <img src="assets/images/lessons/waving-woman.webp" alt="" width="640" height="805" loading="lazy" decoding="async" />
+                <img src="assets/images/lessons/meet-greet-wave.webp" alt="" width="800" height="450" loading="lazy" decoding="async" />
                 <span class="play"><span><svg class="ic" width="13" height="13"><use href="#i-play"/></svg></span></span>
                 <span class="fm-video-time">6:24</span>
               </div>
               <div class="mock-progress"><i style="width:52%"></i></div>
+              <div class="fm-video-controls">
+                <svg class="ic"><use href="#i-play"/></svg>
+                <span>3:12 / 6:24</span>
+                <svg class="ic"><use href="#i-volume"/></svg>
+              </div>
               <p class="fm-caption">Real language. Real people. Real progress.</p>
             </div>
-            <p>Native-speaker videos for every lesson.</p>
           </article>
 
           <!-- 3 — Speaking Activities: conversation UI with avatars + voice -->
-          <article class="feature-card reveal" style="--reveal-delay:.12s">
+          <article class="feature-card feature-card--speaking reveal" style="--reveal-delay:.12s">
             <div class="feature-head">
               <span class="icon-badge icon-badge--amber" aria-hidden="true"><svg class="ic"><use href="#i-message-circle"/></svg></span>
-              <h3>Speaking Activities</h3>
+              <div class="feature-title"><h3>Speaking Activities</h3><p>Structured pair and group work.</p></div>
             </div>
             <div class="feature-mock" aria-hidden="true">
               <div class="fm-chat">
                 <div class="fm-chat-row">
                   <img class="fm-avatar" src="assets/images/people/omar.webp" alt="" width="60" height="60" loading="lazy" decoding="async" />
-                  <span class="fm-bubble left">What did you do last weekend?</span>
+                  <span class="fm-bubble left">Hi! What&rsquo;s your name?</span>
                 </div>
                 <div class="fm-chat-row right">
-                  <span class="fm-bubble right">I visited my grandmother.</span>
+                  <span class="fm-bubble right">My name is Sara!</span>
                   <img class="fm-avatar" src="assets/images/people/sarah.webp" alt="" width="60" height="60" loading="lazy" decoding="async" />
                 </div>
               </div>
               <div class="fm-voice">
                 <svg class="ic"><use href="#i-mic"/></svg>
                 <span class="fm-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-                <em>Speak up!</em>
+                <em>0:08</em>
               </div>
+              <span class="fm-speak-callout"><svg class="ic"><use href="#i-mic"/></svg>Speak up!</span>
             </div>
-            <p>Structured pair and group work.</p>
           </article>
 
           <!-- 4 — Vocabulary & Grammar: word chips + sentence in context -->
-          <article class="feature-card reveal" style="--reveal-delay:.18s">
+          <article class="feature-card feature-card--vocab reveal" style="--reveal-delay:.18s">
             <div class="feature-head">
               <span class="icon-badge icon-badge--pink" aria-hidden="true"><svg class="ic"><use href="#i-book"/></svg></span>
-              <h3>Vocabulary &amp; Grammar</h3>
+              <div class="feature-title"><h3>Vocabulary &amp; Grammar</h3><p>Clear presentation and guided practice.</p></div>
             </div>
-            <div class="feature-mock" aria-hidden="true">
-              <div class="fm-chips">
-                <span class="hl">school</span><span>teacher</span><span>student</span><span>book</span>
+            <div class="feature-mock fm-vocab" aria-hidden="true">
+              <div class="fm-vocab-word">
+                <span>Vocabulary</span>
+                <span class="fm-audio"><svg class="ic"><use href="#i-volume"/></svg></span>
+                <strong>beautiful</strong>
+                <small>/ˈbjuː.tɪ.fəl/ &middot; adjective</small>
               </div>
-              <div class="fm-sentence">
-                <img src="assets/images/lessons/pair-work.webp" alt="" width="120" height="80" loading="lazy" decoding="async" />
-                <p>It&rsquo;s a <strong>beautiful</strong> day outside.</p>
+              <div class="fm-vocab-context">
+                <span class="fm-city" aria-hidden="true">
+                  <svg viewBox="0 0 88 78" role="presentation">
+                    <defs><linearGradient id="wi-sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#bde7ff"/><stop offset="1" stop-color="#eef9ff"/></linearGradient></defs>
+                    <rect width="88" height="78" rx="12" fill="url(#wi-sky)"/>
+                    <circle cx="69" cy="16" r="8" fill="#ffd76a"/>
+                    <path d="M0 62 17 48l13 14 18-25 22 25 18-12v28H0z" fill="#78a9df"/>
+                    <path d="m29 62 19-25 8 11 8-7 13 21" fill="#5d87bf"/>
+                    <path d="m44 42 4-5 4 6-3-1-2 2z" fill="#fff"/>
+                    <path d="M0 66c18-7 34 4 50-2s25-5 38-2v16H0z" fill="#85d7b1"/>
+                  </svg>
+                </span>
+                <p><strong>It&rsquo;s a beautiful place.</strong><span>The view is full of color and light.</span></p>
               </div>
+              <div class="fm-grammar-focus"><span>Grammar focus</span><strong>Present simple</strong><small>It looks beautiful today.</small></div>
             </div>
-            <p>Clear presentation and guided practice.</p>
           </article>
 
           <!-- 5 — Interactive Activities: matching game -->
-          <article class="feature-card reveal">
+          <article class="feature-card feature-card--interactive reveal">
             <div class="feature-head">
               <span class="icon-badge icon-badge--purple" aria-hidden="true"><svg class="ic"><use href="#i-grid"/></svg></span>
-              <h3>Interactive Activities</h3>
+              <div class="feature-title"><h3>Interactive Activities</h3><p>Games and tasks that keep students engaged.</p></div>
             </div>
             <div class="feature-mock fm-match" aria-hidden="true">
               <p class="fm-match-title">Match the words to the pictures</p>
@@ -312,11 +342,13 @@
                   <span class="fm-word">a cat</span>
                   <span class="fm-word">a dog</span>
                   <span class="fm-word">a bird</span>
+                  <span class="fm-word">a fish</span>
                 </div>
                 <svg class="fm-match-lines" viewBox="0 0 100 100" preserveAspectRatio="none" fill="none">
-                  <path d="M0 17 C 40 17, 60 50, 100 50" />
-                  <path d="M0 50 C 40 50, 60 83, 100 83" />
-                  <path d="M0 83 C 40 83, 60 17, 100 17" />
+                  <path d="M0 12 C 40 12, 60 37, 100 37" />
+                  <path d="M0 37 C 40 37, 60 62, 100 62" />
+                  <path d="M0 62 C 40 62, 60 12, 100 12" />
+                  <path d="M0 87 C 40 87, 60 87, 100 87" />
                 </svg>
                 <div class="fm-match-col">
                   <span class="fm-pic">
@@ -328,17 +360,19 @@
                   <span class="fm-pic">
                     <svg viewBox="0 0 64 64"><circle cx="32" cy="34" r="18" fill="#67c6ea"/><path d="M22 34c2-9 8-14 12-14s4 6 2 14-8 12-12 10-3-6-2-10z" fill="#3fa9d8"/><circle cx="26" cy="30" r="2" fill="#123a52"/><path d="M44 34l10 3-10 4z" fill="#f59e0b"/><path d="M20 22l3 4M18 28l4 2" stroke="#3fa9d8" stroke-width="2" stroke-linecap="round"/><path d="M30 52c2 2 8 2 10-2" stroke="#2f8ab8" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg>
                   </span>
+                  <span class="fm-pic">
+                    <svg viewBox="0 0 64 64"><path d="M13 33c9-13 25-14 35-3l9-6-1 18-9-6c-10 10-26 8-34-3z" fill="#fb923c"/><circle cx="26" cy="29" r="2.2" fill="#7c2d12"/><path d="M34 23c-1-6 4-9 8-7l-2 9M30 42c0 5 5 7 9 4l-2-6" fill="#fdba74"/><path d="M18 34c6 4 15 5 23 1" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/></svg>
+                  </span>
                 </div>
               </div>
             </div>
-            <p>Games and tasks that keep students engaged.</p>
           </article>
 
           <!-- 6 — Exercises & Practice: multiple choice with selected answer -->
-          <article class="feature-card reveal" style="--reveal-delay:.06s">
+          <article class="feature-card feature-card--exercise reveal" style="--reveal-delay:.06s">
             <div class="feature-head">
               <span class="icon-badge icon-badge--blue" aria-hidden="true"><svg class="ic"><use href="#i-clipboard-check"/></svg></span>
-              <h3>Exercises &amp; Practice</h3>
+              <div class="feature-title"><h3>Exercises &amp; Practice</h3><p>Worksheets for class and homework.</p></div>
             </div>
             <div class="feature-mock fm-quiz fm-exercise" aria-hidden="true">
               <p class="q">1. She ___ to school every day.</p>
@@ -349,39 +383,39 @@
               </div>
               <span class="fm-pencil"><svg class="ic"><use href="#i-pencil"/></svg></span>
             </div>
-            <p>Worksheets for class and homework.</p>
           </article>
 
           <!-- 7 — Tests & Assessments: unit test card with A+ -->
-          <article class="feature-card reveal" style="--reveal-delay:.12s">
+          <article class="feature-card feature-card--test reveal" style="--reveal-delay:.12s">
             <div class="feature-head">
               <span class="icon-badge icon-badge--green" aria-hidden="true"><svg class="ic"><use href="#i-award"/></svg></span>
-              <h3>Tests &amp; Assessments</h3>
+              <div class="feature-title"><h3>Tests &amp; Assessments</h3><p>Unit tests and progress checks.</p></div>
             </div>
             <div class="feature-mock" aria-hidden="true">
               <div class="fm-unittest">
                 <div class="ut-head">
                   <svg class="ic"><use href="#i-file-text"/></svg>
-                  <strong>Unit 3 Test</strong>
+                  <strong>Unit Test &ndash; Unit 3</strong>
                   <span class="ut-chip">A2</span>
                 </div>
-                <ul class="ut-lines">
-                  <li><svg class="ic"><use href="#i-check"/></svg><i style="width:86%"></i></li>
-                  <li><svg class="ic"><use href="#i-check"/></svg><i style="width:68%"></i></li>
-                  <li><svg class="ic"><use href="#i-check"/></svg><i style="width:78%"></i></li>
-                  <li><svg class="ic"><use href="#i-check"/></svg><i style="width:52%"></i></li>
-                </ul>
-                <span class="ut-grade">A+</span>
+                <div class="ut-result">
+                  <ul class="ut-lines">
+                    <li><svg class="ic"><use href="#i-check"/></svg><span>Listening</span><i><b style="width:100%"></b></i><em>10/10</em></li>
+                    <li><svg class="ic"><use href="#i-check"/></svg><span>Reading</span><i><b style="width:90%"></b></i><em>9/10</em></li>
+                    <li><svg class="ic"><use href="#i-check"/></svg><span>Grammar</span><i><b style="width:100%"></b></i><em>10/10</em></li>
+                    <li><svg class="ic"><use href="#i-check"/></svg><span>Speaking</span><i><b style="width:90%"></b></i><em>9/10</em></li>
+                  </ul>
+                  <div class="ut-grade-wrap"><span class="ut-grade">A+</span><small>Great work!</small></div>
+                </div>
               </div>
             </div>
-            <p>Unit tests and progress checks.</p>
           </article>
 
           <!-- 8 — Reviews: positive completion state -->
-          <article class="feature-card reveal" style="--reveal-delay:.18s">
+          <article class="feature-card feature-card--review reveal" style="--reveal-delay:.18s">
             <div class="feature-head">
               <span class="icon-badge icon-badge--amber" aria-hidden="true"><svg class="ic"><use href="#i-star"/></svg></span>
-              <h3>Reviews</h3>
+              <div class="feature-title"><h3>Reviews</h3><p>Regular review to lock in learning.</p></div>
             </div>
             <div class="feature-mock fm-review" aria-hidden="true">
               <p class="fm-review-hand">
@@ -393,28 +427,19 @@
               </div>
               <p class="fm-review-note">Keep going! You&rsquo;re making progress.</p>
             </div>
-            <p>Regular review to lock in learning.</p>
           </article>
         </div>
-
-        <ul class="inside-chips reveal" style="margin-top:clamp(2.75rem,5.5vw,4rem)">
-          <li class="chip"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Video</li>
-          <li class="chip"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Vocabulary</li>
-          <li class="chip"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Grammar</li>
-          <li class="chip"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Speaking</li>
-          <li class="chip"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Activities</li>
-          <li class="chip"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Practice</li>
-          <li class="chip"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Review</li>
-          <li class="chip"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Assessment</li>
-        </ul>
       </div>
     </section>
 
     <!-- ============================== MATERIALS ============================== -->
-    <section class="section" style="background:var(--surface-blue)" aria-labelledby="materials-title">
+    <section class="section wi-materials" style="background:var(--surface-blue)" aria-labelledby="materials-title">
       <div class="decor" aria-hidden="true">
         <span class="blob blob--green float-slow" style="width:420px;height:360px;top:-130px;left:-120px;opacity:.7"></span>
         <span class="blob blob--cyan float-slower" style="width:360px;height:320px;bottom:-130px;right:-100px;opacity:.7"></span>
+        <span class="wi-bg-dots wi-bg-dots--materials-left"></span>
+        <span class="wi-bg-dots wi-bg-dots--materials-right"></span>
+        <span class="wi-bg-ring wi-bg-ring--materials"></span>
       </div>
       <div class="container">
         <div class="section-head reveal">
@@ -469,7 +494,7 @@
             <div class="mx-visual mx-visual--green" aria-hidden="true">
               <div class="mx-laptop">
                 <div class="mx-screen">
-                  <img src="assets/images/lessons/teacher-teaching.webp" alt="" width="640" height="427" loading="lazy" decoding="async" />
+                  <img src="assets/images/lessons/teacher-laptop.webp" alt="" width="960" height="540" loading="lazy" decoding="async" />
                   <span class="play"><span><svg class="ic" width="15" height="15"><use href="#i-play"/></svg></span></span>
                 </div>
                 <span class="mx-base"></span>
@@ -546,7 +571,12 @@
     </section>
 
     <!-- ============================== CTA BANNER ============================== -->
-    <section class="section" aria-labelledby="wi-cta-title">
+    <section class="section wi-cta-section" aria-labelledby="wi-cta-title">
+      <div class="decor" aria-hidden="true">
+        <span class="wi-bg-dots wi-bg-dots--cta-left"></span>
+        <span class="wi-bg-dots wi-bg-dots--cta-right"></span>
+        <span class="wi-bg-spark wi-bg-spark--cta"></span>
+      </div>
       <div class="container">
         <div class="cta-banner reveal">
           <div class="decor" aria-hidden="true">
@@ -628,7 +658,6 @@
           <div class="footer-social">
             <a href="https://facebook.com/remtoo" aria-label="Remtoo on Facebook" target="_blank" rel="noopener"><svg class="ic"><use href="#i-facebook"/></svg></a>
             <a href="https://instagram.com/remtoo" aria-label="Remtoo on Instagram" target="_blank" rel="noopener"><svg class="ic"><use href="#i-instagram"/></svg></a>
-            <a href="https://x.com/remtoo" aria-label="Remtoo on X (Twitter)" target="_blank" rel="noopener"><svg class="ic"><use href="#i-twitter"/></svg></a>
             <a href="https://youtube.com/@remtoo" aria-label="Remtoo on YouTube" target="_blank" rel="noopener"><svg class="ic"><use href="#i-youtube"/></svg></a>
             <a href="https://linkedin.com/company/remtoo" aria-label="Remtoo on LinkedIn" target="_blank" rel="noopener"><svg class="ic"><use href="#i-linkedin"/></svg></a>
           </div>

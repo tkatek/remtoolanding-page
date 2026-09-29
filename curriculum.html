@@ -23,17 +23,14 @@
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/curriculum.css" />
   <script>
-    // Progressive enhancement gate + fail-safe: release any unrevealed content
-    // after initialization so a delayed script can never leave the page blank.
+    // Progressive enhancement gate + fail-safe: if the reveal system never
+    // initializes, remove the gate so content cannot remain hidden.
     document.documentElement.classList.add("js");
     setTimeout(function () {
-      if (!window.__remtooReady) {
+      var firstReveal = document.querySelector(".reveal");
+      if (!window.__remtooReady || (firstReveal && !firstReveal.classList.contains("is-visible"))) {
         document.documentElement.classList.remove("js");
-        return;
       }
-      document.querySelectorAll(".reveal:not(.is-visible)").forEach(function (element) {
-        element.classList.add("is-visible");
-      });
     }, 1500);
   </script>
 </head>
@@ -215,7 +212,7 @@
 
             <div class="ch-video-card" aria-hidden="true">
               <span class="ch-video-thumb">
-                <img src="assets/images/lessons/restaurant-conversation.webp" alt="" width="960" height="540" loading="lazy" decoding="async" />
+                <img src="assets/images/lessons/restaurant-conversation.webp" alt="" width="960" height="540" decoding="async" />
                 <span class="play"><span><svg class="ic" width="13" height="13"><use href="#i-play"/></svg></span></span>
               </span>
               <p><strong>Real lessons.</strong> Real progress.</p>
@@ -552,10 +549,10 @@
           <p class="section-sub">Real feedback from real educators.</p>
         </div>
 
-        <div class="carousel reveal" aria-roledescription="carousel" aria-label="Teacher testimonials">
-          <div class="carousel-track" id="testimonials-track" tabindex="0" aria-label="Testimonials (use arrow keys to browse)">
-            <article class="testimonial-card" aria-roledescription="slide" aria-label="1 of 3">
-              <div class="t-stars" aria-label="Rated 5 out of 5 stars">
+        <div class="carousel reveal" role="region" aria-roledescription="carousel" aria-labelledby="testimonials-title" data-responsive-testimonials>
+          <div class="carousel-track" id="testimonials-track" role="group" tabindex="0" aria-label="Testimonials (use arrow keys to browse)">
+            <article class="testimonial-card" role="group" aria-roledescription="slide" aria-label="1 of 3">
+              <div class="t-stars" role="img" aria-label="Rated 5 out of 5 stars">
                 <svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg>
               </div>
               <blockquote>
@@ -563,14 +560,14 @@
                 My students are more engaged than ever — and I finally get my evenings back.&rdquo;
               </blockquote>
               <div class="t-person">
-                <img src="assets/images/people/sarah.webp" alt="Portrait of Sarah K." width="54" height="54" loading="lazy" decoding="async" />
+                <img src="assets/images/people/sarah.webp" alt="Portrait of Sarah K." width="64" height="64" loading="lazy" decoding="async" />
                 <div class="who"><strong>Sarah K.</strong><span>English Teacher &middot; Canada</span></div>
                 <span class="t-badge icon-badge--blue" aria-hidden="true"><svg class="ic ic-fill"><use href="#i-quote"/></svg></span>
               </div>
             </article>
 
-            <article class="testimonial-card" aria-roledescription="slide" aria-label="2 of 3">
-              <div class="t-stars" aria-label="Rated 5 out of 5 stars">
+            <article class="testimonial-card" role="group" aria-roledescription="slide" aria-label="2 of 3">
+              <div class="t-stars" role="img" aria-label="Rated 5 out of 5 stars">
                 <svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg>
               </div>
               <blockquote>
@@ -578,14 +575,14 @@
                 same quality lesson, and we can finally track real progress across classes.&rdquo;
               </blockquote>
               <div class="t-person">
-                <img src="assets/images/people/david.webp" alt="Portrait of David M." width="54" height="54" loading="lazy" decoding="async" />
+                <img src="assets/images/people/david.webp" alt="Portrait of David M." width="64" height="64" loading="lazy" decoding="async" />
                 <div class="who"><strong>David M.</strong><span>Program Director &middot; USA</span></div>
                 <span class="t-badge icon-badge--green" aria-hidden="true"><svg class="ic ic-fill"><use href="#i-quote"/></svg></span>
               </div>
             </article>
 
-            <article class="testimonial-card" aria-roledescription="slide" aria-label="3 of 3">
-              <div class="t-stars" aria-label="Rated 5 out of 5 stars">
+            <article class="testimonial-card" role="group" aria-roledescription="slide" aria-label="3 of 3">
+              <div class="t-stars" role="img" aria-label="Rated 5 out of 5 stars">
                 <svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg>
               </div>
               <blockquote>
@@ -593,7 +590,7 @@
                 searching for materials and started focusing on their students.&rdquo;
               </blockquote>
               <div class="t-person">
-                <img src="assets/images/people/amina.webp" alt="Portrait of Amina R." width="54" height="54" loading="lazy" decoding="async" />
+                <img src="assets/images/people/amina.webp" alt="Portrait of Amina R." width="64" height="64" loading="lazy" decoding="async" />
                 <div class="who"><strong>Amina R.</strong><span>Language Center &middot; Morocco</span></div>
                 <span class="t-badge icon-badge--amber" aria-hidden="true"><svg class="ic ic-fill"><use href="#i-quote"/></svg></span>
               </div>
@@ -604,11 +601,12 @@
             <button class="carousel-btn" id="t-prev" type="button" aria-label="Previous testimonial">
               <svg class="ic" style="transform:rotate(180deg)" aria-hidden="true"><use href="#i-arrow-right"/></svg>
             </button>
-            <div class="carousel-dots" id="t-dots" role="tablist" aria-label="Choose testimonial"></div>
+            <div class="carousel-dots" id="t-dots" role="group" aria-label="Choose testimonial page"></div>
             <button class="carousel-btn" id="t-next" type="button" aria-label="Next testimonial">
               <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>
             </button>
           </div>
+          <p class="visually-hidden" id="testimonial-status" aria-live="polite" aria-atomic="true"></p>
         </div>
       </div>
     </section>

@@ -1791,6 +1791,293 @@
 }
 
 /* ==========================================================================
+   MAIN LANDING PAGE — screenshot-density pass
+   The homepage reuses the school story, but keeps a deliberately tighter
+   desktop rhythm to match the supplied long-form reference composition.
+   ========================================================================== */
+
+@media (min-width: 1081px) {
+  .main-reference-page {
+    --header-h: 58px;
+    --section-y: 28px;
+  }
+
+  .main-reference-page .container { max-width: 1360px; }
+
+  .main-reference-page .header-inner { min-height: 58px; }
+  .main-reference-page .logo-mark { width: 34px; height: 34px; border-radius: 10px; }
+  .main-reference-page .logo-word { font-size: 1.25rem; }
+  .main-reference-page .nav-link { font-size: 0.82rem; }
+  .main-reference-page .header-cta { min-height: 40px; padding: 0.55rem 1.15rem; }
+
+  .main-reference-page .schools-hero { padding-block: 34px; }
+  .main-reference-page .schools-hero .page-hero-inner {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 44px;
+  }
+  .main-reference-page .schools-hero .hero-eyebrow { margin-bottom: 0.72rem; }
+  .main-reference-page .schools-hero h1 {
+    margin-bottom: 0.8rem;
+    font-size: 3.45rem;
+    line-height: 1.01;
+  }
+  .main-reference-page .schools-hero .page-lead {
+    max-width: 540px;
+    margin-bottom: 1rem;
+    font-size: 0.94rem;
+    line-height: 1.5;
+  }
+  .main-reference-page .schools-hero-trust {
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+  }
+  .main-reference-page .schools-hero-trust .check-item { font-size: 0.72rem; }
+  .main-reference-page .schools-hero .hero-actions { margin-bottom: 0.85rem; gap: 0.7rem; }
+  .main-reference-page .schools-hero .btn-lg { min-height: 43px; padding: 0.65rem 1.2rem; font-size: 0.82rem; }
+  .main-reference-page .hero-proof { gap: 0.65rem; min-height: 32px; }
+  .main-reference-page .proof-avatars img { width: 27px; height: 27px; }
+  .main-reference-page .proof-copy strong { font-size: 0.7rem; }
+  .main-reference-page .proof-copy span { font-size: 0.64rem; }
+
+  .main-reference-page .schools-hero-visual {
+    width: min(100%, 690px);
+    margin-block: -40px;
+    transform: scale(0.78);
+    transform-origin: center right;
+  }
+  .main-reference-page .hero-photo-card--teacher {
+    right: -22px;
+    left: auto;
+    bottom: 24px;
+    transform: rotate(3deg);
+  }
+  .main-reference-page .hero-mini-stat { right: 112px; bottom: 24px; }
+
+  .main-reference-page .impact-section { padding-block: 23px; }
+  .main-reference-page .impact { padding: 0.25rem 0.9rem; column-gap: 0.65rem; }
+  .main-reference-page .impact .icon-badge { width: 38px; height: 38px; border-radius: 12px; }
+  .main-reference-page .impact .icon-badge svg { width: 19px; height: 19px; }
+  .main-reference-page .impact .v { font-size: 1.45rem; }
+  .main-reference-page .impact .l { font-size: 0.66rem; }
+
+  .main-reference-page .section-head { margin-bottom: 16px; }
+  .main-reference-page .section-title {
+    margin-bottom: 0.35rem;
+    font-size: 1.9rem;
+    line-height: 1.08;
+  }
+  .main-reference-page .section-sub { font-size: 0.82rem; line-height: 1.45; }
+  .main-reference-page .badge { margin-bottom: 0.45rem; padding: 0.28rem 0.72rem; font-size: 0.62rem; }
+
+  .main-reference-page .schools-steps { gap: 14px; }
+  .main-reference-page .schools-steps .step-arrow { margin-inline: -3px; }
+  .main-reference-page .schools-steps .step-card {
+    min-height: 0;
+    padding: 0.9rem 0.95rem 1rem;
+    border-radius: 16px;
+    gap: 0.28rem;
+  }
+  .main-reference-page .schools-steps .step-num {
+    top: 0.85rem;
+    left: 0.9rem;
+    width: 32px;
+    height: 32px;
+    font-size: 0.82rem;
+  }
+  .main-reference-page .schools-steps .step-card h3 {
+    min-height: 32px;
+    padding-left: 2.65rem;
+    font-size: 0.9rem;
+  }
+  .main-reference-page .schools-steps .step-text { font-size: 0.69rem; line-height: 1.38; }
+  .main-reference-page .schools-steps .step-visual { margin-top: 0.35rem; padding-top: 0; }
+  .main-reference-page .onboard-mock { gap: 0.3rem; padding: 0.55rem; }
+  .main-reference-page .ob-row { gap: 0.4rem; padding: 0.32rem 0.4rem; }
+  .main-reference-page .ob-row img { width: 27px; height: 27px; border-radius: 8px; }
+  .main-reference-page .ob-name { font-size: 0.68rem; }
+  .main-reference-page .ob-name strong,
+  .main-reference-page .ob-foot { font-size: 0.56rem; }
+  .main-reference-page .ob-check { width: 19px; height: 19px; }
+  .main-reference-page .mock-head { margin-bottom: 0.4rem; }
+  .main-reference-page .mock-video { height: 112px; aspect-ratio: auto; }
+  .main-reference-page .mock-video img { height: 100%; aspect-ratio: auto; object-fit: cover; }
+  .main-reference-page .mock-video .play span { width: 40px; height: 40px; }
+  .main-reference-page .lesson-kit { gap: 0.28rem; margin-top: 0.35rem; }
+  .main-reference-page .lesson-kit li { padding: 0.24rem 0.36rem; font-size: 0.57rem; }
+  .main-reference-page .track-mock { padding: 0.68rem; }
+  .main-reference-page .tm-head { margin-bottom: 0.45rem; }
+  .main-reference-page .tm-score { font-size: 1.45rem; }
+  .main-reference-page .tm-meta strong { font-size: 0.68rem; }
+  .main-reference-page .tm-meta span { font-size: 0.58rem; }
+  .main-reference-page .tm-bars { height: 70px; gap: 6px; }
+  .main-reference-page .tm-labels { gap: 6px; }
+  .main-reference-page .tm-labels span { font-size: 0.54rem; }
+
+  .main-reference-page .consistency-grid { gap: 42px; }
+  .main-reference-page #programs { padding-block: 50px; }
+  .main-reference-page #programs .section-title { max-width: 470px; }
+  .main-reference-page #programs .section-title + p {
+    margin-bottom: 0.9rem !important;
+    max-width: 570px;
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+  .main-reference-page .consistency-list { gap: 0.55rem; }
+  .main-reference-page .cl-item { gap: 0.65rem; }
+  .main-reference-page .cl-item .icon-badge { width: 38px; height: 38px; border-radius: 11px; }
+  .main-reference-page .cl-item strong { font-size: 0.76rem; }
+  .main-reference-page .cl-item span { font-size: 0.66rem; }
+  .main-reference-page .consistency-visual { min-height: 230px; }
+  .main-reference-page .curriculum-book-fan { height: 230px; }
+  .main-reference-page .curriculum-book {
+    width: 105px;
+    height: 170px;
+    bottom: 28px;
+    padding: 0.72rem 0.66rem;
+  }
+  .main-reference-page .curriculum-book small { font-size: 0.52rem; }
+  .main-reference-page .curriculum-book b { font-size: 0.76rem; }
+  .main-reference-page .curriculum-book strong { font-size: 1.9rem; }
+  .main-reference-page .curriculum-book em { font-size: 0.49rem; }
+  .main-reference-page .curriculum-book--a1 { --book-x: -140px; }
+  .main-reference-page .curriculum-book--a2 { --book-x: -72px; }
+  .main-reference-page .curriculum-book--b1 { --book-x: 0px; }
+  .main-reference-page .curriculum-book--b2 { --book-x: 72px; }
+  .main-reference-page .curriculum-book--c1 { --book-x: 140px; }
+  .main-reference-page .stack-chip { padding: 0.32rem 0.72rem; font-size: 0.65rem; }
+  .main-reference-page .stack-note { margin-top: -0.7rem; font-size: 1rem; }
+
+  .main-reference-page .school-features-grid { gap: 0.65rem; }
+  .main-reference-page .reference-tools { padding-block: 53px; }
+  .main-reference-page .school-features-grid .value-card {
+    min-height: 62px;
+    padding: 0.68rem 0.85rem;
+    border-radius: 13px;
+    gap: 0.65rem;
+  }
+  .main-reference-page .school-features-grid .value-card .icon-badge { width: 36px; height: 36px; border-radius: 11px; }
+  .main-reference-page .school-features-grid .value-card h3 { font-size: 0.75rem; }
+  .main-reference-page .school-features-grid .value-card p { font-size: 0.63rem; line-height: 1.3; }
+
+  .main-reference-page .testimonial-card {
+    min-height: 133px;
+    padding: 0.75rem 0.9rem;
+    border-radius: 15px;
+    gap: 0.5rem;
+  }
+  .main-reference-page .t-stars svg { width: 13px; height: 13px; }
+  .main-reference-page .testimonial-card blockquote { font-size: 0.69rem; line-height: 1.48; }
+  .main-reference-page .t-person { padding-top: 0.45rem; }
+  .main-reference-page .t-person img { width: 34px; height: 34px; }
+  .main-reference-page .t-person .who strong { font-size: 0.69rem; }
+  .main-reference-page .t-person .who span { font-size: 0.59rem; }
+  .main-reference-page .t-person .quote-mark { width: 34px; height: 34px; }
+
+  .main-reference-page .schools-pricing .pricing-grid { max-width: 980px; gap: 0.85rem; }
+  .main-reference-page .schools-pricing { padding-block: 18px; }
+  .main-reference-page .schools-pricing .pricing-card {
+    min-height: 0;
+    padding: 0.78rem 0.9rem 0.76rem;
+    border-radius: 15px;
+  }
+  .main-reference-page .schools-pricing .pricing-card .plan-name { font-size: 0.9rem; }
+  .main-reference-page .schools-pricing .pricing-card .plan-for { margin: 0.12rem 0 0.52rem; font-size: 0.67rem; }
+  .main-reference-page .schools-pricing .price-row .amount { font-size: 1.7rem; }
+  .main-reference-page .schools-pricing .price-row .period { font-size: 0.68rem; }
+  .main-reference-page .schools-pricing .pricing-card .price-note { margin-bottom: 0.5rem; font-size: 0.61rem; }
+  .main-reference-page .schools-pricing .pricing-card .plan-features {
+    gap: 0.1rem;
+    padding-block: 0.38rem;
+    margin-bottom: 0.4rem;
+  }
+  .main-reference-page .schools-pricing .pricing-card .plan-features .check-item { gap: 0.38rem; font-size: 0.61rem; line-height: 1.15; }
+  .main-reference-page .schools-pricing .pricing-card .plan-features .check-item svg { width: 13px; height: 13px; }
+  .main-reference-page .schools-pricing .pricing-card .btn { min-height: 34px; padding: 0.42rem 0.72rem; font-size: 0.68rem; }
+  .main-reference-page .schools-pricing .popular-tag { top: -12px; padding: 0.25rem 0.8rem; font-size: 0.58rem; }
+  .main-reference-page .schools-pricing .pricing-note { margin-top: 0.8rem; font-size: 0.65rem; }
+
+  .main-reference-page .demo-section .demo-card {
+    grid-template-columns: 0.7fr 1.18fr 0.7fr;
+    gap: 1rem;
+    padding: 0.75rem;
+    border-radius: 18px;
+  }
+  .main-reference-page .demo-section { padding-block: 14px; }
+  .main-reference-page .demo-card .demo-intro .section-title { font-size: 1.55rem; }
+  .main-reference-page .demo-card .demo-intro .section-sub { font-size: 0.72rem; line-height: 1.48; }
+  .main-reference-page .demo-form .form-grid { gap: 0.28rem; }
+  .main-reference-page .demo-form .form-field { gap: 0.22rem; }
+  .main-reference-page .demo-form .form-field label { font-size: 0.64rem; }
+  .main-reference-page .demo-form input,
+  .main-reference-page .demo-form select,
+  .main-reference-page .demo-form textarea {
+    min-height: 32px;
+    padding: 0.4rem 0.58rem;
+    border-radius: 9px;
+    font-size: 0.68rem;
+  }
+  .main-reference-page .demo-form .form-field textarea { min-height: 44px; }
+  .main-reference-page .demo-form .form-helper { font-size: 0.57rem; line-height: 1.4; }
+  .main-reference-page .demo-actions { margin-top: 0.55rem; gap: 0.65rem; }
+  .main-reference-page .demo-actions .btn { min-height: 38px; padding: 0.5rem 0.9rem; font-size: 0.68rem; }
+  .main-reference-page .demo-actions .text-link { font-size: 0.65rem; }
+  .main-reference-page .demo-photo-panel { border-radius: 14px; }
+  .main-reference-page .demo-photo-panel > img { min-height: 190px; }
+  .main-reference-page .demo-photo-panel figcaption { padding: 0.5rem; border-radius: 10px; }
+  .main-reference-page .demo-photo-panel .demo-checks { gap: 0.22rem; }
+  .main-reference-page .demo-photo-panel .demo-checks .check-item { font-size: 0.58rem; }
+
+  .main-reference-page .final-cta { padding-block: 16px; }
+  .main-reference-page .final-cta .badge,
+  .main-reference-page .final-cta .cta-note { display: none; }
+  .main-reference-page .final-cta .section-head { margin-bottom: 0; }
+  .main-reference-page .final-cta .section-title { font-size: 1.75rem; }
+  .main-reference-page .final-cta .section-sub { font-size: 0.76rem; }
+  .main-reference-page .final-cta .cta-note { margin-top: 0.2rem; font-size: 0.86rem; }
+  .main-reference-page .final-cta .cta-cards { max-width: 980px; margin-top: 0.45rem; gap: 0.65rem; }
+  .main-reference-page .final-cta .cta-card {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 0.7rem;
+    row-gap: 0.08rem;
+    padding: 0.62rem 0.75rem;
+    border-radius: 13px;
+  }
+  .main-reference-page .final-cta .cta-card .icon-badge {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+  .main-reference-page .final-cta .cta-card h3 { grid-column: 2; margin: 0; font-size: 0.82rem; }
+  .main-reference-page .final-cta .cta-card > p { grid-column: 2; margin: 0; font-size: 0.61rem; }
+  .main-reference-page .final-cta .cta-card .btn {
+    grid-column: 3;
+    grid-row: 1 / 3;
+    min-height: 34px;
+    margin: 0;
+    padding: 0.42rem 0.72rem;
+    font-size: 0.64rem;
+  }
+
+  .main-reference-page .site-footer { padding-top: 10px; }
+  .main-reference-page .site-footer .footer-grid {
+    gap: 2rem;
+    padding-bottom: 10px;
+  }
+  .main-reference-page .footer-brand .logo { margin-bottom: 0.55rem; }
+  .main-reference-page .footer-brand .tagline { max-width: 430px; margin-bottom: 0; font-size: 0.58rem; line-height: 1.4; }
+  .main-reference-page .footer-col h3 { margin-bottom: 0.4rem; font-size: 0.56rem; }
+  .main-reference-page .footer-col ul { gap: 0.18rem; }
+  .main-reference-page .footer-col a { font-size: 0.59rem; line-height: 1.2; }
+  .main-reference-page .site-footer .footer-bottom { padding-block: 6px; font-size: 0.6rem; }
+  .main-reference-page .footer-lang { padding: 0.32rem 0.72rem; font-size: 0.66rem; }
+}
+
+/* ==========================================================================
    LEGAL PAGE
    ========================================================================== */
 

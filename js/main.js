@@ -6,9 +6,6 @@
 (() => {
   "use strict";
 
-  // Signal readiness to the head fail-safe (see inline script in each page).
-  window.__remtooReady = true;
-
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
@@ -28,28 +25,33 @@
   const menuToggle = $(".menu-toggle");
   const mobileMenu = $("#mobile-menu");
 
-  const closeMenu = () => {
+  const closeMenu = (restoreFocus = false) => {
     if (!mobileMenu || !mobileMenu.classList.contains("is-open")) return;
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.setAttribute("aria-label", "Open menu");
     mobileMenu.classList.remove("is-open");
+    mobileMenu.inert = true;
+    if (restoreFocus) menuToggle.focus();
   };
 
   const openMenu = () => {
     menuToggle.setAttribute("aria-expanded", "true");
     menuToggle.setAttribute("aria-label", "Close menu");
+    mobileMenu.inert = false;
     mobileMenu.classList.add("is-open");
   };
 
   if (menuToggle && mobileMenu) {
+    mobileMenu.inert = true;
+
     menuToggle.addEventListener("click", () => {
       menuToggle.getAttribute("aria-expanded") === "true" ? closeMenu() : openMenu();
     });
 
-    $$("a", mobileMenu).forEach((a) => a.addEventListener("click", closeMenu));
+    $$("a", mobileMenu).forEach((a) => a.addEventListener("click", () => closeMenu()));
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMenu();
+      if (e.key === "Escape") closeMenu(true);
     });
 
     document.addEventListener("click", (e) => {
@@ -90,6 +92,11 @@
     revealEls.forEach((el) => io.observe(el));
   }
 
+  // Signal readiness only after the progressive-enhancement reveal gate is
+  // safely configured. If setup above ever fails, the inline fail-safe keeps
+  // all content visible instead of leaving it at opacity: 0.
+  window.__remtooReady = true;
+
   /* ------------------------------------------------------------------
      Accordions (footer groups + FAQ items)
   ------------------------------------------------------------------ */
@@ -122,7 +129,164 @@
 
   if (track && prevBtn && nextBtn && dotsWrap) {
     const slides = [...track.children];
-    const dots = [];
+    dotsWrap.setAttribute("role", "group");
+
+    /* The curriculum page uses a true responsive, paged carousel: all three
+       cards on desktop, two on tablet, and one on mobile. Other pages keep
+       the original single-card carousel behavior below. */
+    if (track.closest("[data-responsive-testimonials]")) {
+      const status = $("#testimonial-status");
+      let dots = [];
+      let pageStarts = [0];
+      let targets = [0];
+      let cardsPerView = 3;
+      let currentPage = 0;
+      let resizeFrame = 0;
+      let scrollFrame = 0;
+      let scrollSettleTimer = 0;
+      let programmaticPage = null;
+
+      const getCardsPerView = () => (window.innerWidth > 1180 ? 3 : window.innerWidth > 760 ? 2 : 1);
+
+      const setActive = (pageIndex, announce = false) => {
+        currentPage = Math.max(0, Math.min(pageStarts.length - 1, pageIndex));
+        dots.forEach((dot, index) => {
+          const active = index === currentPage;
+          dot.classList.toggle("is-active", active);
+          if (active) dot.setAttribute("aria-current", "true");
+          else dot.removeAttribute("aria-current");
+        });
+
+        prevBtn.disabled = currentPage === 0;
+        nextBtn.disabled = currentPage === pageStarts.length - 1;
+
+        if (status) {
+          const first = pageStarts[currentPage] + 1;
+          const last = Math.min(slides.length, first + cardsPerView - 1);
+          const message = `Showing testimonial${first === last ? "" : "s"} ${first}${first === last ? "" : `–${last}`} of ${slides.length}`;
+          track.setAttribute("aria-label", `${message}. Use arrow keys to browse.`);
+          if (status.textContent !== message) {
+            status.setAttribute("aria-live", announce ? "polite" : "off");
+            status.textContent = message;
+          }
+        }
+      };
+
+      const activePage = () => {
+        let closest = 0;
+        let distance = Infinity;
+        targets.forEach((target, index) => {
+          const nextDistance = Math.abs(track.scrollLeft - target);
+          if (nextDistance < distance) {
+            distance = nextDistance;
+            closest = index;
+          }
+        });
+        return closest;
+      };
+
+      const finishProgrammaticScroll = () => {
+        programmaticPage = null;
+        setActive(activePage());
+      };
+
+      const goToPage = (pageIndex, announce = true) => {
+        const nextPage = Math.max(0, Math.min(pageStarts.length - 1, pageIndex));
+        programmaticPage = nextPage;
+        clearTimeout(scrollSettleTimer);
+        track.scrollTo({ left: targets[nextPage] || 0, behavior: reduceMotion ? "auto" : "smooth" });
+        setActive(nextPage, announce);
+        scrollSettleTimer = window.setTimeout(finishProgrammaticScroll, 180);
+      };
+
+      const measureTargets = () => {
+        const trackRect = track.getBoundingClientRect();
+        const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+        targets = pageStarts.map((slideIndex) => {
+          const slideRect = slides[slideIndex].getBoundingClientRect();
+          return Math.max(0, Math.min(maxScroll, track.scrollLeft + slideRect.left - trackRect.left));
+        });
+      };
+
+      const rebuild = () => {
+        const previousStart = pageStarts[currentPage] || 0;
+        const restoreDotFocus = dots.includes(document.activeElement);
+        cardsPerView = getCardsPerView();
+        pageStarts = Array.from(
+          { length: Math.max(1, slides.length - cardsPerView + 1) },
+          (_, index) => index
+        );
+        measureTargets();
+
+        dotsWrap.replaceChildren();
+        dots = pageStarts.map((start, pageIndex) => {
+          const first = start + 1;
+          const last = Math.min(slides.length, first + cardsPerView - 1);
+          const dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "carousel-dot";
+          dot.setAttribute(
+            "aria-label",
+            `Show testimonial${first === last ? "" : "s"} ${first}${first === last ? "" : ` to ${last}`}`
+          );
+          dot.addEventListener("click", () => goToPage(pageIndex));
+          dotsWrap.appendChild(dot);
+          return dot;
+        });
+
+        track.tabIndex = cardsPerView === slides.length ? -1 : 0;
+        currentPage = Math.max(0, pageStarts.indexOf(Math.min(previousStart, pageStarts.at(-1))));
+        track.scrollTo({ left: targets[currentPage] || 0, behavior: "auto" });
+        setActive(currentPage);
+        if (restoreDotFocus) dots[currentPage]?.focus();
+      };
+
+      prevBtn.addEventListener("click", () => goToPage(currentPage - 1));
+      nextBtn.addEventListener("click", () => goToPage(currentPage + 1));
+
+      track.addEventListener(
+        "scroll",
+        () => {
+          clearTimeout(scrollSettleTimer);
+          if (programmaticPage !== null) {
+            scrollSettleTimer = window.setTimeout(finishProgrammaticScroll, 180);
+            return;
+          }
+          if (scrollFrame) return;
+          scrollFrame = requestAnimationFrame(() => {
+            scrollFrame = 0;
+            setActive(activePage(), true);
+          });
+        },
+        { passive: true }
+      );
+
+      track.addEventListener("keydown", (event) => {
+        if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(event.key)) return;
+        event.preventDefault();
+        if (event.key === "Home") goToPage(0);
+        else if (event.key === "End") goToPage(pageStarts.length - 1);
+        else goToPage(currentPage + (event.key === "ArrowRight" ? 1 : -1));
+      });
+
+      window.addEventListener("resize", () => {
+        cancelAnimationFrame(resizeFrame);
+        resizeFrame = requestAnimationFrame(() => {
+          programmaticPage = null;
+          clearTimeout(scrollSettleTimer);
+          if (getCardsPerView() !== cardsPerView) {
+            rebuild();
+            return;
+          }
+          measureTargets();
+          track.scrollTo({ left: targets[currentPage] || 0, behavior: "auto" });
+          setActive(currentPage);
+        });
+      });
+
+      rebuild();
+    } else {
+      const dots = [];
 
     const activeIndex = () => {
       const center = track.scrollLeft + track.clientWidth / 2;
@@ -142,8 +306,8 @@
       dots.forEach((d, j) => {
         const active = i === j;
         d.classList.toggle("is-active", active);
-        d.setAttribute("aria-selected", String(active));
-        d.setAttribute("tabindex", active ? "0" : "-1");
+        if (active) d.setAttribute("aria-current", "true");
+        else d.removeAttribute("aria-current");
       });
 
     const goTo = (i) => {
@@ -159,10 +323,8 @@
       const dot = document.createElement("button");
       dot.type = "button";
       dot.className = "carousel-dot" + (i === 0 ? " is-active" : "");
-      dot.setAttribute("role", "tab");
       dot.setAttribute("aria-label", `Go to testimonial ${i + 1}`);
-      dot.setAttribute("aria-selected", String(i === 0));
-      dot.setAttribute("tabindex", i === 0 ? "0" : "-1");
+      if (i === 0) dot.setAttribute("aria-current", "true");
       dot.addEventListener("click", () => goTo(i));
       dotsWrap.appendChild(dot);
       dots.push(dot);
@@ -184,7 +346,8 @@
       }
     });
 
-    window.addEventListener("resize", () => setActive(activeIndex()));
+      window.addEventListener("resize", () => setActive(activeIndex()));
+    }
   }
 
   /* ------------------------------------------------------------------
@@ -422,10 +585,26 @@
   const langMenu = $("#lang-menu");
 
   if (langBtn && langMenu) {
-    const closeLang = () => {
+    const langItems = $$('button[role="menuitemradio"]', langMenu);
+    const enabledLangItems = () => langItems.filter((item) => !item.disabled);
+
+    const closeLang = (restoreFocus = false) => {
       langBtn.setAttribute("aria-expanded", "false");
       langMenu.classList.remove("is-open");
+      langMenu.inert = true;
+      if (restoreFocus) langBtn.focus();
     };
+
+    const openLang = () => {
+      langBtn.setAttribute("aria-expanded", "true");
+      langMenu.inert = false;
+      langMenu.classList.add("is-open");
+      const checked = enabledLangItems().find((item) => item.getAttribute("aria-checked") === "true");
+      const focusTarget = checked || enabledLangItems()[0];
+      window.setTimeout(() => focusTarget?.focus(), 0);
+    };
+
+    langMenu.inert = true;
 
     langBtn.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -433,8 +612,7 @@
       if (expanded) {
         closeLang();
       } else {
-        langBtn.setAttribute("aria-expanded", "true");
-        langMenu.classList.add("is-open");
+        openLang();
       }
     });
 
@@ -443,15 +621,28 @@
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeLang();
+      if (e.key === "Escape" && langBtn.getAttribute("aria-expanded") === "true") closeLang(true);
     });
 
-    $$("button[role='menuitemradio']", langMenu).forEach((btn) => {
+    langMenu.addEventListener("keydown", (e) => {
+      const items = enabledLangItems();
+      const current = items.indexOf(document.activeElement);
+      let next = current;
+      if (e.key === "ArrowDown") next = (current + 1) % items.length;
+      else if (e.key === "ArrowUp") next = (current - 1 + items.length) % items.length;
+      else if (e.key === "Home") next = 0;
+      else if (e.key === "End") next = items.length - 1;
+      else return;
+      e.preventDefault();
+      items[next]?.focus();
+    });
+
+    langItems.forEach((btn) => {
       btn.addEventListener("click", () => {
-        $$("button[role='menuitemradio']", langMenu).forEach((b) =>
+        langItems.forEach((b) =>
           b.setAttribute("aria-checked", String(b === btn))
         );
-        closeLang();
+        closeLang(true);
       });
     });
   }
