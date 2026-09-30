@@ -2124,7 +2124,7 @@ html.js .whats-included-page .wi-features .reveal.is-visible {
   .whats-included-page .wi-card-icon { width: 32px; height: 32px; border-radius: 10px; }
   .whats-included-page .wi-card-icon svg { width: 17px; height: 17px; }
   .whats-included-page .wi-card-head h2,
-  .whats-included-page .wi-video-title h2 { font-size: 0.76rem; }
+  .whats-included-page .wi-video-title h2 { font-size: 0.72rem; letter-spacing: -0.02em; }
   .whats-included-page .wi-card-list { gap: 5px; }
   .whats-included-page .wi-card-list li { grid-template-columns: 14px 1fr; gap: 6px; font-size: 0.66rem; line-height: 1.3; }
   .whats-included-page .wi-card-list li svg { width: 14px; height: 14px; }

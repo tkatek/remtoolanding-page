@@ -557,6 +557,9 @@
 }
 
 .t-wave path { stroke-linecap: round; }
+.t-wave--a path:first-child { stroke: var(--decor-wave-blue); }
+.t-wave--a path:last-child { stroke: var(--decor-wave-teal); }
+.t-wave--b path { stroke: var(--decor-wave-violet); }
 
 .t-wave--a { left: 41%; top: 5%; }
 
@@ -571,14 +574,14 @@
   border-radius: 50%;
 }
 
-.t-bdot--1 { left: 9%; top: 13%; width: 13px; height: 13px; background: rgba(125, 230, 223, 0.8); filter: blur(3px); }
-.t-bdot--2 { left: 2.5%; top: 47%; width: 10px; height: 10px; background: rgba(196, 181, 253, 0.85); filter: blur(3px); }
-.t-bdot--3 { left: 13%; bottom: 13%; width: 16px; height: 16px; background: rgba(111, 219, 202, 0.7); filter: blur(4px); }
-.t-bdot--4 { left: 44.5%; top: 7%; width: 10px; height: 10px; background: rgba(31, 109, 242, 0.55); filter: blur(3px); }
-.t-bdot--5 { left: 79%; top: 9%; width: 12px; height: 12px; background: rgba(125, 230, 223, 0.75); filter: blur(3px); }
-.t-bdot--6 { left: 93%; top: 42%; width: 14px; height: 14px; background: rgba(196, 181, 253, 0.7); filter: blur(4px); }
-.t-bdot--7 { left: 55%; bottom: 7%; width: 12px; height: 12px; background: rgba(31, 109, 242, 0.5); filter: blur(3px); }
-.t-bdot--8 { left: 87%; bottom: 17%; width: 10px; height: 10px; background: rgba(111, 219, 202, 0.75); filter: blur(3px); }
+.t-bdot--1 { left: 9%; top: 13%; width: 13px; height: 13px; background: var(--decor-dot-cyan); filter: blur(3px); }
+.t-bdot--2 { left: 2.5%; top: 47%; width: 10px; height: 10px; background: var(--decor-dot-lav); filter: blur(3px); }
+.t-bdot--3 { left: 13%; bottom: 13%; width: 16px; height: 16px; background: var(--decor-dot-mint); filter: blur(4px); }
+.t-bdot--4 { left: 44.5%; top: 7%; width: 10px; height: 10px; background: var(--decor-dot-blue); filter: blur(3px); }
+.t-bdot--5 { left: 79%; top: 9%; width: 12px; height: 12px; background: var(--decor-dot-cyan); filter: blur(3px); }
+.t-bdot--6 { left: 93%; top: 42%; width: 14px; height: 14px; background: var(--decor-dot-lav); filter: blur(4px); }
+.t-bdot--7 { left: 55%; bottom: 7%; width: 12px; height: 12px; background: var(--decor-dot-blue); filter: blur(3px); }
+.t-bdot--8 { left: 87%; bottom: 17%; width: 10px; height: 10px; background: var(--decor-dot-mint); filter: blur(3px); }
 
 /* --------------------------------------------------------------------------
    Three-step workflow

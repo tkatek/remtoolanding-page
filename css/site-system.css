@@ -4599,12 +4599,50 @@ html:not(.site-shell-js) .global-footer__accordion-trigger:disabled {
 
   .teachers-page .t-eyebrow { color: #8bb7ff; background: rgba(54, 112, 214, 0.18); }
   .teachers-page .t-eyebrow--green { color: #68dda7; background: rgba(33, 176, 110, 0.16); }
-  .teachers-page .t-hero-backdrop {
+  .teachers-page .t-hero-panel {
+    border-color: rgba(110, 162, 190, 0.2);
     background:
-      linear-gradient(90deg, rgba(12, 31, 49, 0.9), rgba(12, 31, 49, 0.12) 34%, rgba(19, 50, 58, 0.2)),
-      linear-gradient(155deg, #102333 0 38%, #18323a 39% 42%, #0d202d 43% 100%);
-    box-shadow: inset 0 0 60px rgba(55, 112, 145, 0.08);
+      radial-gradient(120% 62% at 50% 0%, rgba(26, 54, 74, 0.6), rgba(10, 26, 42, 0) 58%),
+      linear-gradient(180deg, #0e2539 0%, #0c2033 40%, #0a1a2b 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(133, 180, 224, 0.12),
+      0 36px 74px rgba(0, 0, 0, 0.45);
   }
+
+  .teachers-page .t-hero-panel::after {
+    background: linear-gradient(90deg, transparent, rgba(120, 170, 210, 0.22), transparent);
+  }
+
+  .teachers-page .t-hero-ring { border-color: rgba(120, 168, 255, 0.12); }
+
+  .teachers-page .t-hero-glass {
+    border-color: rgba(130, 170, 220, 0.16);
+    background: linear-gradient(160deg, rgba(20, 42, 66, 0.55), rgba(15, 32, 52, 0.25));
+  }
+
+  .teachers-page .t-hero-floor {
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 72%);
+  }
+
+  .teachers-page .t-hero-teacher { filter: drop-shadow(0 30px 38px rgba(0, 0, 0, 0.55)); }
+
+  .teachers-page .t-glow--hero-cyan { background: rgba(45, 170, 190, 0.16); }
+  .teachers-page .t-glow--hero-lav { background: rgba(126, 100, 220, 0.15); }
+  .teachers-page .t-glow--hero-mint { background: rgba(38, 160, 130, 0.12); }
+
+  .teachers-page .t-hero-curve path { stroke: rgba(139, 183, 255, 0.24); }
+
+  .teachers-page .t-handnote--hero { color: var(--handwritten-theme); }
+
+  .teachers-page .t-spark::before,
+  .teachers-page .t-spark::after { background: #2fbf8f; }
+
+  .teachers-page .t-trust .ic { background: rgba(38, 160, 105, 0.18); color: #4bd395; }
+
+  .teachers-page .t-card-check { background: linear-gradient(135deg, #2ea36f, #157a4e); }
+  .teachers-page .t-card-clock { background: rgba(139, 102, 230, 0.2); color: #b39bff; box-shadow: none; }
+  .teachers-page .t-card-graph { background: rgba(64, 120, 230, 0.2); color: #8ab5ff; box-shadow: none; }
+  .teachers-page .t-progress-line { background: rgba(120, 160, 220, 0.14); }
 
   .teachers-page .t-float-card {
     border-color: var(--theme-border);
@@ -5518,4 +5556,81 @@ html:not(.site-shell-js) .global-footer__accordion-trigger:disabled {
 .schools-page .ob-foot,
 .teachers-page .t-progress-good {
   font-size: 0.875rem;
+}
+
+/* --------------------------------------------------------------------------
+   Shared ambient decorations: wavy lines + small blurred dots.
+   Dropped into any hero decor container as <div class="bg-decor">…
+   Colors come from --decor-* custom properties and follow the color scheme.
+   -------------------------------------------------------------------------- */
+
+:root {
+  --decor-wave-blue: rgba(31, 109, 242, 0.35);
+  --decor-wave-teal: rgba(56, 198, 216, 0.3);
+  --decor-wave-violet: rgba(124, 96, 232, 0.32);
+  --decor-dot-cyan: rgba(125, 230, 223, 0.8);
+  --decor-dot-mint: rgba(111, 219, 202, 0.72);
+  --decor-dot-lav: rgba(196, 181, 253, 0.85);
+  --decor-dot-blue: rgba(31, 109, 242, 0.55);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --decor-wave-blue: rgba(122, 170, 255, 0.38);
+    --decor-wave-teal: rgba(94, 214, 228, 0.32);
+    --decor-wave-violet: rgba(172, 144, 248, 0.36);
+    --decor-dot-cyan: rgba(94, 234, 226, 0.55);
+    --decor-dot-mint: rgba(63, 224, 180, 0.5);
+    --decor-dot-lav: rgba(188, 162, 255, 0.55);
+    --decor-dot-blue: rgba(122, 170, 255, 0.5);
+  }
+}
+
+.bg-decor {
+  position: absolute;
+  inset: 0;
+  overflow: clip;
+  pointer-events: none;
+}
+
+.bg-wave {
+  position: absolute;
+  width: min(300px, 26vw);
+  height: auto;
+  fill: none;
+  filter: blur(0.8px);
+}
+
+.bg-wave path { stroke-linecap: round; }
+
+.bg-wave--a { left: 5%; top: 8%; }
+.bg-wave--a path:nth-child(1) { stroke: var(--decor-wave-blue); stroke-width: 2.5; }
+.bg-wave--a path:nth-child(2) { stroke: var(--decor-wave-teal); stroke-width: 2; }
+
+.bg-wave--b {
+  right: 4%;
+  bottom: 6%;
+  width: min(280px, 24vw);
+}
+.bg-wave--b path { stroke: var(--decor-wave-violet); stroke-width: 2.5; stroke-dasharray: 1 10; }
+
+.bg-dot { position: absolute; border-radius: 50%; }
+
+.bg-dot--1 { left: 8%; top: 18%; width: 13px; height: 13px; background: var(--decor-dot-cyan); filter: blur(3px); }
+.bg-dot--2 { left: 2.5%; top: 50%; width: 10px; height: 10px; background: var(--decor-dot-lav); filter: blur(3px); }
+.bg-dot--3 { left: 12%; bottom: 12%; width: 16px; height: 16px; background: var(--decor-dot-mint); filter: blur(4px); }
+.bg-dot--4 { left: 46%; top: 6%; width: 10px; height: 10px; background: var(--decor-dot-blue); filter: blur(3px); }
+.bg-dot--5 { left: 79%; top: 10%; width: 12px; height: 12px; background: var(--decor-dot-cyan); filter: blur(3px); }
+.bg-dot--6 { left: 93%; top: 44%; width: 14px; height: 14px; background: var(--decor-dot-lav); filter: blur(4px); }
+.bg-dot--7 { left: 55%; bottom: 8%; width: 12px; height: 12px; background: var(--decor-dot-blue); filter: blur(3px); }
+.bg-dot--8 { left: 87%; bottom: 16%; width: 10px; height: 10px; background: var(--decor-dot-mint); filter: blur(3px); }
+
+@media (max-width: 700px) {
+  .bg-wave--b,
+  .bg-dot--3,
+  .bg-dot--5,
+  .bg-dot--6,
+  .bg-dot--8 { display: none; }
+
+  .bg-wave--a { width: 220px; }
 }
