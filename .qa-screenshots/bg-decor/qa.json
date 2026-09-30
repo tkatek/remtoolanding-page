@@ -1,0 +1,338 @@
+[
+ {
+  "scheme": "light",
+  "page": "index",
+  "overflow": 0,
+  "decor": "1440x860",
+  "wave": "300x82",
+  "dot": "125, 230, 223",
+  "bad": []
+ },
+ {
+  "scheme": "light",
+  "page": "curriculum",
+  "overflow": 0,
+  "decor": "1440x868",
+  "wave": "300x82",
+  "dot": "125, 230, 223",
+  "bad": []
+ },
+ {
+  "scheme": "light",
+  "page": "free-sample",
+  "overflow": 0,
+  "decor": "1440x508",
+  "wave": "300x82",
+  "dot": "125, 230, 223",
+  "bad": []
+ },
+ {
+  "scheme": "light",
+  "page": "pricing",
+  "overflow": 0,
+  "decor": "1440x620",
+  "wave": "300x82",
+  "dot": "125, 230, 223",
+  "bad": []
+ },
+ {
+  "scheme": "light",
+  "page": "schools",
+  "overflow": 0,
+  "decor": "1440x845",
+  "wave": "300x82",
+  "dot": "125, 230, 223",
+  "bad": []
+ },
+ {
+  "scheme": "light",
+  "page": "whats-included",
+  "overflow": 0,
+  "decor": "1440x884",
+  "wave": "300x82",
+  "dot": "125, 230, 223",
+  "bad": []
+ },
+ {
+  "scheme": "light",
+  "page": "legal",
+  "overflow": 0,
+  "decor": "1440x511",
+  "wave": "300x82",
+  "dot": "125, 230, 223",
+  "bad": []
+ },
+ {
+  "scheme": "light",
+  "page": "teachers",
+  "overflow": 0,
+  "decor": "1440x798",
+  "wave": "320x87",
+  "dot": "125, 230, 223",
+  "bad": []
+ },
+ {
+  "scheme": "dark",
+  "page": "index",
+  "overflow": 0,
+  "decor": "1440x860",
+  "wave": "300x82",
+  "dot": "94, 234, 226",
+  "bad": []
+ },
+ {
+  "scheme": "dark",
+  "page": "curriculum",
+  "overflow": 0,
+  "decor": "1440x868",
+  "wave": "300x82",
+  "dot": "94, 234, 226",
+  "bad": []
+ },
+ {
+  "scheme": "dark",
+  "page": "free-sample",
+  "overflow": 0,
+  "decor": "1440x508",
+  "wave": "300x82",
+  "dot": "94, 234, 226",
+  "bad": []
+ },
+ {
+  "scheme": "dark",
+  "page": "pricing",
+  "overflow": 0,
+  "decor": "1440x620",
+  "wave": "300x82",
+  "dot": "94, 234, 226",
+  "bad": []
+ },
+ {
+  "scheme": "dark",
+  "page": "schools",
+  "overflow": 0,
+  "decor": "1440x845",
+  "wave": "300x82",
+  "dot": "94, 234, 226",
+  "bad": []
+ },
+ {
+  "scheme": "dark",
+  "page": "whats-included",
+  "overflow": 0,
+  "decor": "1440x884",
+  "wave": "300x82",
+  "dot": "94, 234, 226",
+  "bad": []
+ },
+ {
+  "scheme": "dark",
+  "page": "legal",
+  "overflow": 0,
+  "decor": "1440x511",
+  "wave": "300x82",
+  "dot": "94, 234, 226",
+  "bad": []
+ },
+ {
+  "scheme": "dark",
+  "page": "teachers",
+  "overflow": 0,
+  "decor": "1440x798",
+  "wave": "320x87",
+  "dot": "94, 234, 226",
+  "bad": []
+ },
+ {
+  "scheme": "w320",
+  "page": "index",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w320",
+  "page": "curriculum",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w320",
+  "page": "free-sample",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w320",
+  "page": "pricing",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w320",
+  "page": "schools",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w320",
+  "page": "whats-included",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w320",
+  "page": "legal",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w320",
+  "page": "teachers",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w390",
+  "page": "index",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w390",
+  "page": "curriculum",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w390",
+  "page": "free-sample",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w390",
+  "page": "pricing",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w390",
+  "page": "schools",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w390",
+  "page": "whats-included",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w390",
+  "page": "legal",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w390",
+  "page": "teachers",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w768",
+  "page": "index",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w768",
+  "page": "curriculum",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w768",
+  "page": "free-sample",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w768",
+  "page": "pricing",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w768",
+  "page": "schools",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w768",
+  "page": "whats-included",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w768",
+  "page": "legal",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ },
+ {
+  "scheme": "w768",
+  "page": "teachers",
+  "overflow": 0,
+  "decor": "-",
+  "wave": "-",
+  "dot": "-"
+ }
+]
