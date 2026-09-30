@@ -90,7 +90,10 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
         }
         if (s.iconFilter && s.iconFilter !== "none") fail(`${tag}: icon has filter ${s.iconFilter}`);
         if (s.iconObjectFit !== "contain") fail(`${tag}: icon object-fit ${s.iconObjectFit}`);
-        if (s.icon.w / s.icon.h < 0.9 || s.icon.w / s.icon.h > 1.11) fail(`${tag}: icon aspect off: ${s.icon.w}x${s.icon.h}`);
+        const naturalRatio = 209 / 230;
+        if (Math.abs(s.icon.w / s.icon.h - naturalRatio) > 0.03 * naturalRatio) {
+          fail(`${tag}: icon aspect off: ${s.icon.w}x${s.icon.h}`);
+        }
 
         // Wordmark is real text and single-line.
         if (s.wordmarkText !== "REMTOO") fail(`${tag}: wordmark text "${s.wordmarkText}"`);

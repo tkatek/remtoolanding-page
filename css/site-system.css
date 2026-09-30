@@ -405,7 +405,8 @@
 .global-brand__icon {
   display: block;
   width: 32px;
-  height: 32px;
+  height: auto;
+  aspect-ratio: 209 / 230;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -662,7 +663,6 @@
 
 .global-mobile-nav .global-brand__icon {
   width: 38px;
-  height: 38px;
 }
 
 .global-mobile-nav .global-brand__wordmark {
@@ -1210,7 +1210,6 @@ html.site-shell-nav-open body {
 
 .global-footer__brand .global-brand__icon {
   width: 38px;
-  height: 38px;
 }
 
 .global-footer__brand .global-brand__wordmark {
@@ -1907,7 +1906,6 @@ html.site-shell-nav-open body {
   /* Compact header brand on small phones; drawer keeps its roomier size. */
   .global-header .global-brand__icon {
     width: 34px;
-    height: 34px;
   }
 
   .global-header .global-brand__wordmark {
@@ -1916,7 +1914,6 @@ html.site-shell-nav-open body {
 
   .global-mobile-nav .global-brand__icon {
     width: 36px;
-    height: 36px;
   }
 
   .global-mobile-nav .global-brand__wordmark {
