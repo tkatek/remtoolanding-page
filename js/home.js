@@ -1,55 +1,9 @@
+/* Remtoo homepage behavior: reveal-on-scroll + hero testimonial carousel.
+   Navigation, drawer, footer and year live in site-shell.js. */
 (() => {
   "use strict";
 
-  const header = document.getElementById("site-header");
-  const menuButton = document.getElementById("menu-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  const updateHeader = () => {
-    header?.classList.toggle("is-scrolled", window.scrollY > 10);
-  };
-
-  updateHeader();
-  window.addEventListener("scroll", updateHeader, { passive: true });
-
-  const closeMenu = () => {
-    if (!menuButton || !mobileMenu) return;
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.setAttribute("aria-label", "Open navigation");
-    mobileMenu.classList.remove("is-open");
-    mobileMenu.inert = true;
-    mobileMenu.setAttribute("aria-hidden", "true");
-  };
-
-  if (menuButton && mobileMenu) {
-    mobileMenu.inert = true;
-    mobileMenu.setAttribute("aria-hidden", "true");
-
-    menuButton.addEventListener("click", () => {
-      const opening = menuButton.getAttribute("aria-expanded") !== "true";
-      menuButton.setAttribute("aria-expanded", String(opening));
-      menuButton.setAttribute("aria-label", opening ? "Close navigation" : "Open navigation");
-      mobileMenu.classList.toggle("is-open", opening);
-      mobileMenu.inert = !opening;
-      mobileMenu.setAttribute("aria-hidden", String(!opening));
-    });
-
-    mobileMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        closeMenu();
-        menuButton.focus();
-      }
-    });
-    document.addEventListener("click", (event) => {
-      if (!mobileMenu.classList.contains("is-open")) return;
-      if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target)) closeMenu();
-    });
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 1040) closeMenu();
-    });
-  }
 
   const revealItems = [...document.querySelectorAll(".reveal")];
   if (!reducedMotion && "IntersectionObserver" in window) {
@@ -189,9 +143,6 @@
 
     update(activeIndex);
   }
-
-  const year = document.getElementById("year");
-  if (year) year.textContent = String(new Date().getFullYear());
 
   window.__remtooHomeReady = true;
 })();
