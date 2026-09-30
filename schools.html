@@ -33,6 +33,7 @@
   </script>
   <link rel="stylesheet" href="css/demo-section.css" />
   <link rel="stylesheet" href="css/site-system.css" />
+  <link rel="stylesheet" href="css/quality-section.css" />
 </head>
 <body id="top" class="schools-page">
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -155,37 +156,86 @@
         data-mobile-nav-close
       ></button>
       <div class="global-mobile-nav__panel" aria-label="Mobile navigation">
-        <button class="global-mobile-nav__close" type="button" aria-label="Close navigation" data-mobile-nav-close>
-          <svg class="global-icon" viewBox="0 0 20 20" aria-hidden="true">
-            <path d="m5 5 10 10M15 5 5 15" />
-          </svg>
-        </button>
+        <div class="global-mobile-nav__head">
+          <a class="global-mobile-nav__brand" href="index.html" aria-label="Remtoo home">
+            <img class="global-brand__image" src="assets/logos/remtoo-logo.png" alt="" width="921" height="250" decoding="async" />
+          </a>
+          <button class="global-mobile-nav__close" type="button" aria-label="Close navigation" data-mobile-nav-close>
+            <svg class="global-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="m5 5 10 10M15 5 5 15" />
+            </svg>
+          </button>
+        </div>
+
         <nav class="global-mobile-nav__links" aria-label="Mobile navigation links">
-          <a class="global-nav-link global-mobile-nav__link" data-nav-route="curriculum.html" href="curriculum.html">
-            <span>Curriculum</span><span aria-hidden="true">&rsaquo;</span>
+          <a class="global-mobile-nav__link" data-nav-route="curriculum.html" href="curriculum.html">
+            <span class="global-mobile-nav__icon" aria-hidden="true">
+              <svg class="global-icon" viewBox="0 0 24 24"><path d="M12 6.5C10.4 5.2 8.3 4.5 6 4.5H2.5v13H6c2.3 0 4.4.7 6 2 1.6-1.3 3.7-2 6-2h3.5v-13H18c-2.3 0-4.4.7-6 2Zm0 0V21.5" /></svg>
+            </span>
+            <span class="global-mobile-nav__label">Curriculum</span>
+            <svg class="global-icon global-mobile-nav__chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4.5 5.5 5.5L7 15.5" /></svg>
           </a>
-          <a class="global-nav-link global-mobile-nav__link" data-nav-route="whats-included.html" href="whats-included.html">
-            <span>What&rsquo;s Included</span><span aria-hidden="true">&rsaquo;</span>
+          <a class="global-mobile-nav__link" data-nav-route="whats-included.html" href="whats-included.html">
+            <span class="global-mobile-nav__icon" aria-hidden="true">
+              <svg class="global-icon" viewBox="0 0 24 24"><path d="M21 7.6 12 3 3 7.6v8.8L12 21l9-4.6V7.6ZM3 7.6 12 12.2m9-4.6L12 12.2m0 0V21" /></svg>
+            </span>
+            <span class="global-mobile-nav__label">What&rsquo;s Included</span>
+            <svg class="global-icon global-mobile-nav__chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4.5 5.5 5.5L7 15.5" /></svg>
           </a>
-          <a class="global-nav-link global-mobile-nav__link" data-nav-route="schools.html" href="schools.html" aria-current="page">
-            <span>For Schools</span><span aria-hidden="true">&rsaquo;</span>
+          <a class="global-mobile-nav__link" data-nav-route="schools.html" href="schools.html">
+            <span class="global-mobile-nav__icon" aria-hidden="true">
+              <svg class="global-icon" viewBox="0 0 24 24"><path d="M3.5 21h17M5.5 21V6.6L12 3.2l6.5 3.4V21M12 6.4v2M9.2 9.6h.01M14.8 9.6h.01M9.2 12.8h.01M14.8 12.8h.01M9.2 16h.01M14.8 16h.01" /></svg>
+            </span>
+            <span class="global-mobile-nav__label">For Schools</span>
+            <svg class="global-icon global-mobile-nav__chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4.5 5.5 5.5L7 15.5" /></svg>
           </a>
-          <a class="global-nav-link global-mobile-nav__link" data-nav-route="teachers.html" href="teachers.html">
-            <span>For Teachers</span><span aria-hidden="true">&rsaquo;</span>
+          <a class="global-mobile-nav__link" data-nav-route="teachers.html" href="teachers.html">
+            <span class="global-mobile-nav__icon" aria-hidden="true">
+              <svg class="global-icon" viewBox="0 0 24 24"><path d="M12 4 2.5 8.5 12 13l9.5-4.5L12 4ZM6 10.9V15c0 1.8 2.7 3.2 6 3.2s6-1.4 6-3.2v-4.1M21.5 9v5" /></svg>
+            </span>
+            <span class="global-mobile-nav__label">For Teachers</span>
+            <svg class="global-icon global-mobile-nav__chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4.5 5.5 5.5L7 15.5" /></svg>
           </a>
-          <a class="global-nav-link global-mobile-nav__link" data-nav-route="pricing.html" href="pricing.html">
-            <span>Pricing</span><span aria-hidden="true">&rsaquo;</span>
+          <a class="global-mobile-nav__link" data-nav-route="pricing.html" href="pricing.html">
+            <span class="global-mobile-nav__icon" aria-hidden="true">
+              <svg class="global-icon" viewBox="0 0 24 24"><path d="M3.5 11.5v-7a1 1 0 0 1 1-1h7L21 13l-8 8-9.5-9.5ZM7.5 7.5h.01" /></svg>
+            </span>
+            <span class="global-mobile-nav__label">Pricing</span>
+            <svg class="global-icon global-mobile-nav__chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4.5 5.5 5.5L7 15.5" /></svg>
           </a>
-          <a class="global-nav-link global-mobile-nav__link" data-nav-route="free-sample.html" href="free-sample.html">
-            <span>Free Sample</span><span aria-hidden="true">&rsaquo;</span>
+          <a class="global-mobile-nav__link" data-nav-route="free-sample.html" href="free-sample.html">
+            <span class="global-mobile-nav__icon" aria-hidden="true">
+              <svg class="global-icon" viewBox="0 0 24 24"><path d="M20 11.5v9a.5.5 0 0 1-.5.5h-15a.5.5 0 0 1-.5-.5v-9M2.5 8h19v3.5h-19zM12 8v13M12 8S7.5 8.2 6.5 6c-.7-1.6.6-3 2-2.6 2 .7 3.5 4.6 3.5 4.6Zm0 0s4.5.2 5.5-2c.7-1.6-.6-3-2-2.6-2 .7-3.5 4.6-3.5 4.6Z" /></svg>
+            </span>
+            <span class="global-mobile-nav__label">Free Sample</span>
+            <svg class="global-icon global-mobile-nav__chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4.5 5.5 5.5L7 15.5" /></svg>
           </a>
         </nav>
-        <a class="global-header-cta global-mobile-nav__cta" href="pricing.html">
-          <span>Get Started</span>
-          <svg class="global-icon" viewBox="0 0 20 20" aria-hidden="true">
-            <path d="M4 10h11m-4-4 4 4-4 4" />
-          </svg>
-        </a>
+
+        <div class="global-mobile-nav__footer">
+          <a class="global-header-cta global-mobile-nav__cta" href="pricing.html">
+            <span>Get Started</span>
+            <svg class="global-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M4 10h11m-4-4 4 4-4 4" />
+            </svg>
+          </a>
+          <div class="global-mobile-nav__decor" aria-hidden="true">
+            <svg class="global-mobile-nav__flight" viewBox="0 0 164 40">
+              <path class="global-mobile-nav__flight-path" d="M4 36C44 34 72 19 102 12c18-4 38-3 58 8" />
+            </svg>
+            <svg class="global-mobile-nav__plane" viewBox="0 0 40 40">
+              <path class="global-mobile-nav__plane-body" d="M37 3 3.6 16.4c-1 .4-1 1.8.1 2.1l8.7 2.6 2.9 8.7c.3 1 1.6 1.2 2.2.3l4.4-6 8.4 5.5c.8.5 1.8.1 2.1-.8L38.8 4.5C39.1 3.5 38 2.6 37 3Z" />
+              <path class="global-mobile-nav__plane-fold" d="M13.5 21.2 33.6 9.2 16.7 27.4l-.2 3.9-3-10.1Z" />
+            </svg>
+            <svg class="global-mobile-nav__wave" viewBox="0 0 360 68" preserveAspectRatio="none">
+              <path class="global-mobile-nav__wave-back" d="M0 40C56 18 122 16 180 28c52 10 108 8 180-14v54H0Z" />
+              <path class="global-mobile-nav__wave-front" d="M0 52C64 36 128 34 188 44c56 9 116 4 172-12v36H0Z" />
+            </svg>
+            <p class="global-mobile-nav__tagline">Small steps.
+              <span class="global-mobile-nav__tagline-accent">Big futures.<svg class="global-mobile-nav__swoosh" viewBox="0 0 96 7"><path class="global-mobile-nav__swoosh-path" d="M2 5.5C28 1 62 1 94 3.5" /></svg></span>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -503,62 +553,237 @@
     </section>
 
     <!-- ============================== CONSISTENT CURRICULUM ============================== -->
-    <section class="section ambient-stage" id="programs" aria-labelledby="consistency-title">
-      <div class="decor" aria-hidden="true">
-        <span class="ambient-art ambient-art--mist ambient-art--mint ambient-art--mid-right"></span>
+    <section class="section cq" id="programs" aria-labelledby="consistency-title">
+      <div class="cq-decor" aria-hidden="true">
+        <span class="cq-edge cq-edge--tl"></span>
+        <span class="cq-edge cq-edge--br"></span>
+        <span class="cq-glow cq-glow--blue"></span>
+        <span class="cq-glow cq-glow--cyan"></span>
+        <span class="cq-circle cq-circle--mint"></span>
+        <span class="cq-dot cq-dot--lav"></span>
+        <span class="cq-dots cq-dots--left"></span>
+        <span class="cq-dots cq-dots--right"></span>
       </div>
-      <div class="container">
-        <div class="consistency-grid">
-          <div class="reveal">
-            <p class="badge badge--green">
+
+      <div class="cq-wrap">
+        <div class="cq-grid">
+          <div class="cq-copy reveal">
+            <p class="badge badge--green cq-eyebrow">
               <svg class="ic" aria-hidden="true"><use href="#i-book-open"/></svg>
               Consistent Curriculum
             </p>
-            <h2 class="section-title" id="consistency-title">Same Quality in Every Classroom</h2>
-            <p style="color:var(--muted);margin-bottom:1.75rem">
+            <h2 class="cq-title" id="consistency-title">Same Quality in<br />Every Classroom</h2>
+            <p class="cq-lead">
               Every teacher follows the same structured learning path — so quality never
               depends on who happens to be in front of the class.
             </p>
-            <div class="consistency-list">
-              <div class="cl-item">
-                <span class="icon-badge icon-badge--blue" aria-hidden="true"><svg class="ic"><use href="#i-route"/></svg></span>
-                <div><strong>CEFR-aligned, step-by-step curriculum</strong><span>A clear A1&ndash;C1 path every teacher can follow.</span></div>
-              </div>
-              <div class="cl-item">
-                <span class="icon-badge icon-badge--green" aria-hidden="true"><svg class="ic"><use href="#i-file-text"/></svg></span>
-                <div><strong>Ready-to-teach lesson plans</strong><span>Open a lesson and teach it — no prep marathon.</span></div>
-              </div>
-              <div class="cl-item">
-                <span class="icon-badge icon-badge--amber" aria-hidden="true"><svg class="ic"><use href="#i-video"/></svg></span>
-                <div><strong>Engaging, real-world content</strong><span>Videos and activities students actually enjoy.</span></div>
-              </div>
-              <div class="cl-item">
-                <span class="icon-badge icon-badge--purple" aria-hidden="true"><svg class="ic"><use href="#i-clipboard-check"/></svg></span>
-                <div><strong>Assessments &amp; progress tracking</strong><span>See results for every class and student.</span></div>
-              </div>
-            </div>
           </div>
 
-          <div class="consistency-visual reveal" style="--reveal-delay:.12s">
-            <div class="decor" aria-hidden="true">
-              <span class="blob blob--teal" style="width:320px;height:280px;top:6%;left:14%"></span>
+          <div class="cq-visual">
+            <div class="cq-stage">
+              <svg class="cq-arc" viewBox="0 0 900 320" preserveAspectRatio="none" focusable="false">
+                <path d="M28 292 C 210 96, 690 96, 872 292" />
+              </svg>
+              <span class="cq-ground"></span>
+
+              <div class="cq-books">
+                <div class="cq-book cq-book--a1" style="--i:0">
+                  <span class="cq-book-spine"></span>
+                  <div class="cq-book-head">
+                    <span class="cq-book-brand">Remtoo</span>
+                    <span class="cq-book-sub">English</span>
+                  </div>
+                  <div class="cq-book-meta">
+                    <strong class="cq-book-code">A1</strong>
+                    <span class="cq-book-name">Starter</span>
+                  </div>
+                  <div class="cq-scene">
+                    <svg class="cq-scene-art" viewBox="0 0 140 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                      <circle class="s-sun" cx="103" cy="22" r="11"/>
+                      <path class="s-line" d="M34 18q5-4 10 0M48 25q5-4 10 0"/>
+                      <path class="s-fill-45" d="M64 62 64 32l20 30z"/>
+                      <path class="s-fill-95" d="M50 62h48l-7 10H57z"/>
+                      <path class="s-fill-25" d="M0 82q22-10 44-4t32 2 32-6 32 4v20H0z"/>
+                      <path class="s-line" d="M0 91q26-8 52-3t40 1 48-5"/>
+                    </svg>
+                  </div>
+                  <div class="cq-book-foot">First steps in English</div>
+                </div>
+
+                <div class="cq-book cq-book--a2" style="--i:1">
+                  <span class="cq-book-spine"></span>
+                  <div class="cq-book-head">
+                    <span class="cq-book-brand">Remtoo</span>
+                    <span class="cq-book-sub">English</span>
+                  </div>
+                  <div class="cq-book-meta">
+                    <strong class="cq-book-code">A2</strong>
+                    <span class="cq-book-name">Elementary</span>
+                  </div>
+                  <div class="cq-scene">
+                    <svg class="cq-scene-art" viewBox="0 0 140 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                      <circle class="s-sun" cx="24" cy="20" r="9"/>
+                      <path class="s-fill-25" d="M0 74q28-26 56-8t34 2 50-6v36H0z"/>
+                      <path class="s-fill-45" d="M0 86q30-18 62-6t40 0 38-4v22H0z"/>
+                      <path class="s-fill-95" d="M88 58h18v16H88z"/>
+                      <path class="s-fill-45" d="M85 58l12-9 12 9z"/>
+                      <circle class="s-fill-95" cx="34" cy="53" r="7"/>
+                      <path class="s-line" d="M34 60v14"/>
+                      <circle class="s-fill-45" cx="56" cy="61" r="6"/>
+                      <path class="s-line" d="M56 67v8"/>
+                    </svg>
+                  </div>
+                  <div class="cq-book-foot">Everyday English</div>
+                </div>
+
+                <div class="cq-book cq-book--b1" style="--i:2">
+                  <span class="cq-book-spine"></span>
+                  <div class="cq-book-head">
+                    <span class="cq-book-brand">Remtoo</span>
+                    <span class="cq-book-sub">English</span>
+                  </div>
+                  <div class="cq-book-meta">
+                    <strong class="cq-book-code">B1</strong>
+                    <span class="cq-book-name">Intermediate</span>
+                  </div>
+                  <div class="cq-scene">
+                    <svg class="cq-scene-art" viewBox="0 0 140 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                      <circle class="s-sun" cx="110" cy="22" r="10"/>
+                      <path class="s-line" d="M110 5v5M110 34v5M93 22h5M122 22h5M98 10l3 3M119 31l3 3M119 10l-3 3M98 31l3 3"/>
+                      <path class="s-fill-45" d="M28 88V66l10-13 10 13v22zM110 88V56l10-14 10 14v32z"/>
+                      <path class="s-fill-95" d="M50 88V50l13-17 13 17-5 6 5 6-5 6 5 6v21z"/>
+                      <path class="s-line" d="M34 71h5M34 79h5M62 62h5M62 72h5M115 64h5M115 74h5"/>
+                      <path class="s-fill-45" d="M14 34q0-8 7-9 1-6 8-6 8 0 9 7 6 1 6 8 0 8-9 8h-11q-10 0-10-8z"/>
+                      <path class="s-fill-95" d="M29 34h-7l7-9z"/>
+                      <path class="s-dash" d="M2 44q10 8 20 6"/>
+                    </svg>
+                  </div>
+                  <div class="cq-book-foot">Independent English</div>
+                </div>
+
+                <div class="cq-book cq-book--b2" style="--i:3">
+                  <span class="cq-book-spine"></span>
+                  <div class="cq-book-head">
+                    <span class="cq-book-brand">Remtoo</span>
+                    <span class="cq-book-sub">English</span>
+                  </div>
+                  <div class="cq-book-meta">
+                    <strong class="cq-book-code">B2</strong>
+                    <span class="cq-book-name">Upper-Intermediate</span>
+                  </div>
+                  <div class="cq-scene">
+                    <svg class="cq-scene-art" viewBox="0 0 140 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                      <circle class="s-sun" cx="27" cy="20" r="9"/>
+                      <path class="s-fill-25" d="M52 86 84 30l32 56zM100 86l18-28 22 28z"/>
+                      <path class="s-fill-95" d="M84 30 96 50h-9l-7-10-6 9h-9z"/>
+                      <path class="s-line" d="M84 50v36"/>
+                      <path class="s-dash" d="M6 92q28-16 52-12"/>
+                      <path class="s-fill-95" d="M84 30l-3-10 9 3z"/>
+                    </svg>
+                  </div>
+                  <div class="cq-book-foot">Fluent communication</div>
+                </div>
+
+                <div class="cq-book cq-book--c1" style="--i:4">
+                  <span class="cq-book-spine"></span>
+                  <div class="cq-book-head">
+                    <span class="cq-book-brand">Remtoo</span>
+                    <span class="cq-book-sub">English</span>
+                  </div>
+                  <div class="cq-book-meta">
+                    <strong class="cq-book-code">C1</strong>
+                    <span class="cq-book-name">Advanced</span>
+                  </div>
+                  <div class="cq-scene">
+                    <svg class="cq-scene-art" viewBox="0 0 140 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                      <path class="s-sun" d="M110 14a9 9 0 1 0 6 15 11 11 0 0 1-6-15z"/>
+                      <circle class="s-fill-45" cx="18" cy="18" r="1.6"/>
+                      <circle class="s-fill-45" cx="34" cy="11" r="1.2"/>
+                      <circle class="s-fill-45" cx="52" cy="19" r="1.6"/>
+                      <circle class="s-fill-45" cx="92" cy="9" r="1.2"/>
+                      <circle class="s-line" cx="28" cy="64" r="17"/>
+                      <path class="s-line" d="M28 47v34M11 64h34M16 52l24 24M40 52 16 76"/>
+                      <path class="s-line" d="M22 81l6 7 6-7"/>
+                      <path class="s-fill-45" d="M54 92V66l9-12 9 12v26zM92 92V58l11-15 11 15v34z"/>
+                      <path class="s-fill-95" d="M74 92V50l12-16 12 16v42z"/>
+                      <path class="s-line" d="M62 70h4M62 80h4M80 62h4M80 74h4M99 66h4M99 78h4"/>
+                    </svg>
+                  </div>
+                  <div class="cq-book-foot">Near-native mastery</div>
+                </div>
+              </div>
+
+              <span class="cq-levels">
+                <svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg>
+                5 levels · A1&ndash;C1
+              </span>
             </div>
-            <div class="curriculum-book-fan" aria-hidden="true">
-              <span class="curriculum-book curriculum-book--a1"><small>Remtoo</small><b>English</b><strong>A1</strong><em>Starter</em></span>
-              <span class="curriculum-book curriculum-book--a2"><small>Remtoo</small><b>English</b><strong>A2</strong><em>Elementary</em></span>
-              <span class="curriculum-book curriculum-book--b1"><small>Remtoo</small><b>English</b><strong>B1</strong><em>Intermediate</em></span>
-              <span class="curriculum-book curriculum-book--b2"><small>Remtoo</small><b>English</b><strong>B2</strong><em>Upper-Intermediate</em></span>
-              <span class="curriculum-book curriculum-book--c1"><small>Remtoo</small><b>English</b><strong>C1</strong><em>Advanced</em></span>
-            </div>
-            <span class="stack-chip" aria-hidden="true">
-              <svg class="ic"><use href="#i-layers"/></svg>
-              5 levels · A1&ndash;C1
-            </span>
-            <p class="handwritten stack-note" aria-hidden="true">A clear path for every learner.</p>
+
+            <p class="cq-note handwritten" aria-hidden="true">
+              A clear path for every learner.
+              <svg class="cq-note-line" viewBox="0 0 220 16" aria-hidden="true" focusable="false">
+                <path class="cq-note-line-main" d="M5 11C50 3 128 2 214 8" />
+                <path class="cq-note-line-echo" d="M22 14C64 8 132 7 198 11" />
+              </svg>
+            </p>
           </div>
+
+          <ul class="cq-list reveal" style="--reveal-delay:.1s">
+            <li class="cq-fi">
+              <span class="cq-fi-tile cq-fi-tile--blue"><svg class="ic" aria-hidden="true"><use href="#i-route"/></svg></span>
+              <div class="cq-fi-text">
+                <strong>CEFR-aligned, step-by-step curriculum</strong>
+                <span>A clear, research-backed path every teacher can follow.</span>
+              </div>
+            </li>
+            <li class="cq-fi">
+              <span class="cq-fi-tile cq-fi-tile--mint"><svg class="ic" aria-hidden="true"><use href="#i-file-text"/></svg></span>
+              <div class="cq-fi-text">
+                <strong>Ready-to-teach lesson plans</strong>
+                <span>Open a lesson and teach it — no prep marathon.</span>
+              </div>
+            </li>
+            <li class="cq-fi">
+              <span class="cq-fi-tile cq-fi-tile--amber"><svg class="ic" aria-hidden="true"><use href="#i-video"/></svg></span>
+              <div class="cq-fi-text">
+                <strong>Engaging, real-world content</strong>
+                <span>Videos and activities students actually enjoy.</span>
+              </div>
+            </li>
+            <li class="cq-fi">
+              <span class="cq-fi-tile cq-fi-tile--lav"><svg class="ic" aria-hidden="true"><use href="#i-bar-chart"/></svg></span>
+              <div class="cq-fi-text">
+                <strong>Assessments &amp; progress tracking</strong>
+                <span>See results for every class and student.</span>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
+
+    <script>
+      // Curriculum fan entrance: stagger the five covers in from their spread
+      // once the stage scrolls into view. Styling lives in css/quality-section.css.
+      (function () {
+        var stage = document.querySelector(".cq-stage");
+        if (!stage) return;
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (reduce || !("IntersectionObserver" in window)) {
+          stage.classList.add("is-inview", "is-settled");
+          return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            io.disconnect();
+            stage.classList.add("is-inview");
+            window.setTimeout(function () { stage.classList.add("is-settled"); }, 1150);
+          });
+        }, { threshold: 0.3, rootMargin: "0px 0px -8% 0px" });
+        io.observe(stage);
+      })();
+    </script>
 
     <!-- ============================== SCHOOL FEATURES ============================== -->
     <section class="section" style="background:var(--surface-soft)" aria-labelledby="sf-title">

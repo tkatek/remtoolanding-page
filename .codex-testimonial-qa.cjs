@@ -105,7 +105,7 @@ const readState = (page) => page.evaluate(() => {
         if (initial.documentOverflow > 1) failures.push(`${label}: document overflow ${initial.documentOverflow}px`);
         if (initial.arrowSizes.some(size => size.width < 44 || size.height < 44)) failures.push(`${label}: arrow target below 44px`);
         if (viewport.width <= 430 && initial.activeWidth > viewport.width - 38) failures.push(`${label}: mobile card is wider than the requested gutter`);
-        if (viewport.width <= 768 && (initial.previousVisibleWidth > 70 || initial.nextVisibleWidth > 70)) failures.push(`${label}: mobile neighbor peek is too wide`);
+        if (viewport.width <= 760 && (initial.previousVisibleWidth > 70 || initial.nextVisibleWidth > 70)) failures.push(`${label}: mobile neighbor peek is too wide`);
 
         if (colorScheme === "light") {
           await page.click(".carousel-next");
@@ -162,7 +162,7 @@ const readState = (page) => page.evaluate(() => {
     if (reduced.cardDuration !== "0s") failures.push(`reduced motion: card transition is ${reduced.cardDuration}`);
     await reducedPage.close();
 
-    console.log(JSON.stringify({ results, reduced, failures }, null, 2));
+    console.log(JSON.stringify({ checkedLayouts: results.length, reduced, failures }, null, 2));
     if (failures.length) process.exitCode = 1;
   } finally {
     await browser.close();

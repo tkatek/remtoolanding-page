@@ -143,6 +143,59 @@
         }
       });
 
+      // Swipe-to-dismiss: horizontal drags on the panel follow the finger,
+      // then either settle back or continue off-screen. Vertical drags keep
+      // scrolling the menu list untouched.
+      let swipeStartX = 0;
+      let swipeStartY = 0;
+      let swipeDistance = 0;
+      let swiping = false;
+
+      mobilePanel.addEventListener(
+        "touchstart",
+        (event) => {
+          if (!menuOpen || event.changedTouches.length !== 1) return;
+          const touch = event.changedTouches[0];
+          swipeStartX = touch.clientX;
+          swipeStartY = touch.clientY;
+          swipeDistance = 0;
+          swiping = false;
+        },
+        { passive: true }
+      );
+
+      mobilePanel.addEventListener(
+        "touchmove",
+        (event) => {
+          if (!menuOpen) return;
+          const touch = event.changedTouches[0];
+          const dx = touch.clientX - swipeStartX;
+          const dy = touch.clientY - swipeStartY;
+          if (!swiping) {
+            if (Math.abs(dx) < 10 || Math.abs(dx) <= Math.abs(dy)) return;
+            swiping = true;
+          }
+          swipeDistance = Math.max(0, dx);
+          mobilePanel.style.transition = "none";
+          mobilePanel.style.transform = `translateX(${swipeDistance}px)`;
+        },
+        { passive: true }
+      );
+
+      const endSwipe = () => {
+        if (!swiping) return;
+        swiping = false;
+        const threshold = Math.min(96, mobilePanel.offsetWidth * 0.3);
+        const shouldClose = swipeDistance > threshold;
+        swipeDistance = 0;
+        mobilePanel.style.transition = "";
+        mobilePanel.style.transform = "";
+        if (shouldClose) setMenuOpen(false, { restoreFocus: false });
+      };
+
+      mobilePanel.addEventListener("touchend", endSwipe, { passive: true });
+      mobilePanel.addEventListener("touchcancel", endSwipe, { passive: true });
+
       const closeAtDesktop = (event) => {
         if (!event.matches || !menuOpen) return;
         const focusWasInMenu = mobileNav.contains(document.activeElement);

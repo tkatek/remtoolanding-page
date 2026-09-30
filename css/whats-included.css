@@ -372,9 +372,9 @@
   position: absolute;
   z-index: 0;
   top: 7%;
-  right: 9%;
+  right: 8%;
   bottom: 5%;
-  left: 14%;
+  left: 9%;
   border: 2px solid rgba(255, 255, 255, 0.78);
   border-radius: 43% 57% 49% 51% / 37% 43% 57% 63%;
   background:
@@ -403,10 +403,11 @@
 .whats-included-page .wi-teacher-picture {
   position: absolute;
   z-index: 2;
-  left: 21%;
-  bottom: 3%;
-  height: 89%;
-  aspect-ratio: 614 / 920;
+  left: 2%;
+  bottom: 4%;
+  width: 96%;
+  max-height: 86%;
+  aspect-ratio: 880 / 804;
   display: block;
 }
 
@@ -454,9 +455,9 @@
 }
 
 .whats-included-page .wi-float-card--video {
-  top: 25%;
+  top: 30%;
   right: 0;
-  width: clamp(218px, 17vw, 244px);
+  width: clamp(218px, 16.5vw, 238px);
 }
 
 .whats-included-page .wi-float-card--video .wi-float-card-surface {
@@ -475,7 +476,7 @@
 }
 
 .whats-included-page .wi-float-card--materials {
-  top: 52%;
+  top: 62%;
   right: -1%;
   width: clamp(204px, 16vw, 226px);
 }
@@ -622,8 +623,8 @@
 .whats-included-page .wi-trust-card {
   position: absolute;
   z-index: 7;
-  right: 10%;
-  bottom: 8%;
+  left: 1%;
+  bottom: 6%;
   width: clamp(230px, 18vw, 260px);
   min-height: 78px;
   padding: 14px 18px;
@@ -1903,8 +1904,8 @@ html.js .whats-included-page .wi-features .reveal.is-visible {
   }
 
   .whats-included-page .wi-trust-card {
-    right: 30%;
-    bottom: 1%;
+    left: 1%;
+    bottom: 2%;
   }
 
   .whats-included-page .wi-scroll-cue {
@@ -2060,38 +2061,39 @@ html.js .whats-included-page .wi-features .reveal.is-visible {
 
   .whats-included-page .wi-hero-visual {
     width: 100%;
-    height: clamp(470px, 135vw, 560px);
+    height: clamp(470px, 122vw, 540px);
   }
 
   .whats-included-page .wi-teacher-blob {
-    top: 7%;
-    right: 5%;
-    bottom: 3%;
-    left: 8%;
+    top: 10%;
+    right: 1%;
+    bottom: 0;
+    left: 1%;
   }
 
   .whats-included-page .wi-teacher-picture {
-    left: 9%;
+    left: 3%;
     bottom: 0;
-    height: 82%;
+    width: 94%;
   }
 
   .whats-included-page .wi-teacher-arc {
-    right: 2%;
-    width: 88%;
+    top: 3%;
+    right: -2%;
+    width: 96%;
   }
 
   .whats-included-page .wi-float-card--lesson {
-    top: 5%;
-    left: 0;
-    width: min(180px, 56vw);
+    top: 1.5%;
+    left: -2.5%;
+    width: 54%;
   }
 
   .whats-included-page .wi-float-card--video {
     top: auto;
-    right: 0;
-    bottom: 1%;
-    width: min(184px, 57vw);
+    right: -3%;
+    bottom: 4%;
+    width: 58%;
   }
 
   .whats-included-page .wi-float-card-surface { padding: 13px; border-radius: 17px; }

@@ -1,0 +1,31 @@
+server up
+browser up
+goto...
+REQ  http://127.0.0.1:41761/teachers.html
+REQ  https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&famil
+REQ  http://127.0.0.1:41761/css/variables.css
+REQ  http://127.0.0.1:41761/css/base.css
+REQ  http://127.0.0.1:41761/css/components.css
+REQ  http://127.0.0.1:41761/css/sections.css
+REQ  http://127.0.0.1:41761/css/pages.css
+REQ  http://127.0.0.1:41761/css/responsive.css
+REQ  http://127.0.0.1:41761/css/teachers.css
+REQ  http://127.0.0.1:41761/css/site-system.css
+REQ  http://127.0.0.1:41761/assets/logos/remtoo-logo.png
+REQ  http://127.0.0.1:41761/assets/images/hero/teacher-included-optimized.webp
+REQ  http://127.0.0.1:41761/assets/images/people/student.webp
+REQ  http://127.0.0.1:41761/assets/images/people/omar.webp
+REQ  http://127.0.0.1:41761/assets/images/people/lina.webp
+REQ  http://127.0.0.1:41761/js/main.js
+REQ  http://127.0.0.1:41761/js/site-shell.js
+REQ  http://127.0.0.1:41761/assets/images/lessons/restaurant-conversation.webp
+REQ  http://127.0.0.1:41761/assets/images/lessons/meeting.webp
+REQ  http://127.0.0.1:41761/assets/images/lessons/pair-work.webp
+REQ  http://127.0.0.1:41761/assets/images/lessons/teacher-laptop.webp
+REQ  https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yw.woff2
+REQ  https://fonts.gstatic.com/s/caveat/v23/Wnz6HAc5bAfYB2Q7ZjYY.woff2
+REQ  http://127.0.0.1:41761/assets/images/people/sarah.webp
+domcontentloaded reached
+REQ  http://127.0.0.1:41761/assets/logos/favicon.svg
+wait done, taking screenshot
+done

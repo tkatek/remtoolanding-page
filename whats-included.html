@@ -154,37 +154,86 @@
         data-mobile-nav-close
       ></button>
       <div class="global-mobile-nav__panel" aria-label="Mobile navigation">
-        <button class="global-mobile-nav__close" type="button" aria-label="Close navigation" data-mobile-nav-close>
-          <svg class="global-icon" viewBox="0 0 20 20" aria-hidden="true">
-            <path d="m5 5 10 10M15 5 5 15" />
-          </svg>
-        </button>
+        <div class="global-mobile-nav__head">
+          <a class="global-mobile-nav__brand" href="index.html" aria-label="Remtoo home">
+            <img class="global-brand__image" src="assets/logos/remtoo-logo.png" alt="" width="921" height="250" decoding="async" />
+          </a>
+          <button class="global-mobile-nav__close" type="button" aria-label="Close navigation" data-mobile-nav-close>
+            <svg class="global-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="m5 5 10 10M15 5 5 15" />
+            </svg>
+          </button>
+        </div>
+
         <nav class="global-mobile-nav__links" aria-label="Mobile navigation links">
-          <a class="global-nav-link global-mobile-nav__link" data-nav-route="curriculum.html" href="curriculum.html">
-            <span>Curriculum</span><span aria-hidden="true">&rsaquo;</span>
+          <a class="global-mobile-nav__link" data-nav-route="curriculum.html" href="curriculum.html">
+            <span class="global-mobile-nav__icon" aria-hidden="true">
+              <svg class="global-icon" viewBox="0 0 24 24"><path d="M12 6.5C10.4 5.2 8.3 4.5 6 4.5H2.5v13H6c2.3 0 4.4.7 6 2 1.6-1.3 3.7-2 6-2h3.5v-13H18c-2.3 0-4.4.7-6 2Zm0 0V21.5" /></svg>
+            </span>
+            <span class="global-mobile-nav__label">Curriculum</span>
+            <svg class="global-icon global-mobile-nav__chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4.5 5.5 5.5L7 15.5" /></svg>
           </a>
-          <a class="global-nav-link global-mobile-nav__link" data-nav-route="whats-included.html" href="whats-included.html" aria-current="page">
-            <span>What&rsquo;s Included</span><span aria-hidden="true">&rsaquo;</span>
+          <a class="global-mobile-nav__link" data-nav-route="whats-included.html" href="whats-included.html">
+            <span class="global-mobile-nav__icon" aria-hidden="true">
+              <svg class="global-icon" viewBox="0 0 24 24"><path d="M21 7.6 12 3 3 7.6v8.8L12 21l9-4.6V7.6ZM3 7.6 12 12.2m9-4.6L12 12.2m0 0V21" /></svg>
+            </span>
+            <span class="global-mobile-nav__label">What&rsquo;s Included</span>
+            <svg class="global-icon global-mobile-nav__chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4.5 5.5 5.5L7 15.5" /></svg>
           </a>
-          <a class="global-nav-link global-mobile-nav__link" data-nav-route="schools.html" href="schools.html">
-            <span>For Schools</span><span aria-hidden="true">&rsaquo;</span>
+          <a class="global-mobile-nav__link" data-nav-route="schools.html" href="schools.html">
+            <span class="global-mobile-nav__icon" aria-hidden="true">
+              <svg class="global-icon" viewBox="0 0 24 24"><path d="M3.5 21h17M5.5 21V6.6L12 3.2l6.5 3.4V21M12 6.4v2M9.2 9.6h.01M14.8 9.6h.01M9.2 12.8h.01M14.8 12.8h.01M9.2 16h.01M14.8 16h.01" /></svg>
+            </span>
+            <span class="global-mobile-nav__label">For Schools</span>
+            <svg class="global-icon global-mobile-nav__chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4.5 5.5 5.5L7 15.5" /></svg>
           </a>
-          <a class="global-nav-link global-mobile-nav__link" data-nav-route="teachers.html" href="teachers.html">
-            <span>For Teachers</span><span aria-hidden="true">&rsaquo;</span>
+          <a class="global-mobile-nav__link" data-nav-route="teachers.html" href="teachers.html">
+            <span class="global-mobile-nav__icon" aria-hidden="true">
+              <svg class="global-icon" viewBox="0 0 24 24"><path d="M12 4 2.5 8.5 12 13l9.5-4.5L12 4ZM6 10.9V15c0 1.8 2.7 3.2 6 3.2s6-1.4 6-3.2v-4.1M21.5 9v5" /></svg>
+            </span>
+            <span class="global-mobile-nav__label">For Teachers</span>
+            <svg class="global-icon global-mobile-nav__chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4.5 5.5 5.5L7 15.5" /></svg>
           </a>
-          <a class="global-nav-link global-mobile-nav__link" data-nav-route="pricing.html" href="pricing.html">
-            <span>Pricing</span><span aria-hidden="true">&rsaquo;</span>
+          <a class="global-mobile-nav__link" data-nav-route="pricing.html" href="pricing.html">
+            <span class="global-mobile-nav__icon" aria-hidden="true">
+              <svg class="global-icon" viewBox="0 0 24 24"><path d="M3.5 11.5v-7a1 1 0 0 1 1-1h7L21 13l-8 8-9.5-9.5ZM7.5 7.5h.01" /></svg>
+            </span>
+            <span class="global-mobile-nav__label">Pricing</span>
+            <svg class="global-icon global-mobile-nav__chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4.5 5.5 5.5L7 15.5" /></svg>
           </a>
-          <a class="global-nav-link global-mobile-nav__link" data-nav-route="free-sample.html" href="free-sample.html">
-            <span>Free Sample</span><span aria-hidden="true">&rsaquo;</span>
+          <a class="global-mobile-nav__link" data-nav-route="free-sample.html" href="free-sample.html">
+            <span class="global-mobile-nav__icon" aria-hidden="true">
+              <svg class="global-icon" viewBox="0 0 24 24"><path d="M20 11.5v9a.5.5 0 0 1-.5.5h-15a.5.5 0 0 1-.5-.5v-9M2.5 8h19v3.5h-19zM12 8v13M12 8S7.5 8.2 6.5 6c-.7-1.6.6-3 2-2.6 2 .7 3.5 4.6 3.5 4.6Zm0 0s4.5.2 5.5-2c.7-1.6-.6-3-2-2.6-2 .7-3.5 4.6-3.5 4.6Z" /></svg>
+            </span>
+            <span class="global-mobile-nav__label">Free Sample</span>
+            <svg class="global-icon global-mobile-nav__chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4.5 5.5 5.5L7 15.5" /></svg>
           </a>
         </nav>
-        <a class="global-header-cta global-mobile-nav__cta" href="pricing.html">
-          <span>Get Started</span>
-          <svg class="global-icon" viewBox="0 0 20 20" aria-hidden="true">
-            <path d="M4 10h11m-4-4 4 4-4 4" />
-          </svg>
-        </a>
+
+        <div class="global-mobile-nav__footer">
+          <a class="global-header-cta global-mobile-nav__cta" href="pricing.html">
+            <span>Get Started</span>
+            <svg class="global-icon" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M4 10h11m-4-4 4 4-4 4" />
+            </svg>
+          </a>
+          <div class="global-mobile-nav__decor" aria-hidden="true">
+            <svg class="global-mobile-nav__flight" viewBox="0 0 164 40">
+              <path class="global-mobile-nav__flight-path" d="M4 36C44 34 72 19 102 12c18-4 38-3 58 8" />
+            </svg>
+            <svg class="global-mobile-nav__plane" viewBox="0 0 40 40">
+              <path class="global-mobile-nav__plane-body" d="M37 3 3.6 16.4c-1 .4-1 1.8.1 2.1l8.7 2.6 2.9 8.7c.3 1 1.6 1.2 2.2.3l4.4-6 8.4 5.5c.8.5 1.8.1 2.1-.8L38.8 4.5C39.1 3.5 38 2.6 37 3Z" />
+              <path class="global-mobile-nav__plane-fold" d="M13.5 21.2 33.6 9.2 16.7 27.4l-.2 3.9-3-10.1Z" />
+            </svg>
+            <svg class="global-mobile-nav__wave" viewBox="0 0 360 68" preserveAspectRatio="none">
+              <path class="global-mobile-nav__wave-back" d="M0 40C56 18 122 16 180 28c52 10 108 8 180-14v54H0Z" />
+              <path class="global-mobile-nav__wave-front" d="M0 52C64 36 128 34 188 44c56 9 116 4 172-12v36H0Z" />
+            </svg>
+            <p class="global-mobile-nav__tagline">Small steps.
+              <span class="global-mobile-nav__tagline-accent">Big futures.<svg class="global-mobile-nav__swoosh" viewBox="0 0 96 7"><path class="global-mobile-nav__swoosh-path" d="M2 5.5C28 1 62 1 94 3.5" /></svg></span>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -237,11 +286,11 @@
             <span class="wi-teacher-blob" aria-hidden="true"></span>
             <span class="wi-teacher-arc" aria-hidden="true"></span>
             <picture class="wi-teacher-picture">
-              <source srcset="assets/images/hero/teacher-included-optimized.webp" type="image/webp" />
+              <source srcset="assets/images/hero/male-educator-hero.webp" type="image/webp" />
               <img
-                src="assets/images/hero/teacher-included-optimized.png"
-                alt="Smiling English teacher in a blue sweater holding a tablet for class"
-                width="614" height="920" fetchpriority="high" decoding="async"
+                src="assets/images/hero/male-educator-hero.png"
+                alt="Confident young male teacher in glasses and a blue shirt holding a laptop"
+                width="880" height="804" fetchpriority="high" decoding="async"
               />
             </picture>
           </div>
