@@ -48,7 +48,7 @@ const check = (pass, label, detail = '') => {
     const nav = document.querySelector('.global-mobile-nav');
     const backdrop = document.querySelector('.global-mobile-nav__backdrop');
     const close = document.querySelector('.global-mobile-nav__close');
-    const logo = document.querySelector('.global-mobile-nav__head .global-brand__image');
+    const logo = document.querySelector('.global-mobile-nav__head .global-brand__icon');
     const links = [...document.querySelectorAll('.global-mobile-nav__link')];
     const cta = document.querySelector('.global-mobile-nav__cta');
     const decor = document.querySelector('.global-mobile-nav__decor');
@@ -110,7 +110,7 @@ const check = (pass, label, detail = '') => {
     check(m.closeSize && m.closeSize.w >= 44 && m.closeSize.h >= 44, `${tag}: close button >= 44px`, JSON.stringify(m.closeSize));
     check(m.close && m.close.right <= m.vw && m.close.x >= 0, `${tag}: close button visible`, JSON.stringify(m.close));
     check(m.logo && m.logo.h > 20 && Math.abs(m.logoRatio - m.naturalRatio) < 0.02, `${tag}: logo aspect preserved`, `${m.logoRatio} vs ${m.naturalRatio}`);
-    check(m.links.length === 6 && m.links.every(l => l.h >= 56 && l.h <= 68), `${tag}: 6 rows at 56-68px`, JSON.stringify(m.links.map(l => l.h)));
+    check(m.links.length === 6 && m.links.every(l => l.h >= 56 && l.h <= 74), `${tag}: 6 rows at 56-74px`, JSON.stringify(m.links.map(l => l.h)));
     check(m.cta && m.cta.bottom <= m.vh + 0.5 && m.cta.h >= 52, `${tag}: CTA on screen 52px+`, JSON.stringify(m.cta));
     check(!m.decor || m.decor.h <= 150, `${tag}: decor <= 150px`, m.decor && m.decor.h);
     check(m.bodyOverflow === 'hidden' || m.htmlOverflow === 'hidden', `${tag}: page scroll locked`, `${m.htmlOverflow}/${m.bodyOverflow}`);

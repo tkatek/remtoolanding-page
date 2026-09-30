@@ -150,7 +150,7 @@ function expectedHeaderHeight(width) {
             viewportWidth: innerWidth,
             header: rect(".global-header"),
             headerInner: rect(".global-header__inner"),
-            brandMark: rect(".global-header .global-brand__image"),
+            brandMark: rect(".global-header .global-brand__icon"),
             desktopCta: rect(".global-header > .global-header__inner > .global-header-cta"),
             menuToggle: rect(".global-menu-toggle"),
             footerInner: rect(".global-footer__inner"),

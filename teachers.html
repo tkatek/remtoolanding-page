@@ -114,8 +114,9 @@
   <header class="global-header" id="global-header" data-site-header>
     <div class="global-header__inner">
       <a class="global-brand" href="index.html" aria-label="Remtoo home">
-        <img class="global-brand__image" src="assets/logos/remtoo-logo.png" alt="" width="921" height="250" decoding="async" />
-      </a>
+            <img class="global-brand__icon" src="assets/logos/remtoo-icon.svg" alt="" width="209" height="230" aria-hidden="true" decoding="async" />
+            <span class="global-brand__wordmark">REMTOO</span>
+          </a>
 
       <nav class="global-desktop-nav" aria-label="Main navigation">
         <a class="global-nav-link" data-nav-route="curriculum.html" href="curriculum.html">Curriculum</a>
@@ -155,8 +156,9 @@
       ></button>
       <div class="global-mobile-nav__panel" aria-label="Mobile navigation">
         <div class="global-mobile-nav__head">
-          <a class="global-mobile-nav__brand" href="index.html" aria-label="Remtoo home">
-            <img class="global-brand__image" src="assets/logos/remtoo-logo.png" alt="" width="921" height="250" decoding="async" />
+          <a class="global-brand global-mobile-nav__brand" href="index.html" aria-label="Remtoo home">
+            <img class="global-brand__icon" src="assets/logos/remtoo-icon.svg" alt="" width="209" height="230" aria-hidden="true" decoding="async" />
+            <span class="global-brand__wordmark">REMTOO</span>
           </a>
           <button class="global-mobile-nav__close" type="button" aria-label="Close navigation" data-mobile-nav-close>
             <svg class="global-icon" viewBox="0 0 20 20" aria-hidden="true">
@@ -218,16 +220,16 @@
             </svg>
           </a>
           <div class="global-mobile-nav__decor" aria-hidden="true">
-            <svg class="global-mobile-nav__flight" viewBox="0 0 164 40">
-              <path class="global-mobile-nav__flight-path" d="M4 36C44 34 72 19 102 12c18-4 38-3 58 8" />
+            <svg class="global-mobile-nav__flight" viewBox="0 0 170 110">
+              <path class="global-mobile-nav__flight-path" d="M6 102C52 100 84 16 128 18c24 1 32 32 36 78" />
             </svg>
             <svg class="global-mobile-nav__plane" viewBox="0 0 40 40">
               <path class="global-mobile-nav__plane-body" d="M37 3 3.6 16.4c-1 .4-1 1.8.1 2.1l8.7 2.6 2.9 8.7c.3 1 1.6 1.2 2.2.3l4.4-6 8.4 5.5c.8.5 1.8.1 2.1-.8L38.8 4.5C39.1 3.5 38 2.6 37 3Z" />
               <path class="global-mobile-nav__plane-fold" d="M13.5 21.2 33.6 9.2 16.7 27.4l-.2 3.9-3-10.1Z" />
             </svg>
-            <svg class="global-mobile-nav__wave" viewBox="0 0 360 68" preserveAspectRatio="none">
-              <path class="global-mobile-nav__wave-back" d="M0 40C56 18 122 16 180 28c52 10 108 8 180-14v54H0Z" />
-              <path class="global-mobile-nav__wave-front" d="M0 52C64 36 128 34 188 44c56 9 116 4 172-12v36H0Z" />
+            <svg class="global-mobile-nav__wave" viewBox="0 0 360 84" preserveAspectRatio="none">
+              <path class="global-mobile-nav__wave-back" d="M0 48C56 24 122 22 180 34c52 10 108 8 180-16v66H0Z" />
+              <path class="global-mobile-nav__wave-front" d="M0 62C64 44 128 42 188 52c56 9 116 4 172-14v46H0Z" />
             </svg>
             <p class="global-mobile-nav__tagline">Small steps.
               <span class="global-mobile-nav__tagline-accent">Big futures.<svg class="global-mobile-nav__swoosh" viewBox="0 0 96 7"><path class="global-mobile-nav__swoosh-path" d="M2 5.5C28 1 62 1 94 3.5" /></svg></span>
@@ -243,18 +245,34 @@
     <!-- ============================== HERO ============================== -->
     <section class="t-hero" aria-labelledby="t-hero-title">
       <div class="t-atmosphere" aria-hidden="true">
-        <span class="t-shape t-shape--hero-left"></span>
-        <span class="t-shape t-shape--hero-lav"></span>
-        <span class="t-shape t-shape--hero-corner"></span>
+        <span class="t-glow t-glow--hero-cyan"></span>
+        <span class="t-glow t-glow--hero-lav"></span>
+        <span class="t-glow t-glow--hero-mint"></span>
         <span class="t-dots t-dots--hero"></span>
+        <span class="t-dots t-dots--hero-b"></span>
+        <svg class="t-hero-curve" viewBox="0 0 220 120" fill="none" aria-hidden="true">
+          <path d="M6 112C74 96 150 62 214 8" stroke="rgba(31,109,242,.16)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 10" />
+        </svg>
+        <svg class="t-wave t-wave--a" viewBox="0 0 440 120" fill="none" aria-hidden="true">
+          <path d="M4 62C44 22 84 22 124 62S204 102 244 62 324 22 364 62 436 102 436 62" stroke="rgba(31,109,242,.35)" stroke-width="2.5" />
+          <path d="M4 82C44 48 84 48 124 82S204 116 244 82" stroke="rgba(56,198,216,.28)" stroke-width="2" />
+        </svg>
+        <svg class="t-wave t-wave--b" viewBox="0 0 440 120" fill="none" aria-hidden="true">
+          <path d="M4 62C44 102 84 102 124 62S204 22 244 62 324 102 364 62 436 22 436 62" stroke="rgba(124,96,232,.32)" stroke-width="2.5" stroke-dasharray="1 10" />
+        </svg>
+        <span class="t-bdot t-bdot--1"></span>
+        <span class="t-bdot t-bdot--2"></span>
+        <span class="t-bdot t-bdot--3"></span>
+        <span class="t-bdot t-bdot--4"></span>
+        <span class="t-bdot t-bdot--5"></span>
+        <span class="t-bdot t-bdot--6"></span>
+        <span class="t-bdot t-bdot--7"></span>
+        <span class="t-bdot t-bdot--8"></span>
       </div>
 
       <div class="t-container t-hero-grid">
         <div class="t-hero-copy reveal">
-          <p class="t-eyebrow">
-            <svg class="ic" aria-hidden="true"><use href="#i-shield-check"/></svg>
-            For Teachers
-          </p>
+          <p class="t-eyebrow">For Teachers</p>
           <h1 id="t-hero-title">Teach Better.<br /><span>Prepare Less.</span></h1>
           <p class="t-hero-lead">
             Ready-to-teach English lessons for A1–C1. Complete with video, activities,
@@ -275,7 +293,11 @@
         </div>
 
         <div class="t-hero-visual reveal" style="--reveal-delay:.12s">
-          <div class="t-hero-backdrop" aria-hidden="true"></div>
+          <div class="t-hero-glass" aria-hidden="true"></div>
+          <div class="t-hero-panel" aria-hidden="true">
+            <span class="t-hero-ring"></span>
+            <span class="t-hero-floor"></span>
+          </div>
           <img
             class="t-hero-teacher"
             src="assets/images/hero/teacher-included-optimized.webp"
@@ -298,17 +320,21 @@
 
           <div class="t-float-card t-float-card--time">
             <span class="t-card-clock"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg></span>
-            <span><strong>Save Time</strong><small>Preparation, simplified</small></span>
+            <span class="t-float-note"><strong>Save Time</strong><small>Preparation, simplified.</small></span>
           </div>
 
           <div class="t-float-card t-float-card--students">
-            <div class="t-mini-chart" aria-hidden="true"><i></i><i></i><i></i></div>
-            <strong>Engaged Students</strong>
-            <div class="t-avatar-stack" aria-hidden="true">
-              <img src="assets/images/people/student.webp" alt="" width="42" height="42" />
-              <img src="assets/images/people/omar.webp" alt="" width="42" height="42" />
-              <img src="assets/images/people/lina.webp" alt="" width="42" height="42" />
+            <div class="t-float-title">
+              <span class="t-card-graph"><svg class="ic" aria-hidden="true"><use href="#i-trending-up"/></svg></span>
+              <strong>Engaged Students</strong>
             </div>
+            <div class="t-avatar-stack" aria-hidden="true">
+              <img src="assets/images/people/student.webp" alt="" width="42" height="42" loading="lazy" />
+              <img src="assets/images/people/omar.webp" alt="" width="42" height="42" loading="lazy" />
+              <img src="assets/images/people/lina.webp" alt="" width="42" height="42" loading="lazy" />
+              <span class="t-avatar-more">+120</span>
+            </div>
+            <div class="t-progress-line" aria-hidden="true"><i></i></div>
             <small>Real progress. Real confidence.</small>
           </div>
 
@@ -596,7 +622,8 @@
       <div class="global-footer__grid">
         <div class="global-footer__brand">
           <a class="global-brand global-brand--footer" href="index.html" aria-label="Remtoo home">
-            <img class="global-brand__image" src="assets/logos/remtoo-logo.png" alt="" width="921" height="250" loading="lazy" decoding="async" />
+            <img class="global-brand__icon" src="assets/logos/remtoo-icon.svg" alt="" width="209" height="230" aria-hidden="true" decoding="async" />
+            <span class="global-brand__wordmark">REMTOO</span>
           </a>
           <p class="global-footer__tagline">Open. Teach. Inspire.</p>
           <p class="global-footer__description">A complete, structured English curriculum for teachers and schools &mdash; from A1 to C1.</p>

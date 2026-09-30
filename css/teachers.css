@@ -123,70 +123,84 @@
 
 .t-hero {
   position: relative;
-  min-height: 606px;
   overflow: clip;
+  padding-block: clamp(48px, 5.4vw, 84px) clamp(64px, 6vw, 100px);
   background:
-    radial-gradient(circle at 6% 18%, rgba(122, 226, 221, 0.17), transparent 19%),
-    radial-gradient(circle at 53% 19%, rgba(187, 168, 255, 0.13), transparent 16%),
-    linear-gradient(180deg, #fff 0%, #fbfdff 100%);
+    radial-gradient(900px 540px at 7% -8%, rgba(125, 230, 223, 0.16), transparent 62%),
+    radial-gradient(780px 500px at 90% -12%, rgba(191, 173, 255, 0.14), transparent 60%),
+    radial-gradient(980px 620px at 58% 118%, rgba(102, 216, 199, 0.12), transparent 62%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbfe 52%, #f4f9fd 100%);
 }
 
 .t-hero-grid {
-  min-height: 606px;
   display: grid;
-  grid-template-columns: minmax(0, 0.88fr) minmax(560px, 1.12fr);
+  grid-template-columns: minmax(0, 0.96fr) minmax(540px, 1.04fr);
   align-items: center;
-  gap: clamp(38px, 4vw, 66px);
-  padding-block: 28px 24px;
+  gap: clamp(40px, 4.4vw, 84px);
 }
 
-.t-hero-copy { padding-bottom: 7px; }
+.t-hero-copy { padding-block: 10px; }
 
-.t-hero-copy .t-eyebrow { margin-bottom: 21px; }
+.t-hero-copy .t-eyebrow { margin-bottom: 24px; }
 
 .t-hero-copy h1 {
-  max-width: 640px;
+  max-width: 620px;
   color: var(--t-navy);
-  font-size: clamp(3.25rem, 4.85vw, 4.9rem);
-  line-height: 0.99;
-  letter-spacing: -0.06em;
+  font-size: clamp(3.35rem, 4.75vw, 4.95rem);
+  line-height: 1.03;
+  letter-spacing: -0.05em;
 }
 
 .t-hero-copy h1 span { color: var(--t-blue); }
 
 .t-hero-lead {
-  max-width: 610px;
-  margin-top: 23px;
+  max-width: 545px;
+  margin-top: 26px;
   color: var(--t-text);
-  font-size: clamp(1.02rem, 1.3vw, 1.18rem);
-  line-height: 1.65;
+  font-size: clamp(1.05rem, 1.32vw, 1.22rem);
+  line-height: 1.7;
 }
 
 .t-actions {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 25px;
+  gap: 16px;
+  margin-top: 34px;
 }
 
 .teachers-page .t-actions .btn {
-  min-height: 52px;
-  padding: 0.88rem 1.62rem;
-  font-size: 0.96rem;
+  min-height: 56px;
+  padding: 1rem 1.9rem;
+  border-radius: 15px;
+  font-size: 0.99rem;
 }
 
 .teachers-page .t-hero .btn-primary {
-  background: linear-gradient(135deg, #1b72f7, #1e5cdb);
-  box-shadow: 0 13px 30px rgba(31, 109, 242, 0.28);
+  gap: 9px;
+  background: linear-gradient(135deg, #2377f8, #1a5ce4);
+  box-shadow: 0 16px 34px rgba(31, 109, 242, 0.32);
+}
+
+.teachers-page .t-hero .btn-primary .ic { transition: transform 0.2s ease; }
+.teachers-page .t-hero .btn-primary:hover .ic { transform: translateX(3px); }
+
+.teachers-page .t-hero .btn-outline {
+  border: 1.5px solid #dbe6f7;
+  box-shadow: 0 10px 26px rgba(43, 79, 134, 0.07);
+}
+
+.teachers-page .t-hero .btn-outline:hover {
+  border-color: #bcd2f3;
+  transform: translateY(-1px);
 }
 
 .t-trust {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 11px 24px;
-  margin-top: 23px;
+  gap: 12px 26px;
+  margin-top: 30px;
   padding: 0;
   list-style: none;
 }
@@ -194,124 +208,153 @@
 .t-trust li {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  color: #66748e;
-  font-size: 0.78rem;
+  gap: 9px;
+  color: #5d6b86;
+  font-size: 0.86rem;
   font-weight: 600;
   white-space: nowrap;
 }
 
 .t-trust .ic {
-  width: 16px;
-  height: 16px;
-  color: var(--t-green);
-  stroke-width: 2.5;
+  box-sizing: border-box;
+  width: 21px;
+  height: 21px;
+  padding: 4px;
+  border-radius: 50%;
+  background: #e2f7ec;
+  color: #17a56b;
+  stroke-width: 3.2;
 }
 
 .t-hero-visual {
   position: relative;
-  align-self: end;
+  align-self: center;
   min-width: 0;
-  height: 552px;
+  height: clamp(580px, 44vw, 660px);
 }
 
-.t-hero-backdrop {
+/* Translucent rounded panel layered behind the arch. */
+.t-hero-glass {
   position: absolute;
-  inset: 42px 35px 4px 102px;
-  overflow: hidden;
-  border-radius: 44% 36px 42% 36px;
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.92), rgba(255,255,255,.14) 28%, rgba(224,241,245,.24)),
-    linear-gradient(155deg, #f8fcfc 0 38%, #dfecee 39% 42%, #f1f7f7 43% 100%);
-  box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.9);
+  z-index: 1;
+  inset: 128px -16px 44px 122px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 48px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.25));
+  box-shadow: 0 26px 60px rgba(46, 84, 148, 0.09);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
-.t-hero-backdrop::before,
-.t-hero-backdrop::after {
+/* Main arched panel the teacher stands inside. */
+.t-hero-panel {
+  position: absolute;
+  z-index: 2;
+  top: 4px;
+  left: 84px;
+  right: 40px;
+  bottom: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(205, 232, 234, 0.9);
+  border-radius: 999px 999px 46px 46px;
+  background:
+    radial-gradient(120% 62% at 50% 0%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 58%),
+    linear-gradient(180deg, #edfbf8 0%, #f7fdfb 40%, #e6f3f4 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 36px 74px rgba(52, 96, 141, 0.15);
+}
+
+.t-hero-panel::after {
   content: "";
   position: absolute;
-  filter: blur(1px);
+  left: 9%;
+  right: 9%;
+  bottom: 52px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(94, 151, 168, 0.28), transparent);
 }
 
-.t-hero-backdrop::before {
-  top: 13%;
-  right: 7%;
-  width: 51%;
-  height: 39%;
-  border: 11px solid rgba(231, 238, 239, 0.82);
-  border-radius: 9px;
-  background: linear-gradient(135deg, rgba(213, 230, 232, 0.7), rgba(248, 252, 252, 0.92));
-  box-shadow: -245px 78px 0 -54px rgba(181, 211, 203, 0.45), -198px 114px 0 -61px rgba(85, 151, 123, 0.25);
+.t-hero-ring {
+  position: absolute;
+  inset: 22px 26px auto;
+  height: calc(100% - 48px);
+  border: 1.5px solid rgba(31, 109, 242, 0.08);
+  border-radius: 999px 999px 36px 36px;
 }
 
-.t-hero-backdrop::after {
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 26%;
-  background:
-    linear-gradient(176deg, transparent 0 43%, rgba(204, 218, 219, 0.55) 44% 47%, transparent 48%),
-    linear-gradient(90deg, rgba(213, 224, 223, 0.72), rgba(248, 251, 251, 0.82));
+/* Soft floor shadow anchoring the teacher inside the panel. */
+.t-hero-floor {
+  position: absolute;
+  left: 50%;
+  bottom: 38px;
+  width: min(80%, 330px);
+  height: 54px;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(30, 74, 116, 0.19), rgba(30, 74, 116, 0) 72%);
+  filter: blur(8px);
 }
 
 .t-hero-teacher {
   position: absolute;
-  z-index: 2;
-  right: 62px;
-  bottom: -5px;
-  width: min(50%, 370px);
-  height: 530px;
-  object-fit: contain;
-  object-position: bottom center;
-  filter: drop-shadow(0 22px 24px rgba(34, 54, 83, 0.2));
+  z-index: 3;
+  left: calc(50% + 22px); /* align to panel center, panel insets are asymmetric */
+  bottom: 16px;
+  width: min(64%, 356px);
+  height: auto;
+  translate: -50% 0;
+  filter: drop-shadow(0 30px 38px rgba(28, 56, 99, 0.2));
 }
 
 .t-float-card {
   position: absolute;
-  z-index: 4;
-  border: 1px solid rgba(219, 229, 243, 0.85);
-  border-radius: 17px;
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 16px 38px rgba(35, 55, 93, 0.15);
+  z-index: 6;
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow:
+    0 24px 52px rgba(37, 66, 121, 0.14),
+    0 6px 16px rgba(37, 66, 121, 0.05);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   color: #53617c;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
 }
 
-.t-float-card strong { color: var(--t-navy); }
+.t-float-card strong { color: var(--t-navy); letter-spacing: -0.01em; }
 
 .t-float-card--ready {
-  top: 88px;
-  left: 8px;
-  width: 178px;
-  padding: 17px;
+  top: 26px;
+  left: -8px;
+  width: 218px;
+  padding: 18px 18px 19px;
 }
 
 .t-float-title {
   display: flex;
   align-items: center;
-  gap: 9px;
-  font-size: 0.84rem;
+  gap: 11px;
+  font-size: 0.98rem;
 }
 
 .t-card-check {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   display: grid;
   place-items: center;
   flex: none;
   border-radius: 50%;
-  background: linear-gradient(135deg, #5ad196, #14a869);
+  background: linear-gradient(135deg, #58d49a, #12a166);
   color: #fff;
-  box-shadow: 0 6px 13px rgba(24, 173, 109, 0.24);
+  box-shadow: 0 7px 15px rgba(24, 173, 109, 0.28);
 }
 
-.t-card-check .ic { width: 17px; height: 17px; stroke-width: 2.6; }
+.t-card-check .ic { width: 18px; height: 18px; stroke-width: 2.8; }
 
 .t-float-card--ready ul {
   display: grid;
-  gap: 6px;
-  margin: 11px 0 0 44px;
+  gap: 8px;
+  margin: 13px 0 1px 49px;
   padding: 0;
   list-style: none;
 }
@@ -319,86 +362,109 @@
 .t-float-card--ready li {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.7rem;
+  gap: 8px;
+  font-size: 0.84rem;
   font-weight: 600;
 }
 
 .t-float-card--ready li .ic {
-  width: 13px;
-  height: 13px;
-  padding: 2px;
-  border-radius: 4px;
+  box-sizing: border-box;
+  width: 15px;
+  height: 15px;
+  padding: 2.5px;
+  border-radius: 5px;
   background: #37bb7b;
   color: #fff;
-  stroke-width: 3;
+  stroke-width: 3.2;
 }
 
 .t-float-card--time {
-  left: -2px;
-  bottom: 82px;
-  width: 165px;
-  min-height: 88px;
+  left: -22px;
+  bottom: 128px;
+  width: 208px;
   display: flex;
   align-items: center;
-  gap: 11px;
-  padding: 17px 15px;
+  gap: 13px;
+  padding: 17px 18px;
 }
 
 .t-card-clock {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  flex: none;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #f1ebff, #e9e2ff);
+  color: #7b53e8;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.t-card-clock .ic { width: 21px; height: 21px; }
+
+.t-float-note { display: grid; gap: 3px; min-width: 0; }
+.t-float-note strong { font-size: 0.95rem; }
+.t-float-note small { color: #6a7793; font-size: 0.74rem; line-height: 1.35; }
+
+.t-float-card--students {
+  right: -14px;
+  bottom: 30px;
+  width: 232px;
+  padding: 16px 16px 15px;
+}
+
+.t-card-graph {
   width: 38px;
   height: 38px;
   display: grid;
   place-items: center;
   flex: none;
-  border-radius: 12px;
-  background: #efe9ff;
-  color: #7b53e8;
+  border-radius: 13px;
+  background: linear-gradient(145deg, #e3effe, #d8e9ff);
+  color: var(--t-blue);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
-.t-card-clock .ic { width: 20px; height: 20px; }
+.t-card-graph .ic { width: 20px; height: 20px; }
 
-.t-float-card--time > span:last-child { display: grid; gap: 2px; }
-.t-float-card--time strong { font-size: 0.78rem; }
-.t-float-card--time small { font-size: 0.63rem; line-height: 1.35; }
-
-.t-float-card--students {
-  right: 0;
-  bottom: 42px;
-  width: 186px;
-  display: grid;
-  justify-items: center;
-  padding: 14px 14px 13px;
-  text-align: center;
-}
-
-.t-float-card--students > strong { font-size: 0.74rem; }
-.t-float-card--students > small { margin-top: 5px; font-size: 0.6rem; line-height: 1.3; }
-
-.t-mini-chart {
-  position: absolute;
-  top: 15px;
-  left: 13px;
-  height: 20px;
-  display: flex;
-  align-items: end;
-  gap: 3px;
-}
-
-.t-mini-chart i { width: 3px; border-radius: 2px; background: var(--t-blue); }
-.t-mini-chart i:nth-child(1) { height: 9px; }
-.t-mini-chart i:nth-child(2) { height: 16px; }
-.t-mini-chart i:nth-child(3) { height: 20px; }
-
-.t-avatar-stack { display: flex; margin-top: 10px; padding-left: 9px; }
+.t-avatar-stack { display: flex; align-items: center; margin: 12px 0 0 2px; }
 
 .t-avatar-stack img {
-  width: 39px;
-  height: 39px;
-  margin-left: -9px;
+  width: 40px;
+  height: 40px;
+  margin-left: -10px;
   border: 3px solid #fff;
   border-radius: 50%;
   object-fit: cover;
+  box-shadow: 0 4px 10px rgba(37, 66, 121, 0.14);
+}
+
+.t-avatar-stack img:first-child { margin-left: 0; }
+
+.t-avatar-more { margin-left: 8px; color: #6a7793; font-size: 0.76rem; font-weight: 700; }
+
+.t-progress-line {
+  height: 7px;
+  margin-top: 12px;
+  border-radius: 99px;
+  background: #e8eef9;
+  overflow: hidden;
+}
+
+.t-progress-line i {
+  display: block;
+  width: 74%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #2b86f9, #38c6d8);
+}
+
+.t-float-card--students > small {
+  display: block;
+  margin-top: 9px;
+  color: #6a7793;
+  font-size: 0.74rem;
+  line-height: 1.4;
 }
 
 .t-handnote {
@@ -412,12 +478,12 @@
 }
 
 .t-handnote--hero {
-  top: 35px;
-  right: 2px;
-  width: 185px;
-  font-size: 1.42rem;
+  top: -4px;
+  right: 6px;
+  width: 212px;
+  font-size: 1.52rem;
   text-align: center;
-  transform: rotate(3deg);
+  transform: rotate(2.6deg);
 }
 
 .t-handnote--hero svg {
@@ -439,35 +505,80 @@
   background: #40c893;
 }
 
-.t-spark--hero { right: 2px; bottom: 72px; width: 38px; height: 40px; transform: rotate(26deg); }
+.t-spark--hero { right: 232px; bottom: 56px; width: 38px; height: 40px; transform: rotate(26deg); }
 .t-spark--hero::before { left: 6px; top: 5px; height: 22px; }
 .t-spark--hero::after { left: 20px; top: 0; height: 31px; }
 
-.t-shape--hero-left {
-  left: -55px;
-  top: -4px;
-  width: 154px;
-  height: 194px;
-  background: linear-gradient(145deg, rgba(119, 225, 222, 0.25), rgba(220, 250, 246, 0.35));
+/* Soft mesh-gradient glows behind the hero content. */
+.t-glow { position: absolute; border-radius: 50%; filter: blur(48px); }
+
+.t-glow--hero-cyan {
+  left: 30%;
+  top: 4%;
+  width: 400px;
+  height: 400px;
+  background: rgba(125, 230, 223, 0.3);
 }
 
-.t-shape--hero-lav {
-  top: 20px;
-  left: 47%;
-  width: 190px;
-  height: 190px;
-  background: rgba(214, 205, 255, 0.24);
+.t-glow--hero-lav {
+  top: -8%;
+  right: 5%;
+  width: 320px;
+  height: 320px;
+  background: rgba(196, 181, 253, 0.28);
 }
 
-.t-shape--hero-corner {
-  top: -55px;
-  right: -48px;
-  width: 150px;
-  height: 150px;
-  background: rgba(209, 220, 255, 0.54);
+.t-glow--hero-mint {
+  bottom: -10%;
+  left: 42%;
+  width: 460px;
+  height: 340px;
+  background: rgba(111, 219, 202, 0.22);
 }
 
-.t-dots--hero { left: 22px; bottom: 8px; }
+.t-dots--hero { left: 46%; top: 64px; }
+.t-dots--hero-b { left: 3%; bottom: 64px; }
+
+.t-hero-curve {
+  position: absolute;
+  left: 1.5%;
+  bottom: 7%;
+  width: 230px;
+  height: auto;
+}
+
+/* Wavy background lines + soft blurred accent dots. */
+.t-wave {
+  position: absolute;
+  width: min(320px, 28vw);
+  height: auto;
+  fill: none;
+  filter: blur(0.8px);
+}
+
+.t-wave path { stroke-linecap: round; }
+
+.t-wave--a { left: 41%; top: 5%; }
+
+.t-wave--b {
+  right: 4%;
+  bottom: 5%;
+  width: min(300px, 24vw);
+}
+
+.t-bdot {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.t-bdot--1 { left: 9%; top: 13%; width: 13px; height: 13px; background: rgba(125, 230, 223, 0.8); filter: blur(3px); }
+.t-bdot--2 { left: 2.5%; top: 47%; width: 10px; height: 10px; background: rgba(196, 181, 253, 0.85); filter: blur(3px); }
+.t-bdot--3 { left: 13%; bottom: 13%; width: 16px; height: 16px; background: rgba(111, 219, 202, 0.7); filter: blur(4px); }
+.t-bdot--4 { left: 44.5%; top: 7%; width: 10px; height: 10px; background: rgba(31, 109, 242, 0.55); filter: blur(3px); }
+.t-bdot--5 { left: 79%; top: 9%; width: 12px; height: 12px; background: rgba(125, 230, 223, 0.75); filter: blur(3px); }
+.t-bdot--6 { left: 93%; top: 42%; width: 14px; height: 14px; background: rgba(196, 181, 253, 0.7); filter: blur(4px); }
+.t-bdot--7 { left: 55%; bottom: 7%; width: 12px; height: 12px; background: rgba(31, 109, 242, 0.5); filter: blur(3px); }
+.t-bdot--8 { left: 87%; bottom: 17%; width: 10px; height: 10px; background: rgba(111, 219, 202, 0.75); filter: blur(3px); }
 
 /* --------------------------------------------------------------------------
    Three-step workflow
@@ -1418,19 +1529,24 @@
    -------------------------------------------------------------------------- */
 
 @media (max-width: 1280px) {
-  .t-hero-grid { grid-template-columns: minmax(0, 0.92fr) minmax(525px, 1.08fr); gap: 26px; }
-  .t-hero-teacher { right: 48px; }
-  .t-float-card--students { right: 2px; }
-  .t-handnote--hero { right: -5px; }
+  .t-hero-grid { grid-template-columns: minmax(0, 0.94fr) minmax(470px, 1.06fr); gap: 34px; }
+  .t-hero-visual { height: 620px; }
+  .t-hero-panel { left: 68px; right: 26px; }
+  .t-hero-glass { inset: 122px -10px 40px 102px; }
+  .t-hero-teacher { left: calc(50% + 21px); }
+  .t-float-card--time { left: -16px; }
+  .t-float-card--students { right: -8px; }
+  .t-handnote--hero { right: -4px; }
   .t-handnote--benefits { right: 4%; }
   .t-preview-grid { gap: 48px; }
   .t-handnote--preview { position: static; margin-top: 16px; text-align: left; transform: rotate(-3deg); }
 }
 
 @media (max-width: 1180px) {
-  .t-hero-grid { grid-template-columns: minmax(0, 0.95fr) minmax(500px, 1.05fr); }
+  .t-hero-grid { grid-template-columns: minmax(0, 0.95fr) minmax(430px, 1.05fr); }
   .t-hero-copy h1 { font-size: clamp(3.05rem, 5.3vw, 4rem); }
-  .t-hero-teacher { right: 35px; width: 53%; }
+  .t-hero-visual { height: 580px; }
+  .t-hero-teacher { left: calc(50% + 21px); width: min(66%, 330px); }
   .t-handnote--hero { display: none; }
 
   .t-step-grid {
@@ -1462,20 +1578,23 @@
 
   .t-hero-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 46px;
     min-height: 0;
-    padding-block: 66px 0;
   }
 
   .t-hero-copy { width: min(760px, 100%); text-align: center; justify-self: center; }
   .t-hero-copy h1,
   .t-hero-lead { margin-inline: auto; }
-  .t-hero-copy h1 { font-size: clamp(3.5rem, 7.6vw, 4.8rem); }
+  .t-hero-copy h1 { font-size: clamp(3.3rem, 7.4vw, 4.6rem); }
   .t-hero-copy .t-actions,
   .t-trust { justify-content: center; }
-  .t-hero-visual { width: min(760px, 100%); height: 555px; justify-self: center; }
-  .t-hero-backdrop { inset-inline: 90px 55px; }
-  .t-hero-teacher { right: 80px; width: 47%; }
+  .t-hero-visual { width: min(660px, 100%); height: 570px; justify-self: center; }
+  .t-hero-panel { left: 72px; right: 30px; }
+  .t-hero-glass { inset: 118px -6px 38px 106px; }
+  .t-hero-teacher { left: calc(50% + 21px); }
+  .t-dots--hero { left: 40%; top: 46px; }
+  .t-wave--a { left: 36%; top: 3%; }
+  .t-bdot--4 { left: 40%; }
 
   .t-preview-grid { grid-template-columns: 1fr; gap: 42px; }
   .t-laptop-wrap { width: min(820px, 100%); margin-inline: auto; }
@@ -1514,16 +1633,23 @@
   .t-preview-copy h2,
   .t-final-cta h2 { font-size: clamp(2rem, 8vw, 2.6rem); }
 
-  .t-hero-grid { padding-top: 52px; }
-  .t-hero-copy h1 { font-size: clamp(3.05rem, 13vw, 4.05rem); }
+  .t-hero-grid { padding-top: 0; }
+  .t-hero-copy h1 { font-size: clamp(2.9rem, 12.5vw, 3.9rem); }
   .t-hero-lead { font-size: 1rem; }
 
-  .t-hero-visual { height: 515px; }
-  .t-hero-backdrop { inset: 58px 18px 0 35px; }
-  .t-hero-teacher { right: 38px; width: 58%; height: 490px; }
-  .t-float-card--ready { top: 84px; left: 0; transform: scale(0.9); transform-origin: top left; }
-  .t-float-card--time { left: 5px; bottom: 54px; transform: scale(0.9); transform-origin: bottom left; }
-  .t-float-card--students { right: 0; bottom: 24px; transform: scale(0.9); transform-origin: bottom right; }
+  .t-hero-visual { height: 525px; }
+  .t-hero-panel { left: 54px; right: 18px; }
+  .t-hero-glass { inset: 104px 0 34px 86px; }
+  .t-hero-teacher { left: calc(50% + 18px); width: 62%; }
+  .t-float-card--ready { top: 14px; left: -4px; transform: scale(0.92); transform-origin: top left; }
+  .t-float-card--time { left: -6px; bottom: 96px; transform: scale(0.92); transform-origin: bottom left; }
+  .t-float-card--students { right: -4px; bottom: 18px; transform: scale(0.92); transform-origin: bottom right; }
+  .t-wave--b,
+  .t-bdot--3,
+  .t-bdot--5,
+  .t-bdot--6,
+  .t-bdot--8 { display: none; }
+  .t-wave--a { left: 18%; top: 2.5%; width: 240px; }
 
   .t-step-grid { grid-template-columns: 1fr; }
   .t-step-card,
@@ -1562,12 +1688,14 @@
 
   .t-trust { align-items: flex-start; flex-direction: column; width: max-content; max-width: 100%; margin-inline: auto; }
 
-  .t-hero-visual { height: 470px; }
-  .t-hero-backdrop { inset: 50px 4px 0 13px; }
-  .t-hero-teacher { right: 17px; width: 66%; height: 455px; }
-  .t-float-card--ready { top: 70px; transform: scale(0.76); }
-  .t-float-card--time { left: 0; bottom: 38px; transform: scale(0.76); }
-  .t-float-card--students { bottom: 17px; transform: scale(0.75); }
+  .t-hero-visual { height: 488px; }
+  .t-hero-panel { left: 44px; right: 12px; border-radius: 999px 999px 38px 38px; }
+  .t-hero-glass { inset: 94px 2px 30px 72px; border-radius: 40px; }
+  .t-hero-teacher { left: calc(50% + 16px); width: 60%; }
+  .t-float-card--ready { top: 10px; transform: scale(0.85); }
+  .t-float-card--time { bottom: 84px; transform: scale(0.85); }
+  .t-float-card--students { bottom: 12px; transform: scale(0.85); }
+  .t-wave--a { width: 200px; }
   .t-spark--hero { display: none; }
 
   .t-step-card { padding: 20px; border-radius: 20px; }
@@ -1626,11 +1754,12 @@
 
 @media (max-width: 390px) {
   .t-hero-copy h1 { font-size: clamp(2.75rem, 13vw, 3.2rem); }
-  .t-hero-visual { height: 430px; }
-  .t-hero-teacher { width: 70%; height: 420px; }
-  .t-float-card--ready { transform: scale(0.68); }
-  .t-float-card--time { transform: scale(0.68); }
-  .t-float-card--students { transform: scale(0.67); }
+  .t-hero-visual { height: 452px; }
+  .t-hero-panel { left: 38px; right: 8px; }
+  .t-hero-teacher { left: calc(50% + 15px); width: 64%; }
+  .t-float-card--ready { transform: scale(0.82); }
+  .t-float-card--time { left: -10px; bottom: 170px; transform: scale(0.82); }
+  .t-float-card--students { transform: scale(0.82); }
   .t-progress-row { grid-template-columns: 24px 56px minmax(34px, 1fr) 27px; gap: 5px; }
 }
 

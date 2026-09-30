@@ -266,7 +266,7 @@ async function collectState(page) {
       ".global-header",
       ".global-header__inner",
       ".global-header .global-brand",
-      ".global-header .global-brand__image",
+      ".global-header .global-brand__icon",
       ".global-desktop-nav",
       ".global-header__inner > .global-header-cta",
       ".global-menu-toggle",
@@ -337,8 +337,8 @@ async function collectState(page) {
       colorSchemeMeta,
       themeColorMeta,
       navGeometry: Object.fromEntries(navSelectors.map((selector) => [selector, box(selector)])),
-      headerLogo: logoState(".global-header .global-brand__image"),
-      footerLogo: logoState(".global-footer .global-brand__image"),
+      headerLogo: logoState(".global-header .global-brand__icon"),
+      footerLogo: logoState(".global-footer .global-brand__icon"),
       brokenImages: [...document.images]
         .filter((image) => !image.complete || image.naturalWidth === 0)
         .map((image) => image.currentSrc || image.src || "[image without src]"),
@@ -582,7 +582,7 @@ async function inspectLiveSwitch(context, url, pageName) {
               logo.renderedHeight <= 0
             ) {
               fail(`${label}: ${location} logo is missing or failed to render: ${JSON.stringify(logo)}`);
-            } else if (!/\/assets\/logos\/remtoo-logo\.png(?:$|\?)/i.test(logo.src)) {
+            } else if (!/\/assets\/logos\/remtoo-icon\.svg(?:$|\?)/i.test(logo.src)) {
               fail(`${label}: ${location} logo uses unexpected source ${logo.src}`);
             }
           }

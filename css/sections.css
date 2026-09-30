@@ -1847,7 +1847,7 @@
 .fm-pic svg { width: 30px; height: 30px; }
 
 .feature-card:hover .fm-word:first-child,
-.feature-card:hover .fm-pic:nth-child(2) {
+.feature-card:hover .fm-pic:first-child {
   border-color: var(--green);
 }
 

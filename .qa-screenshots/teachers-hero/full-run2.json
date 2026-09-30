@@ -1,0 +1,524 @@
+{
+  "results": [
+    {
+      "width": 320,
+      "overflow": 0,
+      "heroH": 1228,
+      "visualBox": {
+        "x": 20,
+        "y": 784,
+        "w": 280,
+        "h": 452
+      },
+      "teacherLoaded": true,
+      "cards": [
+        {
+          "x": 16,
+          "y": 794,
+          "w": 179,
+          "h": 168,
+          "name": "ready"
+        },
+        {
+          "x": 10,
+          "y": 987,
+          "w": 171,
+          "h": 79,
+          "name": "time"
+        },
+        {
+          "x": 114,
+          "y": 1087,
+          "w": 190,
+          "h": 137,
+          "name": "students"
+        }
+      ],
+      "cardOverlaps": [],
+      "cardsInVisual": 3
+    },
+    {
+      "width": 360,
+      "overflow": 0,
+      "heroH": 1207,
+      "visualBox": {
+        "x": 20,
+        "y": 763,
+        "w": 320,
+        "h": 452
+      },
+      "teacherLoaded": true,
+      "cards": [
+        {
+          "x": 16,
+          "y": 773,
+          "w": 179,
+          "h": 168,
+          "name": "ready"
+        },
+        {
+          "x": 10,
+          "y": 966,
+          "w": 171,
+          "h": 79,
+          "name": "time"
+        },
+        {
+          "x": 154,
+          "y": 1065,
+          "w": 190,
+          "h": 137,
+          "name": "students"
+        }
+      ],
+      "cardOverlaps": [],
+      "cardsInVisual": 3
+    },
+    {
+      "width": 390,
+      "overflow": 0,
+      "heroH": 1215,
+      "visualBox": {
+        "x": 20,
+        "y": 771,
+        "w": 350,
+        "h": 452
+      },
+      "teacherLoaded": true,
+      "cards": [
+        {
+          "x": 16,
+          "y": 781,
+          "w": 179,
+          "h": 168,
+          "name": "ready"
+        },
+        {
+          "x": 10,
+          "y": 974,
+          "w": 171,
+          "h": 79,
+          "name": "time"
+        },
+        {
+          "x": 184,
+          "y": 1073,
+          "w": 190,
+          "h": 137,
+          "name": "students"
+        }
+      ],
+      "cardOverlaps": [],
+      "cardsInVisual": 3
+    },
+    {
+      "width": 430,
+      "overflow": 0,
+      "heroH": 1257,
+      "visualBox": {
+        "x": 20,
+        "y": 777,
+        "w": 390,
+        "h": 488
+      },
+      "teacherLoaded": true,
+      "cards": [
+        {
+          "x": 16,
+          "y": 787,
+          "w": 185,
+          "h": 174,
+          "name": "ready"
+        },
+        {
+          "x": 14,
+          "y": 1099,
+          "w": 177,
+          "h": 82,
+          "name": "time"
+        },
+        {
+          "x": 217,
+          "y": 1111,
+          "w": 197,
+          "h": 142,
+          "name": "students"
+        }
+      ],
+      "cardOverlaps": [],
+      "cardsInVisual": 3
+    },
+    {
+      "width": 560,
+      "overflow": 0,
+      "heroH": 1248,
+      "visualBox": {
+        "x": 20,
+        "y": 768,
+        "w": 520,
+        "h": 488
+      },
+      "teacherLoaded": true,
+      "cards": [
+        {
+          "x": 16,
+          "y": 778,
+          "w": 185,
+          "h": 174,
+          "name": "ready"
+        },
+        {
+          "x": 14,
+          "y": 1090,
+          "w": 177,
+          "h": 82,
+          "name": "time"
+        },
+        {
+          "x": 347,
+          "y": 1101,
+          "w": 197,
+          "h": 142,
+          "name": "students"
+        }
+      ],
+      "cardOverlaps": [],
+      "cardsInVisual": 3
+    },
+    {
+      "width": 700,
+      "overflow": 0,
+      "heroH": 1138,
+      "visualBox": {
+        "x": 28,
+        "y": 621,
+        "w": 644,
+        "h": 525
+      },
+      "teacherLoaded": true,
+      "cards": [
+        {
+          "x": 24,
+          "y": 635,
+          "w": 201,
+          "h": 189,
+          "name": "ready"
+        },
+        {
+          "x": 22,
+          "y": 962,
+          "w": 191,
+          "h": 89,
+          "name": "time"
+        },
+        {
+          "x": 463,
+          "y": 974,
+          "w": 213,
+          "h": 154,
+          "name": "students"
+        }
+      ],
+      "cardOverlaps": [],
+      "cardsInVisual": 3
+    },
+    {
+      "width": 768,
+      "overflow": 0,
+      "heroH": 1176,
+      "visualBox": {
+        "x": 54,
+        "y": 614,
+        "w": 660,
+        "h": 570
+      },
+      "teacherLoaded": true,
+      "cards": [
+        {
+          "x": 46,
+          "y": 640,
+          "w": 218,
+          "h": 205,
+          "name": "ready"
+        },
+        {
+          "x": 38,
+          "y": 959,
+          "w": 208,
+          "h": 97,
+          "name": "time"
+        },
+        {
+          "x": 490,
+          "y": 986,
+          "w": 232,
+          "h": 168,
+          "name": "students"
+        }
+      ],
+      "cardOverlaps": [],
+      "cardsInVisual": 3
+    },
+    {
+      "width": 820,
+      "overflow": 0,
+      "heroH": 1184,
+      "visualBox": {
+        "x": 80,
+        "y": 622,
+        "w": 660,
+        "h": 570
+      },
+      "teacherLoaded": true,
+      "cards": [
+        {
+          "x": 72,
+          "y": 648,
+          "w": 218,
+          "h": 205,
+          "name": "ready"
+        },
+        {
+          "x": 64,
+          "y": 967,
+          "w": 208,
+          "h": 97,
+          "name": "time"
+        },
+        {
+          "x": 516,
+          "y": 994,
+          "w": 232,
+          "h": 168,
+          "name": "students"
+        }
+      ],
+      "cardOverlaps": [],
+      "cardsInVisual": 3
+    },
+    {
+      "width": 1024,
+      "overflow": 0,
+      "heroH": 1218,
+      "visualBox": {
+        "x": 182,
+        "y": 656,
+        "w": 660,
+        "h": 570
+      },
+      "teacherLoaded": true,
+      "cards": [
+        {
+          "x": 174,
+          "y": 682,
+          "w": 218,
+          "h": 205,
+          "name": "ready"
+        },
+        {
+          "x": 166,
+          "y": 1001,
+          "w": 208,
+          "h": 97,
+          "name": "time"
+        },
+        {
+          "x": 618,
+          "y": 1028,
+          "w": 232,
+          "h": 168,
+          "name": "students"
+        }
+      ],
+      "cardOverlaps": [],
+      "cardsInVisual": 3
+    },
+    {
+      "width": 1180,
+      "overflow": 0,
+      "heroH": 715,
+      "visualBox": {
+        "x": 581,
+        "y": 140,
+        "w": 552,
+        "h": 580
+      },
+      "teacherLoaded": true,
+      "cards": [
+        {
+          "x": 573,
+          "y": 166,
+          "w": 218,
+          "h": 205,
+          "name": "ready"
+        },
+        {
+          "x": 565,
+          "y": 495,
+          "w": 208,
+          "h": 97,
+          "name": "time"
+        },
+        {
+          "x": 909,
+          "y": 522,
+          "w": 232,
+          "h": 168,
+          "name": "students"
+        }
+      ],
+      "cardOverlaps": [],
+      "cardsInVisual": 3
+    },
+    {
+      "width": 1280,
+      "overflow": 0,
+      "heroH": 766,
+      "visualBox": {
+        "x": 623,
+        "y": 145,
+        "w": 606,
+        "h": 620
+      },
+      "teacherLoaded": true,
+      "cards": [
+        {
+          "x": 615,
+          "y": 171,
+          "w": 218,
+          "h": 205,
+          "name": "ready"
+        },
+        {
+          "x": 607,
+          "y": 541,
+          "w": 208,
+          "h": 97,
+          "name": "time"
+        },
+        {
+          "x": 1005,
+          "y": 568,
+          "w": 232,
+          "h": 168,
+          "name": "students"
+        }
+      ],
+      "cardOverlaps": [],
+      "cardsInVisual": 3
+    },
+    {
+      "width": 1440,
+      "overflow": 0,
+      "heroH": 798,
+      "visualBox": {
+        "x": 726,
+        "y": 154,
+        "w": 656,
+        "h": 634
+      },
+      "teacherLoaded": true,
+      "cards": [
+        {
+          "x": 718,
+          "y": 180,
+          "w": 218,
+          "h": 205,
+          "name": "ready"
+        },
+        {
+          "x": 704,
+          "y": 563,
+          "w": 208,
+          "h": 97,
+          "name": "time"
+        },
+        {
+          "x": 1164,
+          "y": 590,
+          "w": 232,
+          "h": 168,
+          "name": "students"
+        }
+      ],
+      "cardOverlaps": [],
+      "cardsInVisual": 3
+    },
+    {
+      "width": 1600,
+      "overflow": 0,
+      "heroH": 840,
+      "visualBox": {
+        "x": 808,
+        "y": 160,
+        "w": 712,
+        "h": 660
+      },
+      "teacherLoaded": true,
+      "cards": [
+        {
+          "x": 800,
+          "y": 186,
+          "w": 218,
+          "h": 205,
+          "name": "ready"
+        },
+        {
+          "x": 786,
+          "y": 596,
+          "w": 208,
+          "h": 97,
+          "name": "time"
+        },
+        {
+          "x": 1302,
+          "y": 622,
+          "w": 232,
+          "h": 168,
+          "name": "students"
+        }
+      ],
+      "cardOverlaps": [],
+      "cardsInVisual": 3
+    },
+    {
+      "width": 1920,
+      "overflow": 0,
+      "heroH": 844,
+      "visualBox": {
+        "x": 975,
+        "y": 160,
+        "w": 705,
+        "h": 660
+      },
+      "teacherLoaded": true,
+      "cards": [
+        {
+          "x": 967,
+          "y": 186,
+          "w": 218,
+          "h": 205,
+          "name": "ready"
+        },
+        {
+          "x": 953,
+          "y": 596,
+          "w": 208,
+          "h": 97,
+          "name": "time"
+        },
+        {
+          "x": 1462,
+          "y": 622,
+          "w": 232,
+          "h": 168,
+          "name": "students"
+        }
+      ],
+      "cardOverlaps": [],
+      "cardsInVisual": 3
+    }
+  ],
+  "badResponses": [],
+  "screenshots": "C:\\Users\\HP\\Desktop\\soufinae\\remtoolanding page\\.qa-screenshots\\teachers-hero"
+}

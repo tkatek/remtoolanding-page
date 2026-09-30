@@ -36,12 +36,13 @@ const server = http.createServer((req, res) => {
   const widths = (process.argv[2] || '360,390,430,768,1024,1180,1280,1440,1600,1920')
     .split(',').map(Number);
   const results = [];
+  const allBad = [];
 
   for (const width of widths) {
     const context = await browser.newContext({ viewport: { width, height: width < 700 ? 1200 : 1080 } });
     const page = await context.newPage();
     const badResponses = [];
-    page.on('response', r => { if (r.status() >= 400) badResponses.push(`${r.status()} ${r.url()}`); });
+    page.on('response', r => { if (r.status() >= 400) allBad.push(`${r.status()} ${r.url()}`); });
     await page.goto('http://127.0.0.1:41761/teachers.html', { waitUntil: 'domcontentloaded', timeout: 30000 });
     await page.waitForTimeout(2500);
     await page.evaluate(() => {
@@ -53,10 +54,21 @@ const server = http.createServer((req, res) => {
       const hero = document.querySelector('.t-hero');
       const visual = document.querySelector('.t-hero-visual');
       const teacher = document.querySelector('.t-hero-teacher');
-      const cards = [...document.querySelectorAll('.t-hero-visual .t-float-card')].map(c => {
+      const rawCards = [...document.querySelectorAll('.t-hero-visual .t-float-card')];
+      const cards = rawCards.map(c => {
         const r = c.getBoundingClientRect();
-        return { x: +r.x.toFixed(0), y: +r.y.toFixed(0), w: +r.width.toFixed(0), h: +r.height.toFixed(0) };
+        return { x: +r.x.toFixed(0), y: +r.y.toFixed(0), w: +r.width.toFixed(0), h: +r.height.toFixed(0), name: c.className.match(/t-float-card--(\w+)/)?.[1] };
       });
+      // scaled cards report scaled rects already — overlap between card pairs:
+      const overlaps = [];
+      for (let i = 0; i < cards.length; i++) {
+        for (let j = i + 1; j < cards.length; j++) {
+          const a = cards[i], b = cards[j];
+          const ox = Math.max(0, Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x));
+          const oy = Math.max(0, Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y));
+          if (ox > 2 && oy > 2) overlaps.push(`${a.name}x${b.name}:${ox}x${oy}px`);
+        }
+      }
       const vr = visual ? visual.getBoundingClientRect() : { x: 0, y: 0, width: 0, height: 0 };
       return {
         width: innerWidth,
@@ -65,6 +77,7 @@ const server = http.createServer((req, res) => {
         visualBox: { x: +vr.x.toFixed(0), y: +vr.y.toFixed(0), w: +vr.width.toFixed(0), h: +vr.height.toFixed(0) },
         teacherLoaded: teacher ? (teacher.complete && teacher.naturalWidth > 0) : false,
         cards,
+        cardOverlaps: overlaps,
         cardsInVisual: cards.filter(c => c.w > 0 && c.h > 0).length
       };
     });
@@ -74,7 +87,7 @@ const server = http.createServer((req, res) => {
     await context.close();
   }
 
-  console.log(JSON.stringify({ results, badResponses, screenshots: outDir }, null, 2));
+  console.log(JSON.stringify({ results, badResponses: allBad, screenshots: outDir }, null, 2));
   await browser.close();
   server.close();
   process.exit(0);

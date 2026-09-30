@@ -1,0 +1,80 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "overflow": 0,
+      "heroH": 798,
+      "visualBox": {
+        "x": 726,
+        "y": 154,
+        "w": 656,
+        "h": 634
+      },
+      "teacherLoaded": true,
+      "cards": [
+        {
+          "x": 718,
+          "y": 180,
+          "w": 218,
+          "h": 205,
+          "name": "ready"
+        },
+        {
+          "x": 704,
+          "y": 563,
+          "w": 208,
+          "h": 97,
+          "name": "time"
+        },
+        {
+          "x": 1164,
+          "y": 590,
+          "w": 232,
+          "h": 168,
+          "name": "students"
+        }
+      ],
+      "cardOverlaps": [],
+      "cardsInVisual": 3
+    },
+    {
+      "width": 1920,
+      "overflow": 0,
+      "heroH": 844,
+      "visualBox": {
+        "x": 975,
+        "y": 160,
+        "w": 705,
+        "h": 660
+      },
+      "teacherLoaded": true,
+      "cards": [
+        {
+          "x": 967,
+          "y": 186,
+          "w": 218,
+          "h": 205,
+          "name": "ready"
+        },
+        {
+          "x": 953,
+          "y": 596,
+          "w": 208,
+          "h": 97,
+          "name": "time"
+        },
+        {
+          "x": 1462,
+          "y": 622,
+          "w": 232,
+          "h": 168,
+          "name": "students"
+        }
+      ],
+      "cardOverlaps": [],
+      "cardsInVisual": 3
+    }
+  ],
+  "badResponses": [],
+  "screenshots": "C:\\Users\\HP\\Desktop\\soufinae\\remtoolanding page\\.qa-screenshots\\teachers-hero"
+}

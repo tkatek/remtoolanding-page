@@ -389,19 +389,35 @@
   min-width: 0;
 }
 
+/* Shared brand component: the blue Remtoo symbol as an image plus the
+   REMTOO wordmark as real text, so it re-themes with the shell. */
 .global-brand {
   display: inline-flex;
   align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
   min-width: 0;
   min-height: 46px;
   text-decoration: none;
   touch-action: manipulation;
 }
 
-.global-brand__image {
+.global-brand__icon {
   display: block;
-  width: clamp(116px, 9vw, 132px);
-  height: auto;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.global-brand__wordmark {
+  color: var(--site-ink);
+  font-family: var(--site-font);
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .global-header .global-icon,
@@ -625,13 +641,13 @@
   background: #fff;
 }
 
-/* Drawer head: exact logo asset (proportions locked) + soft circular close. */
+/* Drawer head: shared brand component (top-left) + circular close button. */
 .global-mobile-nav__head {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-  padding: 24px 26px 56px;
+  padding: 24px 26px 64px;
 }
 
 .global-mobile-nav__brand {
@@ -644,9 +660,13 @@
   touch-action: manipulation;
 }
 
-.global-mobile-nav .global-brand__image {
-  width: clamp(148px, 46vw, 164px);
-  height: auto;
+.global-mobile-nav .global-brand__icon {
+  width: 38px;
+  height: 38px;
+}
+
+.global-mobile-nav .global-brand__wordmark {
+  font-size: 24px;
 }
 
 .global-mobile-nav__close {
@@ -690,7 +710,7 @@
   flex-direction: column;
   min-height: 0;
   margin: 0;
-  padding: 22px 16px 8px;
+  padding: 26px 16px 8px;
   list-style: none;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -773,8 +793,8 @@
   height: 40px;
   place-items: center;
   border-radius: 12px;
-  color: #2563eb;
-  background: #eaf1fd;
+  color: #1e5ee8;
+  background: #e4eefc;
   transition:
     color 160ms ease,
     background-color 160ms ease;
@@ -814,7 +834,7 @@
 /* Drawer footer: reference CTA — 60px flat blue pill with 28px margins. */
 .global-mobile-nav__footer {
   flex: none;
-  padding: 22px 28px max(18px, env(safe-area-inset-bottom));
+  padding: 26px 28px max(18px, env(safe-area-inset-bottom));
 }
 
 .global-mobile-nav__cta {
@@ -859,8 +879,8 @@
 .global-mobile-nav__decor {
   position: relative;
   flex: none;
-  height: 136px;
-  margin-block-start: 10px;
+  height: 128px;
+  margin-block-start: 6px;
   overflow: hidden;
   overflow: clip;
 }
@@ -871,7 +891,7 @@
   bottom: 0;
   display: block;
   width: 100%;
-  height: 84px;
+  height: 78px;
 }
 
 .global-mobile-nav__wave-back {
@@ -884,10 +904,11 @@
 
 .global-mobile-nav__flight {
   position: absolute;
-  inset: 0;
+  right: 40px;
+  bottom: 6px;
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 170px;
+  height: 110px;
 }
 
 .global-mobile-nav__flight-path {
@@ -919,13 +940,13 @@
 .global-mobile-nav__tagline {
   position: absolute;
   inset-inline-start: 8px;
-  bottom: 14px;
+  bottom: 16px;
   margin: 0;
   color: #52699a;
   font-family: var(--site-font-hand);
   font-size: clamp(1.42rem, 4.9vw, 1.62rem);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.18;
 }
 
 .global-mobile-nav__tagline-accent {
@@ -1182,11 +1203,19 @@ html.site-shell-nav-open body {
   max-width: 370px;
 }
 
+/* Footer sits on permanent navy: blue icon unchanged, wordmark near-white. */
 .global-footer__brand .global-brand {
   margin-block-end: 18px;
-  padding: 8px 12px;
-  border-radius: 12px;
-  background: #fff;
+}
+
+.global-footer__brand .global-brand__icon {
+  width: 38px;
+  height: 38px;
+}
+
+.global-footer__brand .global-brand__wordmark {
+  color: #f7f9ff;
+  font-size: 24px;
 }
 
 .global-footer__brand :is(.tagline, .global-footer__tagline) {
@@ -1617,7 +1646,7 @@ html.site-shell-nav-open body {
     max-width: 100vw;
     padding: 0 max(0px, env(safe-area-inset-right)) 0 max(0px, env(safe-area-inset-left));
     overflow: hidden;
-    border-start-start-radius: 32px;
+    border-start-start-radius: 36px;
     box-shadow: 0 24px 64px rgba(15, 35, 80, 0.16);
     transform: translateX(100%);
     transition: transform 320ms var(--site-ease);
@@ -1875,8 +1904,23 @@ html.site-shell-nav-open body {
     min-height: 44px;
   }
 
-  .global-brand__image {
-    width: 112px;
+  /* Compact header brand on small phones; drawer keeps its roomier size. */
+  .global-header .global-brand__icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .global-header .global-brand__wordmark {
+    font-size: 23px;
+  }
+
+  .global-mobile-nav .global-brand__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .global-mobile-nav .global-brand__wordmark {
+    font-size: 23px;
   }
 
   .global-menu-toggle {
@@ -3103,9 +3147,10 @@ select {
     box-shadow: 0 15px 38px rgba(0, 0, 0, 0.34);
   }
 
-  :root body .global-header .global-brand__image {
-    filter: brightness(0) invert(1);
-    opacity: 0.96;
+  /* Dark theme: the blue icon stays untouched; only the text flips. */
+  :root body .global-header .global-brand__wordmark,
+  :root body .global-mobile-nav .global-brand__wordmark {
+    color: #f7f9ff;
   }
 
   :root body .global-header .global-nav-link {
@@ -3142,33 +3187,6 @@ select {
   :root body .global-mobile-nav__close:hover {
     color: #a9c8ff;
     background: rgba(103, 163, 255, 0.16);
-  }
-
-  /* Logo stays the exact unchanged asset in dark mode, resting on the same
-     light capsule the dark header uses for the brand. */
-  :root body .global-mobile-nav__brand {
-    position: relative;
-    isolation: isolate;
-  }
-
-  :root body .global-mobile-nav__brand::before {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    pointer-events: none;
-    inset-block: 5px;
-    inset-inline: -9px;
-    border: 1px solid rgba(183, 210, 244, 0.24);
-    border-radius: 11px;
-    background: rgba(246, 249, 255, 0.94);
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
-  }
-
-  :root body .global-mobile-nav .global-brand__image {
-    position: relative;
-    z-index: 1;
-    filter: none;
-    opacity: 1;
   }
 
   :root body .global-mobile-nav__link {
@@ -3247,14 +3265,6 @@ select {
 
   :root body .global-mobile-nav__tagline-accent {
     color: #9dbcff;
-  }
-
-  :root body .global-mobile-nav__tagline {
-    color: #8fb4f2;
-  }
-
-  :root body .global-mobile-nav__tagline-accent {
-    color: #a9c8ff;
   }
 
   :root body .global-mobile-nav__swoosh-path {
@@ -4150,32 +4160,6 @@ select {
    ========================================================================== */
 
 @media (prefers-color-scheme: dark) {
-  /* Preserve the original blue + navy logo on a fixed-geometry light capsule. */
-  :root body .global-header .global-brand {
-    position: relative;
-    isolation: isolate;
-  }
-
-  :root body .global-header .global-brand::before {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    pointer-events: none;
-    inset-block: 4px;
-    inset-inline: -8px;
-    border: 1px solid rgba(183, 210, 244, 0.24);
-    border-radius: 11px;
-    background: rgba(246, 249, 255, 0.94);
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
-  }
-
-  :root body .global-header .global-brand__image {
-    position: relative;
-    z-index: 1;
-    filter: none;
-    opacity: 1;
-  }
-
   /* Home: remaining small surfaces and decorative polish. */
   .home-page :is(.features-section, .smarter-section, .testimonials-section) .eyebrow {
     border: 1px solid rgba(108, 165, 255, 0.18);
