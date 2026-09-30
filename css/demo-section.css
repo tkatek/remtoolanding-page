@@ -1,0 +1,1073 @@
+/* ========================================================================== 
+   Remtoo demo experience
+   Reference-led three-column booking section, scoped to the Schools page.
+   ========================================================================== */
+
+.schools-page .demo-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  scroll-margin-top: calc(var(--header-h) + 18px);
+  padding: clamp(5rem, 7.4vw, 7.25rem) 0;
+  background:
+    radial-gradient(circle at 71% 78%, rgba(34, 211, 238, 0.1), transparent 21rem),
+    radial-gradient(circle at 2% 27%, rgba(52, 211, 153, 0.1), transparent 20rem),
+    linear-gradient(108deg, #fbfdff 0%, #ffffff 48%, #f8fbff 100%);
+}
+
+/* The legacy floating contact control collides with the reference's photo
+   checklist at 1440px and with form fields on tablet. The page already
+   exposes direct email and demo actions, so keep that redundant control out
+   of this conversion-focused view. */
+.schools-page .chat-bubble {
+  display: none;
+}
+
+.schools-page .demo-atmosphere,
+.schools-page .demo-atmosphere span {
+  position: absolute;
+  pointer-events: none;
+}
+
+.schools-page .demo-atmosphere {
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.schools-page .demo-glow {
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+.schools-page .demo-glow--blue {
+  width: 34rem;
+  height: 34rem;
+  top: -14rem;
+  left: 19%;
+  background: radial-gradient(circle, rgba(147, 197, 253, 0.2), rgba(219, 234, 254, 0.05) 58%, transparent 73%);
+}
+
+.schools-page .demo-glow--mint {
+  width: 25rem;
+  height: 25rem;
+  left: -15rem;
+  top: 14%;
+  background: rgba(167, 243, 208, 0.34);
+  filter: blur(30px);
+}
+
+.schools-page .demo-glow--cyan {
+  width: 28rem;
+  height: 28rem;
+  right: -12rem;
+  bottom: -9rem;
+  background: rgba(165, 243, 252, 0.25);
+  filter: blur(34px);
+}
+
+.schools-page .demo-blob {
+  border-radius: 46% 54% 60% 40% / 47% 37% 63% 53%;
+}
+
+.schools-page .demo-blob--top {
+  width: 11rem;
+  height: 5.8rem;
+  top: 1.7rem;
+  left: 3.1%;
+  background: rgba(219, 234, 254, 0.6);
+  transform: rotate(-8deg);
+}
+
+.schools-page .demo-blob--left {
+  width: 8rem;
+  height: 15rem;
+  left: -4.5rem;
+  bottom: 20%;
+  background: rgba(224, 231, 255, 0.58);
+  transform: rotate(13deg);
+}
+
+.schools-page .demo-blob--bottom {
+  width: 13rem;
+  height: 9rem;
+  right: -2.5rem;
+  bottom: -3.5rem;
+  background: rgba(237, 233, 254, 0.72);
+  transform: rotate(-17deg);
+}
+
+.schools-page .demo-dots {
+  width: 9rem;
+  height: 7rem;
+  opacity: 0.36;
+  background-image: radial-gradient(circle, #bfd5ff 1.5px, transparent 1.7px);
+  background-size: 17px 17px;
+}
+
+.schools-page .demo-dots--top {
+  top: 1.2rem;
+  left: 20%;
+}
+
+.schools-page .demo-dots--bottom {
+  bottom: 1.4rem;
+  left: 0.3rem;
+}
+
+.schools-page .demo-shell {
+  position: relative;
+  z-index: 1;
+  width: min(1520px, calc(100% - clamp(2.5rem, 5vw, 6rem)));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 2.05vw, 2.2rem);
+  align-items: center;
+}
+
+/* Left narrative ---------------------------------------------------------- */
+
+.schools-page .demo-story {
+  position: relative;
+  align-self: center;
+  min-width: 0;
+  padding: 1rem 0 0.5rem;
+}
+
+.schools-page .demo-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 1.25rem;
+  padding: 0.52rem 1rem;
+  border-radius: 999px;
+  background: #e6f1ff;
+  color: #1463e5;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.schools-page .demo-eyebrow .ic {
+  width: 1.15rem;
+  height: 1.15rem;
+  stroke-width: 2.2;
+}
+
+.schools-page .demo-story h2 {
+  max-width: 10.5em;
+  margin: 0;
+  color: #0b2052;
+  font-size: clamp(2.45rem, 3vw, 3.55rem);
+  font-weight: 800;
+  letter-spacing: -0.052em;
+  line-height: 1.04;
+}
+
+.schools-page .demo-story h2 span {
+  color: #1467ef;
+}
+
+.schools-page .demo-lead {
+  max-width: 28rem;
+  margin: 1.55rem 0 0;
+  color: #617192;
+  font-size: clamp(1rem, 1.1vw, 1.18rem);
+  line-height: 1.56;
+}
+
+.schools-page .demo-benefits {
+  display: grid;
+  gap: 1.12rem;
+  margin: 2.15rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.schools-page .demo-benefits li {
+  display: grid;
+  grid-template-columns: 3.75rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+}
+
+.schools-page .demo-benefits li > span:last-child {
+  display: grid;
+  gap: 0.28rem;
+  min-width: 0;
+}
+
+.schools-page .demo-benefits strong {
+  color: #10265a;
+  font-size: 0.98rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.schools-page .demo-benefits small {
+  color: #647394;
+  font-size: 0.87rem;
+  line-height: 1.4;
+}
+
+.schools-page .demo-benefit-icon,
+.schools-page .demo-photo-icon {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 1.25rem;
+}
+
+.schools-page .demo-benefit-icon {
+  width: 3.75rem;
+  height: 3.75rem;
+}
+
+.schools-page .demo-benefit-icon .ic {
+  width: 1.65rem;
+  height: 1.65rem;
+  stroke-width: 2;
+}
+
+.schools-page .demo-benefit-icon--blue {
+  color: #1467ef;
+  background: #e4f0ff;
+}
+
+.schools-page .demo-benefit-icon--mint {
+  color: #089b63;
+  background: #e0f8eb;
+}
+
+.schools-page .demo-benefit-icon--lavender {
+  color: #5b50e8;
+  background: #eeebff;
+}
+
+.schools-page .demo-handnote {
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+  color: #0b66f1;
+  font-family: var(--font-hand);
+  font-weight: 700;
+  line-height: 0.98;
+  pointer-events: none;
+}
+
+.schools-page .demo-handnote--left {
+  left: 38%;
+  bottom: -5.1rem;
+  font-size: clamp(1.55rem, 1.9vw, 2rem);
+  transform: rotate(-4deg);
+}
+
+.schools-page .demo-sketch-arrow {
+  position: absolute;
+  width: 5.5rem;
+  height: 2.7rem;
+  right: calc(100% + 0.7rem);
+  bottom: 0.45rem;
+  border-bottom: 3px solid currentColor;
+  border-left: 3px solid currentColor;
+  border-radius: 0 0 0 4rem;
+  transform: rotate(6deg);
+}
+
+.schools-page .demo-sketch-arrow::after {
+  content: "";
+  position: absolute;
+  left: -0.36rem;
+  top: -0.14rem;
+  width: 0.72rem;
+  height: 0.72rem;
+  border-top: 3px solid currentColor;
+  border-left: 3px solid currentColor;
+  transform: rotate(-25deg);
+}
+
+/* Center form ------------------------------------------------------------- */
+
+.schools-page .demo-form-card {
+  position: relative;
+  min-width: 0;
+  padding: clamp(1.75rem, 2.35vw, 2.35rem);
+  border: 1px solid rgba(206, 220, 243, 0.82);
+  border-radius: 1.9rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.99), rgba(255, 255, 255, 0.93));
+  box-shadow:
+    0 30px 75px rgba(36, 74, 134, 0.11),
+    0 8px 24px rgba(52, 93, 153, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.schools-page .demo-form-heading {
+  margin-bottom: 1.65rem;
+}
+
+.schools-page .demo-form-heading h3 {
+  margin: 0;
+  color: #0b2052;
+  font-size: clamp(1.7rem, 2vw, 2.05rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+}
+
+.schools-page .demo-form-heading p {
+  max-width: 31rem;
+  margin: 0.42rem 0 0;
+  color: #607091;
+  font-size: clamp(0.92rem, 1vw, 1.04rem);
+  line-height: 1.5;
+}
+
+.schools-page .demo-section .demo-form .form-grid {
+  gap: 0.9rem 0.85rem;
+}
+
+.schools-page .demo-section .demo-form .form-field {
+  gap: 0.42rem;
+}
+
+.schools-page .demo-section .demo-form .form-field label {
+  color: #10265a;
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.schools-page .required-mark {
+  color: #ef4444;
+}
+
+.schools-page .optional-label {
+  color: #7785a1;
+  font-weight: 500;
+}
+
+.schools-page .demo-section .demo-form input,
+.schools-page .demo-section .demo-form select,
+.schools-page .demo-section .demo-form textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 3.55rem;
+  border: 1.5px solid #cedbf0;
+  border-radius: 0.92rem;
+  background-color: #fff;
+  color: #10265a;
+  padding: 0.86rem 1rem;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  box-shadow: inset 0 1px 2px rgba(15, 35, 77, 0.02);
+  transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.schools-page .demo-section .demo-form input::placeholder,
+.schools-page .demo-section .demo-form textarea::placeholder {
+  color: #858b95;
+  opacity: 1;
+}
+
+.schools-page .demo-section .demo-form select {
+  cursor: pointer;
+}
+
+.schools-page .demo-section .demo-form textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.schools-page .demo-section .demo-form input:focus,
+.schools-page .demo-section .demo-form select:focus,
+.schools-page .demo-section .demo-form textarea:focus {
+  outline: none;
+  border-color: #1467ef;
+  box-shadow: 0 0 0 4px rgba(20, 103, 239, 0.14);
+}
+
+.schools-page .demo-section .demo-form input[aria-invalid="true"],
+.schools-page .demo-section .demo-form select[aria-invalid="true"],
+.schools-page .demo-section .demo-form textarea[aria-invalid="true"] {
+  border-color: #dc2626;
+  background-color: #fffafa;
+}
+
+.schools-page .demo-section .demo-form input[aria-invalid="true"]:focus,
+.schools-page .demo-section .demo-form select[aria-invalid="true"]:focus,
+.schools-page .demo-section .demo-form textarea[aria-invalid="true"]:focus {
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.13);
+}
+
+.schools-page .demo-section .field-error {
+  margin: -0.12rem 0 0;
+  color: #b91c1c;
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.schools-page .demo-section .form-error {
+  margin: 0.85rem 0 0;
+  padding: 0.72rem 0.9rem;
+  border-radius: 0.8rem;
+  font-size: 0.78rem;
+}
+
+.schools-page .demo-submit,
+.schools-page .demo-email {
+  width: 100%;
+  min-height: 3.75rem;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.schools-page .demo-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 1.15rem;
+  border: 0;
+  background: linear-gradient(102deg, #174af3 0%, #0879f9 100%);
+  color: #fff;
+  box-shadow: 0 13px 28px rgba(20, 92, 239, 0.24);
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.schools-page .demo-submit .ic {
+  width: 1.12rem;
+  height: 1.12rem;
+  transition: transform 180ms ease;
+}
+
+.schools-page .demo-submit:hover {
+  filter: saturate(1.08) brightness(1.02);
+  box-shadow: 0 16px 34px rgba(20, 92, 239, 0.3);
+  transform: translateY(-2px);
+}
+
+.schools-page .demo-submit:hover .ic {
+  transform: translateX(4px);
+}
+
+.schools-page .demo-submit:active {
+  transform: translateY(0);
+}
+
+.schools-page .demo-submit:focus-visible,
+.schools-page .demo-email:focus-visible {
+  outline: 3px solid rgba(20, 103, 239, 0.34);
+  outline-offset: 3px;
+}
+
+.schools-page .demo-privacy {
+  display: flex;
+  justify-content: center;
+  gap: 0.62rem;
+  margin: 0.72rem auto 0;
+  color: #6a7895;
+  font-size: 0.69rem;
+  line-height: 1.48;
+  text-align: left;
+}
+
+.schools-page .demo-privacy .ic {
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.06rem;
+  color: #19366d;
+  flex: 0 0 auto;
+  stroke-width: 2;
+}
+
+.schools-page .demo-divider {
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: 1rem 0;
+  color: #6b7895;
+  font-size: 0.79rem;
+}
+
+.schools-page .demo-divider::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 50%;
+  height: 1px;
+  background: #dbe4f2;
+}
+
+.schools-page .demo-divider span {
+  position: relative;
+  z-index: 1;
+  padding-inline: 1rem;
+  background: #fff;
+}
+
+.schools-page .demo-email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  border: 1.5px solid #b8d0f8;
+  background: rgba(255, 255, 255, 0.82);
+  color: #1261e9;
+  box-shadow: 0 4px 12px rgba(34, 84, 151, 0.06);
+  text-decoration: none;
+  transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.schools-page .demo-email .ic {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.schools-page .demo-email:hover {
+  border-color: #7eaaf2;
+  background: #f8fbff;
+  box-shadow: 0 8px 20px rgba(34, 84, 151, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Right photography ------------------------------------------------------- */
+
+.schools-page .demo-section .demo-photo-panel {
+  position: relative;
+  grid-column: auto;
+  min-width: 0;
+  width: 100%;
+  height: clamp(39rem, 45vw, 44.5rem);
+  min-height: 0;
+  margin: 0;
+  overflow: visible;
+  border-radius: 1.9rem;
+  background: #e8f0f6;
+}
+
+.schools-page .demo-section .demo-photo-panel > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: 45% center;
+  box-shadow: 0 26px 64px rgba(20, 48, 91, 0.13);
+}
+
+.schools-page .demo-section .demo-photo-panel figcaption,
+.schools-page .demo-photo-card {
+  position: absolute;
+  z-index: 2;
+  right: 1.25rem;
+  bottom: 1.65rem;
+  left: 1.25rem;
+  width: auto;
+  margin: 0;
+  padding: 1.05rem 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 20px 42px rgba(25, 49, 86, 0.18);
+  backdrop-filter: blur(12px);
+}
+
+.schools-page .demo-photo-card ul {
+  display: grid;
+  gap: 0.72rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.schools-page .demo-photo-card li {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 0.78rem;
+  align-items: center;
+}
+
+.schools-page .demo-photo-card li > span:last-child {
+  display: grid;
+  gap: 0.14rem;
+  min-width: 0;
+}
+
+.schools-page .demo-photo-card strong {
+  color: #10265a;
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.schools-page .demo-photo-card small {
+  color: #637291;
+  font-size: 0.69rem;
+  line-height: 1.35;
+}
+
+.schools-page .demo-photo-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+}
+
+.schools-page .demo-photo-icon .ic {
+  width: 1.4rem;
+  height: 1.4rem;
+  stroke-width: 2.1;
+}
+
+.schools-page .demo-photo-icon--mint {
+  color: #059669;
+  background: #e1f8eb;
+}
+
+.schools-page .demo-photo-icon--blue {
+  color: #1467ef;
+  background: #e4f0ff;
+}
+
+.schools-page .demo-photo-icon--lavender {
+  color: #594ee5;
+  background: #efecff;
+}
+
+.schools-page .demo-photo-icon--green {
+  color: #0c9e5d;
+  background: #dcf8e9;
+}
+
+.schools-page .demo-handnote--right {
+  top: -3rem;
+  right: -1.1rem;
+  font-size: clamp(1.4rem, 1.75vw, 1.9rem);
+  text-align: center;
+  transform: rotate(-7deg);
+}
+
+.schools-page .demo-handnote--right span {
+  display: block;
+  margin-top: -0.12rem;
+  margin-left: 3.9rem;
+  font-family: var(--font);
+  font-size: 2rem;
+  line-height: 1;
+  transform: rotate(-8deg);
+}
+
+/* Scroll reveal direction and pacing ------------------------------------- */
+
+.js .schools-page .demo-reveal--left {
+  transform: translateX(-24px);
+  --reveal-delay: 0s;
+}
+
+.js .schools-page .demo-reveal--form {
+  transform: translateY(24px);
+  --reveal-delay: 0.08s;
+}
+
+.js .schools-page .demo-reveal--photo {
+  transform: scale(0.975);
+  --reveal-delay: 0.14s;
+}
+
+.js .schools-page .demo-reveal--overlay {
+  transform: translateY(18px);
+  --reveal-delay: 0.26s;
+}
+
+.js .schools-page .demo-reveal.is-visible {
+  transform: none;
+}
+
+/* Tablet ------------------------------------------------------------------ */
+
+@media (max-width: 1079px) {
+  .schools-page .demo-section {
+    padding-block: clamp(4.5rem, 8vw, 6rem);
+  }
+
+  .schools-page .demo-shell {
+    width: min(960px, calc(100% - clamp(2.5rem, 6vw, 4.5rem)));
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .schools-page .demo-story h2 {
+    font-size: clamp(2.45rem, 4.5vw, 3.2rem);
+  }
+
+  .schools-page .demo-section .demo-photo-panel {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, 52rem);
+    height: 34rem;
+    margin-top: 1rem;
+  }
+
+  .schools-page .demo-section .demo-photo-panel > img {
+    aspect-ratio: auto;
+    object-position: 50% 43%;
+  }
+
+  .schools-page .demo-section .demo-photo-panel figcaption,
+  .schools-page .demo-photo-card {
+    right: 1.5rem;
+    left: auto;
+    width: min(22rem, calc(100% - 3rem));
+  }
+
+  .schools-page .demo-handnote--left {
+    left: 31%;
+    bottom: -5rem;
+  }
+
+  .schools-page .demo-handnote--right {
+    display: none;
+  }
+}
+
+@media (max-width: 899px) {
+  .schools-page .demo-shell {
+    width: min(720px, calc(100% - clamp(2.5rem, 8vw, 4rem)));
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.3rem;
+  }
+
+  .schools-page .demo-story {
+    padding-top: 0;
+  }
+
+  .schools-page .demo-story h2,
+  .schools-page .demo-lead {
+    max-width: 35rem;
+  }
+
+  .schools-page .demo-benefits {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .schools-page .demo-benefits li {
+    grid-template-columns: 1fr;
+    align-content: start;
+    gap: 0.75rem;
+  }
+
+  .schools-page .demo-handnote--left {
+    display: none;
+  }
+
+  .schools-page .demo-form-card {
+    width: 100%;
+  }
+
+  .schools-page .demo-section .demo-photo-panel {
+    grid-column: auto;
+    width: 100%;
+    height: 33rem;
+    margin-top: 0;
+  }
+}
+
+/* Mobile ------------------------------------------------------------------ */
+
+@media (max-width: 640px) {
+  .schools-page .demo-section {
+    padding-block: 4rem;
+  }
+
+  .schools-page .demo-shell {
+    width: calc(100% - 2.5rem);
+    gap: 2rem;
+  }
+
+  .schools-page .demo-blob--top {
+    width: 8rem;
+    height: 4rem;
+    left: -1rem;
+  }
+
+  .schools-page .demo-dots--top {
+    left: auto;
+    right: -2rem;
+  }
+
+  .schools-page .demo-eyebrow {
+    margin-bottom: 1rem;
+    font-size: 0.72rem;
+  }
+
+  .schools-page .demo-story h2 {
+    font-size: clamp(2.3rem, 11vw, 3rem);
+    letter-spacing: -0.05em;
+  }
+
+  .schools-page .demo-lead {
+    margin-top: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .schools-page .demo-benefits {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1.8rem;
+  }
+
+  .schools-page .demo-benefits li {
+    grid-template-columns: 3.35rem minmax(0, 1fr);
+    gap: 0.9rem;
+    align-items: center;
+  }
+
+  .schools-page .demo-benefit-icon {
+    width: 3.35rem;
+    height: 3.35rem;
+    border-radius: 1.05rem;
+  }
+
+  .schools-page .demo-form-card {
+    padding: 1.4rem 1.2rem;
+    border-radius: 1.5rem;
+  }
+
+  .schools-page .demo-form-heading {
+    margin-bottom: 1.35rem;
+  }
+
+  .schools-page .demo-form-heading h3 {
+    font-size: 1.65rem;
+  }
+
+  .schools-page .demo-section .demo-form .form-grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .schools-page .demo-section .demo-form .form-field.full {
+    grid-column: auto;
+  }
+
+  .schools-page .demo-section .demo-form input,
+  .schools-page .demo-section .demo-form select,
+  .schools-page .demo-section .demo-form textarea {
+    min-height: 3.5rem;
+    font-size: 1rem;
+  }
+
+  .schools-page .demo-section .demo-form textarea {
+    min-height: 7.2rem;
+  }
+
+  .schools-page .demo-privacy br {
+    display: none;
+  }
+
+  .schools-page .demo-section .demo-photo-panel {
+    height: auto;
+    border-radius: 1.5rem;
+    background: transparent;
+  }
+
+  .schools-page .demo-section .demo-photo-panel > img {
+    height: clamp(23rem, 116vw, 30rem);
+    border-radius: 1.5rem;
+    object-position: 48% center;
+  }
+
+  .schools-page .demo-section .demo-photo-panel figcaption,
+  .schools-page .demo-photo-card {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: calc(100% - 1.5rem);
+    margin: -3rem auto 0;
+    padding: 0.95rem;
+    border-radius: 1.2rem;
+  }
+
+  .schools-page .demo-photo-card ul {
+    gap: 0.66rem;
+  }
+
+  .schools-page .demo-photo-card li {
+    grid-template-columns: 2.8rem minmax(0, 1fr);
+    gap: 0.72rem;
+  }
+
+  .schools-page .demo-photo-icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 0.9rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .schools-page .curriculum-book--a1 {
+    --book-x: -83px;
+  }
+
+  .schools-page .curriculum-book--c1 {
+    --book-x: 83px;
+  }
+
+  .schools-page .demo-shell {
+    width: calc(100% - 2rem);
+  }
+
+  .schools-page .demo-form-card {
+    padding-inline: 1rem;
+  }
+
+  .schools-page .demo-submit,
+  .schools-page .demo-email {
+    font-size: 0.88rem;
+  }
+
+  .schools-page .demo-photo-card strong {
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .schools-page .demo-submit,
+  .schools-page .demo-submit .ic,
+  .schools-page .demo-email,
+  .js .schools-page .demo-reveal {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* Automatic dark appearance for the demo/contact experience. */
+@media (prefers-color-scheme: dark) {
+  .schools-page .demo-section {
+    color: var(--text-secondary);
+    background:
+      radial-gradient(circle at 71% 78%, rgba(45, 164, 213, 0.13), transparent 21rem),
+      radial-gradient(circle at 2% 27%, rgba(45, 204, 143, 0.12), transparent 20rem),
+      linear-gradient(108deg, #071321 0%, #091729 48%, #0a192b 100%);
+  }
+
+  .schools-page .demo-glow--blue { background: radial-gradient(circle, rgba(65, 137, 242, 0.2), rgba(43, 92, 164, 0.06) 58%, transparent 73%); }
+  .schools-page .demo-glow--mint { background: rgba(44, 203, 143, 0.13); }
+  .schools-page .demo-glow--cyan { background: rgba(45, 171, 213, 0.13); }
+  .schools-page .demo-blob--top { background: rgba(48, 105, 190, 0.13); }
+  .schools-page .demo-blob--left { background: rgba(117, 91, 210, 0.1); }
+  .schools-page .demo-blob--bottom { background: rgba(131, 94, 218, 0.12); }
+  .schools-page .demo-dots {
+    opacity: 0.28;
+    background-image: radial-gradient(circle, rgba(109, 169, 247, 0.7) 1.5px, transparent 1.7px);
+  }
+
+  .schools-page .demo-eyebrow { color: #8cb8ff; background: rgba(53, 112, 216, 0.18); }
+  .schools-page .demo-story h2,
+  .schools-page .demo-benefits strong { color: var(--text-primary); }
+  .schools-page .demo-story h2 span { color: #79aaff; }
+  .schools-page :is(.demo-lead, .demo-benefits small) { color: var(--text-secondary); }
+  .schools-page .demo-handnote { color: var(--handwritten-theme); }
+  .schools-page .demo-benefit-icon--blue { color: #82afff; background: rgba(55, 116, 222, 0.18); }
+  .schools-page .demo-benefit-icon--mint { color: #62daa0; background: rgba(36, 182, 112, 0.17); }
+  .schools-page .demo-benefit-icon--lavender { color: #b69af2; background: rgba(134, 91, 224, 0.18); }
+
+  .schools-page .demo-form-card {
+    border-color: var(--theme-border-strong);
+    background: linear-gradient(145deg, rgba(16, 34, 57, 0.99), rgba(11, 25, 43, 0.96));
+    box-shadow: 0 30px 75px rgba(0, 0, 0, 0.38), 0 8px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  }
+
+  .schools-page .demo-form-heading h3 { color: var(--text-primary); }
+  .schools-page .demo-form-heading p { color: var(--text-secondary); }
+  .schools-page .demo-section .demo-form .form-field label { color: #dce6f4; }
+  .schools-page .optional-label { color: var(--text-muted); }
+  .schools-page .required-mark { color: #fb7185; }
+
+  .schools-page .demo-section .demo-form input,
+  .schools-page .demo-section .demo-form select,
+  .schools-page .demo-section .demo-form textarea {
+    color-scheme: dark;
+    border-color: var(--control-border);
+    color: var(--control-text);
+    background-color: var(--control-bg);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .schools-page .demo-section .demo-form input::placeholder,
+  .schools-page .demo-section .demo-form textarea::placeholder {
+    color: var(--control-placeholder);
+    opacity: 1;
+  }
+
+  .schools-page .demo-section .demo-form select option { color: var(--control-text); background: var(--control-bg); }
+  .schools-page .demo-section .demo-form input:focus,
+  .schools-page .demo-section .demo-form select:focus,
+  .schools-page .demo-section .demo-form textarea:focus {
+    outline: none;
+    border-color: #76a8ff;
+    box-shadow: 0 0 0 4px rgba(86, 146, 250, 0.22);
+  }
+
+  .schools-page .demo-section .demo-form input[aria-invalid="true"],
+  .schools-page .demo-section .demo-form select[aria-invalid="true"],
+  .schools-page .demo-section .demo-form textarea[aria-invalid="true"] {
+    border-color: #fb7185;
+    background-color: #291722;
+  }
+
+  .schools-page .demo-section .demo-form input[aria-invalid="true"]:focus,
+  .schools-page .demo-section .demo-form select[aria-invalid="true"]:focus,
+  .schools-page .demo-section .demo-form textarea[aria-invalid="true"]:focus {
+    border-color: #fb7185;
+    box-shadow: 0 0 0 4px rgba(251, 113, 133, 0.2);
+  }
+
+  .schools-page .demo-section .field-error { color: #fda4af; }
+  .schools-page .demo-section .form-error { border: 1px solid rgba(251, 113, 133, 0.3); color: #fecdd3; background: rgba(136, 30, 55, 0.2); }
+
+  .schools-page .demo-section .demo-form input:-webkit-autofill,
+  .schools-page .demo-section .demo-form input:-webkit-autofill:hover,
+  .schools-page .demo-section .demo-form input:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--control-text);
+    caret-color: var(--control-text);
+    -webkit-box-shadow: 0 0 0 1000px var(--control-bg) inset;
+    box-shadow: 0 0 0 1000px var(--control-bg) inset;
+    border-color: var(--control-border);
+    transition: background-color 9999s ease-out 0s;
+  }
+
+  .schools-page .demo-section .demo-form input:autofill {
+    color: var(--control-text);
+    caret-color: var(--control-text);
+    box-shadow: 0 0 0 1000px var(--control-bg) inset;
+  }
+
+  .schools-page .demo-submit { color: #fff; background: linear-gradient(102deg, #4f88f3, #2d72e9); box-shadow: 0 13px 30px rgba(47, 113, 233, 0.28); }
+  .schools-page .demo-submit:hover { box-shadow: 0 16px 36px rgba(55, 128, 244, 0.34); }
+  .schools-page .demo-privacy,
+  .schools-page .demo-divider { color: var(--text-muted); }
+  .schools-page .demo-privacy .ic { color: #9ab8e5; }
+  .schools-page .demo-divider::before { background: var(--theme-border); }
+  .schools-page .demo-divider span { background: #0e1f35; }
+
+  .schools-page .demo-email { border-color: rgba(111, 166, 255, 0.42); color: #a8c9ff; background: rgba(17, 38, 65, 0.86); box-shadow: none; }
+  .schools-page .demo-email:hover { border-color: #79aaff; color: #eef4ff; background: rgba(36, 76, 128, 0.62); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22); }
+  .schools-page .demo-section .demo-photo-panel { background: #102b3a; }
+  .schools-page .demo-section .demo-photo-panel figcaption,
+  .schools-page .demo-photo-card { border-color: var(--theme-border-strong); background: rgba(13, 30, 51, 0.94); box-shadow: var(--theme-shadow-md); }
+  .schools-page .demo-photo-card strong { color: var(--text-primary); }
+  .schools-page .demo-photo-card small { color: var(--text-muted); }
+  .schools-page .demo-photo-icon--mint,
+  .schools-page .demo-photo-icon--green { color: #61d99f; background: rgba(36, 181, 111, 0.17); }
+  .schools-page .demo-photo-icon--blue { color: #82afff; background: rgba(55, 116, 222, 0.18); }
+  .schools-page .demo-photo-icon--lavender { color: #b69af2; background: rgba(134, 91, 224, 0.18); }
+}

@@ -24,7 +24,6 @@ body {
   color: var(--body);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
-  overflow-x: clip;
 }
 
 img,
@@ -96,6 +95,7 @@ strong { color: var(--ink-2); font-weight: 700; }
 .section {
   padding-block: var(--section-y);
   position: relative;
+  overflow: clip;
 }
 
 /* Content always sits above decoration layers */

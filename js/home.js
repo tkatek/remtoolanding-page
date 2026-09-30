@@ -76,56 +76,70 @@
 
   if (track && previousButton && nextButton && dotsContainer) {
     const cards = [...track.children];
-    let activeIndex = 0;
-    let scrollFrame = 0;
+    const carousel = track.closest(".testimonial-carousel");
+    let activeIndex = Math.min(1, cards.length - 1);
+    let measureFrame = 0;
+    let swipeStart = null;
+
+    const wrapIndex = (index) => (index + cards.length) % cards.length;
 
     const dots = cards.map((_, index) => {
       const dot = document.createElement("button");
       dot.type = "button";
-      dot.setAttribute("aria-label", `Show testimonial ${index + 1}`);
+      dot.setAttribute("aria-label", `Go to testimonial ${index + 1}`);
       dot.addEventListener("click", () => goTo(index));
       dotsContainer.appendChild(dot);
       return dot;
     });
 
+    const measureTrack = () => {
+      measureFrame = 0;
+      const tallestCard = Math.ceil(Math.max(...cards.map((card) => card.offsetHeight)));
+      if (!tallestCard) return;
+      const height = `${tallestCard}px`;
+      track.style.setProperty("--testimonial-height", height);
+      carousel?.style.setProperty("--testimonial-height", height);
+    };
+
+    const scheduleMeasure = () => {
+      if (measureFrame) cancelAnimationFrame(measureFrame);
+      measureFrame = requestAnimationFrame(measureTrack);
+    };
+
     const update = (index, announce = false) => {
-      activeIndex = Math.max(0, Math.min(cards.length - 1, index));
+      activeIndex = wrapIndex(index);
+      const previousIndex = wrapIndex(activeIndex - 1);
+      const nextIndex = wrapIndex(activeIndex + 1);
+
+      cards.forEach((card, cardIndex) => {
+        const isActive = cardIndex === activeIndex;
+        card.classList.toggle("is-active", isActive);
+        card.classList.toggle("is-previous", cardIndex === previousIndex);
+        card.classList.toggle("is-next", cardIndex === nextIndex);
+        if (isActive) card.setAttribute("aria-current", "true");
+        else card.removeAttribute("aria-current");
+      });
+
       dots.forEach((dot, dotIndex) => {
         const isActive = dotIndex === activeIndex;
         dot.classList.toggle("is-active", isActive);
         if (isActive) dot.setAttribute("aria-current", "true");
         else dot.removeAttribute("aria-current");
       });
+
+      track.dataset.activeIndex = String(activeIndex);
+      track.setAttribute("aria-label", `Testimonial ${activeIndex + 1} of ${cards.length} selected`);
       if (announce && status) status.textContent = `Testimonial ${activeIndex + 1} of ${cards.length}`;
+      scheduleMeasure();
     };
 
     const goTo = (index) => {
-      const nextIndex = (index + cards.length) % cards.length;
-      const card = cards[nextIndex];
-      track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: reducedMotion ? "auto" : "smooth" });
-      update(nextIndex, true);
+      update(index, true);
     };
 
     previousButton.addEventListener("click", () => goTo(activeIndex - 1));
     nextButton.addEventListener("click", () => goTo(activeIndex + 1));
-    track.addEventListener(
-      "scroll",
-      () => {
-        if (scrollFrame) return;
-        scrollFrame = requestAnimationFrame(() => {
-          scrollFrame = 0;
-          const closest = cards.reduce(
-            (best, card, index) => {
-              const distance = Math.abs(card.offsetLeft - track.offsetLeft - track.scrollLeft);
-              return distance < best.distance ? { index, distance } : best;
-            },
-            { index: 0, distance: Infinity }
-          );
-          update(closest.index);
-        });
-      },
-      { passive: true }
-    );
+
     track.addEventListener("keydown", (event) => {
       if (event.key === "ArrowRight") {
         event.preventDefault();
@@ -135,8 +149,45 @@
         event.preventDefault();
         goTo(activeIndex - 1);
       }
+      if (event.key === "Home") {
+        event.preventDefault();
+        goTo(0);
+      }
+      if (event.key === "End") {
+        event.preventDefault();
+        goTo(cards.length - 1);
+      }
     });
-    update(0);
+
+    track.addEventListener("pointerdown", (event) => {
+      if (event.pointerType === "mouse") return;
+      swipeStart = { id: event.pointerId, x: event.clientX, y: event.clientY };
+      track.setPointerCapture?.(event.pointerId);
+    });
+
+    track.addEventListener("pointerup", (event) => {
+      if (!swipeStart || swipeStart.id !== event.pointerId) return;
+      const deltaX = event.clientX - swipeStart.x;
+      const deltaY = event.clientY - swipeStart.y;
+      const threshold = Math.max(44, track.clientWidth * 0.11);
+      swipeStart = null;
+      if (Math.abs(deltaX) < threshold || Math.abs(deltaX) <= Math.abs(deltaY) * 1.2) return;
+      goTo(activeIndex + (deltaX < 0 ? 1 : -1));
+    });
+
+    track.addEventListener("pointercancel", () => {
+      swipeStart = null;
+    });
+
+    if ("ResizeObserver" in window) {
+      const cardObserver = new ResizeObserver(scheduleMeasure);
+      cards.forEach((card) => cardObserver.observe(card));
+    }
+    window.addEventListener("resize", scheduleMeasure, { passive: true });
+    document.fonts?.ready.then(scheduleMeasure);
+    cards.forEach((card) => card.querySelector("img")?.addEventListener("load", scheduleMeasure, { once: true }));
+
+    update(activeIndex);
   }
 
   const year = document.getElementById("year");

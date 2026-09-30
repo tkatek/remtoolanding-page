@@ -1129,9 +1129,10 @@ html:not(.fs-js) .fs-level-tab:disabled {
 .fs-carousel-controls button { display: grid; width: 44px; height: 44px; place-items: center; border: 1px solid #d9e2ef; border-radius: 50%; color: var(--fs-blue); background: #fff; }
 .fs-carousel-controls button:disabled { color: #76839a; background: #f4f6f9; cursor: default; opacity: .58; }
 .fs-carousel-controls button:first-child svg { transform: rotate(180deg); }
-.fs-carousel-controls > div { display: flex; gap: 0.4rem; }
-.fs-carousel-dot { width: 8px; height: 8px; padding: 0; border-radius: 50%; background: #cbd5e4; }
-.fs-carousel-dot.is-active { width: 22px; border-radius: 999px; background: var(--fs-blue); }
+.fs-carousel-controls > div { display: flex; justify-content: center; gap: 0; }
+.fs-carousel-dot { position: relative; width: 44px; height: 44px; padding: 0; background: transparent; }
+.fs-carousel-dot::before { content: ""; position: absolute; top: 50%; left: 50%; width: 8px; height: 8px; border-radius: 50%; background: #cbd5e4; transform: translate(-50%, -50%); transition: width 0.2s ease, background-color 0.2s ease; }
+.fs-carousel-dot.is-active::before { width: 22px; border-radius: 999px; background: var(--fs-blue); }
 
 /* Final banner and compact footer ---------------------------------------- */
 
@@ -1448,7 +1449,7 @@ html:not(.fs-js) .fs-level-tab:disabled {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-delay: 0s !important;
-    transition-duration: .01ms !important;
+    transition-duration: 0s !important;
   }
   .js .free-sample-page .reveal,
   .js .free-sample-page .reveal.is-visible {

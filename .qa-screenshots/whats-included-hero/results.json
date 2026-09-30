@@ -1,0 +1,165 @@
+{
+  "results": [
+    {
+      "width": 1366,
+      "height": 768,
+      "errors": [],
+      "badResponses": [],
+      "overflow": 0,
+      "rootOverflow": 0,
+      "bodyOverflow": 0,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1366,
+        "height": 76,
+        "right": 1366,
+        "bottom": 76,
+        "display": "block",
+        "visibility": "visible"
+      },
+      "hero": {
+        "x": 0,
+        "y": 76,
+        "width": 1366,
+        "height": 700,
+        "right": 1366,
+        "bottom": 776,
+        "display": "grid",
+        "visibility": "visible"
+      },
+      "inner": {
+        "x": 55,
+        "y": 116,
+        "width": 1257,
+        "height": 590,
+        "right": 1311,
+        "bottom": 706,
+        "display": "grid",
+        "visibility": "visible"
+      },
+      "copy": {
+        "x": 55,
+        "y": 184,
+        "width": 547,
+        "height": 441,
+        "right": 602,
+        "bottom": 626,
+        "display": "block",
+        "visibility": "visible"
+      },
+      "h1": {
+        "x": 55,
+        "y": 257,
+        "width": 547,
+        "height": 128,
+        "right": 602,
+        "bottom": 385,
+        "display": "block",
+        "visibility": "visible"
+      },
+      "visual": {
+        "x": 629,
+        "y": 116,
+        "width": 682,
+        "height": 590,
+        "right": 1311,
+        "bottom": 706,
+        "display": "block",
+        "visibility": "visible"
+      },
+      "teacher": {
+        "x": 772,
+        "y": 163,
+        "width": 350,
+        "height": 525,
+        "right": 1123,
+        "bottom": 688,
+        "display": "block",
+        "visibility": "visible"
+      },
+      "lesson": {
+        "x": 643,
+        "y": 199,
+        "width": 232,
+        "height": 185,
+        "right": 875,
+        "bottom": 384,
+        "display": "block",
+        "visibility": "visible"
+      },
+      "video": {
+        "x": 1079,
+        "y": 264,
+        "width": 232,
+        "height": 217,
+        "right": 1311,
+        "bottom": 480,
+        "display": "block",
+        "visibility": "visible"
+      },
+      "trust": {
+        "x": 861,
+        "y": 617,
+        "width": 246,
+        "height": 83,
+        "right": 1107,
+        "bottom": 700,
+        "display": "flex",
+        "visibility": "visible"
+      },
+      "next": {
+        "x": 0,
+        "y": 776,
+        "width": 1366,
+        "height": 1227,
+        "right": 1366,
+        "bottom": 2003,
+        "display": "block",
+        "visibility": "visible"
+      },
+      "cards": [
+        {
+          "name": "wi-float-card--lesson",
+          "visible": true,
+          "x": 643,
+          "y": 199,
+          "width": 232,
+          "height": 185,
+          "withinHero": true
+        },
+        {
+          "name": "wi-float-card--video",
+          "visible": true,
+          "x": 1079,
+          "y": 264,
+          "width": 232,
+          "height": 217,
+          "withinHero": true
+        },
+        {
+          "name": "wi-float-card--vocabulary",
+          "visible": true,
+          "x": 622,
+          "y": 429,
+          "width": 246,
+          "height": 185,
+          "withinHero": true
+        },
+        {
+          "name": "wi-float-card--materials",
+          "visible": true,
+          "x": 1100,
+          "y": 482,
+          "width": 219,
+          "height": 185,
+          "withinHero": true
+        }
+      ],
+      "brokenImages": [],
+      "h1Count": 1,
+      "emptyHashLinks": 0
+    }
+  ],
+  "scrollResult": null
+}

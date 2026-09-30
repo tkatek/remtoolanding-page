@@ -114,7 +114,14 @@
         <div class="fs-teaser-grid">${level.teasers.map((lesson) => teaserCard(level, lesson)).join("")}</div>
       </div>`;
 
-    const renderLevel = (tab) => {
+    const syncLevelUrl = (level) => {
+      const url = new URL(window.location.href);
+      if (level === "a1") url.searchParams.delete("level");
+      else url.searchParams.set("level", level);
+      window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
+    };
+
+    const renderLevel = (tab, { syncUrl = true } = {}) => {
       const selectedLevel = tab.dataset.sampleLevel;
 
       levelTabs.forEach((item) => {
@@ -125,6 +132,7 @@
       });
 
       lessonPanel.setAttribute("aria-labelledby", tab.id);
+      if (syncUrl) syncLevelUrl(selectedLevel);
 
       if (selectedLevel === "a1") {
         lessonPanel.classList.remove("is-coming");
@@ -167,6 +175,10 @@
       target.focus({ preventScroll: true });
       renderLevel(target);
     });
+
+    const requestedLevel = new URLSearchParams(window.location.search).get("level");
+    const requestedTab = levelTabs.find((tab) => tab.dataset.sampleLevel === requestedLevel);
+    if (requestedTab && requestedLevel !== "a1") renderLevel(requestedTab, { syncUrl: false });
   }
 
   const track = document.getElementById("sample-testimonials");

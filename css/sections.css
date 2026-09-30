@@ -1038,7 +1038,7 @@
   margin-bottom: 1rem;
 }
 
-.dash-school-head h4 { font-size: 1.05rem; color: var(--ink); }
+.dash-school-head :is(h4, .dash-mock-heading) { font-size: 1.05rem; color: var(--ink); font-weight: 800; }
 
 .dash-year {
   margin-left: auto;
@@ -1089,7 +1089,7 @@
   margin-bottom: 0.65rem;
 }
 
-.dash-classes-head h4 { font-size: 0.98rem; color: var(--ink); }
+.dash-classes-head :is(h4, .dash-mock-heading) { font-size: 0.98rem; color: var(--ink); font-weight: 800; }
 
 .dash-classes-head a {
   font-size: 0.8rem;

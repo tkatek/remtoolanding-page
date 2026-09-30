@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#071221" media="(prefers-color-scheme: dark)" />
   <title>Pricing — Flexible Plans for Schools and Teachers | Remtoo</title>
   <meta name="description" content="Simple Remtoo pricing: Teacher Plan $79/month, School Plan $299/month (up to 20 teachers), and Custom plans for large organizations. Start with free lessons — cancel anytime." />
-  <meta name="theme-color" content="#2563eb" />
   <link rel="icon" type="image/svg+xml" href="assets/logos/favicon.svg" />
-  <link rel="canonical" href="https://remtoo.com/pricing.html" />
+  <link rel="canonical" href="https://remtoo.com/pricing" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Pricing — Flexible Plans for Schools and Teachers | Remtoo" />
   <meta property="og:description" content="Teacher Plan $79/month, School Plan $299/month, Custom plans. Start free, cancel anytime." />
-  <meta property="og:url" content="https://remtoo.com/pricing.html" />
+  <meta property="og:url" content="https://remtoo.com/pricing" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
@@ -30,6 +32,7 @@
       if (!window.__remtooReady) document.documentElement.classList.remove("js");
     }, 1500);
   </script>
+  <link rel="stylesheet" href="css/site-system.css" />
 </head>
 <body class="pricing-page" id="top">
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -97,93 +100,173 @@
   </svg>
 
   <!-- ============================== HEADER ============================== -->
-  <header class="site-header" id="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html" aria-label="Remtoo — home">
-        <span class="logo-mark" aria-hidden="true">
-          <svg class="ic ic-fill"><use href="#i-logo"/></svg>
-        </span>
-        <span class="logo-word">Rem<em>too</em></span>
+  <!-- site-header:start -->
+  <script>
+    (function () {
+      document.documentElement.classList.add("site-shell-js");
+      if (document.body) document.body.classList.add("site-shell-js");
+      window.__remtooShellFallbackTimer = window.setTimeout(function () {
+        if (!window.__remtooShellReady) {
+          document.documentElement.classList.remove("site-shell-js", "site-shell-nav-open");
+          if (document.body) document.body.classList.remove("site-shell-js", "site-shell-nav-open");
+        }
+      }, 1500);
+    })();
+  </script>
+  <header class="global-header" id="global-header" data-site-header>
+    <div class="global-header__inner">
+      <a class="global-brand" href="index.html" aria-label="Remtoo home">
+        <img class="global-brand__image" src="assets/logos/remtoo-logo.png" alt="" width="921" height="250" decoding="async" />
       </a>
 
-      <nav class="nav" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a class="nav-link" href="curriculum.html">Curriculum</a></li>
-          <li><a class="nav-link" href="whats-included.html">What&rsquo;s Included</a></li>
-          <li><a class="nav-link" href="schools.html">For Schools</a></li>
-          <li><a class="nav-link" href="teachers.html">For Teachers</a></li>
-          <li><a class="nav-link" href="pricing.html" aria-current="page">Pricing</a></li>
-          <li><a class="nav-link" href="free-sample.html">Free Sample</a></li>
-        </ul>
-        <a class="btn btn-primary btn-sm header-cta" href="free-sample.html">Get Started <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-          <span></span>
-        </button>
+      <nav class="global-desktop-nav" aria-label="Main navigation">
+        <a class="global-nav-link" data-nav-route="curriculum.html" href="curriculum.html">Curriculum</a>
+        <a class="global-nav-link" data-nav-route="whats-included.html" href="whats-included.html">What&rsquo;s Included</a>
+        <a class="global-nav-link" data-nav-route="schools.html" href="schools.html">For Schools</a>
+        <a class="global-nav-link" data-nav-route="teachers.html" href="teachers.html">For Teachers</a>
+        <a class="global-nav-link" data-nav-route="pricing.html" href="pricing.html" aria-current="page">Pricing</a>
+        <a class="global-nav-link" data-nav-route="free-sample.html" href="free-sample.html">Free Sample</a>
       </nav>
+
+      <a class="global-header-cta" href="pricing.html">
+        <span>Get Started</span>
+        <svg class="global-icon" viewBox="0 0 20 20" aria-hidden="true">
+          <path d="M4 10h11m-4-4 4 4-4 4" />
+        </svg>
+      </a>
+
+      <button
+        class="global-menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="global-mobile-nav"
+        aria-label="Open navigation"
+        data-mobile-nav-toggle
+      >
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <div class="global-mobile-nav" id="global-mobile-nav" data-mobile-nav>
+      <button
+        class="global-mobile-nav__backdrop"
+        type="button"
+        tabindex="-1"
+        aria-label="Close navigation"
+        data-mobile-nav-close
+      ></button>
+      <div class="global-mobile-nav__panel" aria-label="Mobile navigation">
+        <button class="global-mobile-nav__close" type="button" aria-label="Close navigation" data-mobile-nav-close>
+          <svg class="global-icon" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="m5 5 10 10M15 5 5 15" />
+          </svg>
+        </button>
+        <nav class="global-mobile-nav__links" aria-label="Mobile navigation links">
+          <a class="global-nav-link global-mobile-nav__link" data-nav-route="curriculum.html" href="curriculum.html">
+            <span>Curriculum</span><span aria-hidden="true">&rsaquo;</span>
+          </a>
+          <a class="global-nav-link global-mobile-nav__link" data-nav-route="whats-included.html" href="whats-included.html">
+            <span>What&rsquo;s Included</span><span aria-hidden="true">&rsaquo;</span>
+          </a>
+          <a class="global-nav-link global-mobile-nav__link" data-nav-route="schools.html" href="schools.html">
+            <span>For Schools</span><span aria-hidden="true">&rsaquo;</span>
+          </a>
+          <a class="global-nav-link global-mobile-nav__link" data-nav-route="teachers.html" href="teachers.html">
+            <span>For Teachers</span><span aria-hidden="true">&rsaquo;</span>
+          </a>
+          <a class="global-nav-link global-mobile-nav__link" data-nav-route="pricing.html" href="pricing.html" aria-current="page">
+            <span>Pricing</span><span aria-hidden="true">&rsaquo;</span>
+          </a>
+          <a class="global-nav-link global-mobile-nav__link" data-nav-route="free-sample.html" href="free-sample.html">
+            <span>Free Sample</span><span aria-hidden="true">&rsaquo;</span>
+          </a>
+        </nav>
+        <a class="global-header-cta global-mobile-nav__cta" href="pricing.html">
+          <span>Get Started</span>
+          <svg class="global-icon" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M4 10h11m-4-4 4 4-4 4" />
+          </svg>
+        </a>
+      </div>
     </div>
   </header>
-
-  <!-- Mobile navigation panel -->
-  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
-    <ul>
-      <li><a class="nav-link" href="curriculum.html">Curriculum <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
-      <li><a class="nav-link" href="whats-included.html">What&rsquo;s Included <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
-      <li><a class="nav-link" href="schools.html">For Schools <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
-      <li><a class="nav-link" href="teachers.html">For Teachers <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
-      <li><a class="nav-link" href="pricing.html" aria-current="page">Pricing <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
-      <li><a class="nav-link" href="free-sample.html">Free Sample <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
-    </ul>
-    <a class="btn btn-primary btn-block" href="free-sample.html">Get Started <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-  </nav>
+  <!-- site-header:end -->
 
   <main id="main">
     <!-- ============================== PAGE HERO ============================== -->
-    <section class="page-hero pricing-hero" aria-labelledby="p-hero-title">
-      <div class="decor" aria-hidden="true">
-        <span class="pricing-orb pricing-orb--left"></span>
-        <span class="pricing-orb pricing-orb--right"></span>
+    <section class="pricing-hero" aria-labelledby="p-hero-title">
+      <div class="pricing-hero-decor" aria-hidden="true">
+        <span class="pricing-hero-blob pricing-hero-blob--left"></span>
+        <span class="pricing-hero-blob pricing-hero-blob--center"></span>
+        <span class="pricing-hero-blob pricing-hero-blob--right"></span>
         <span class="pricing-dots pricing-dots--hero"></span>
-        <span class="pricing-glass pricing-glass--hero"></span>
+        <span class="pricing-hero-ring"></span>
       </div>
-      <div class="container pricing-hero-inner">
-        <figure class="pricing-hero-media pricing-hero-media--teacher reveal">
-          <div class="pricing-photo-frame">
-            <img src="assets/images/lessons/teacher-laptop.webp" alt="Teacher preparing an English lesson on her laptop" width="960" height="540" fetchpriority="high" decoding="async" />
-          </div>
-          <span class="pricing-photo-icon" aria-hidden="true"><svg class="ic"><use href="#i-graduation-cap"/></svg></span>
-          <figcaption class="pricing-photo-note">Better<br />Teachers<br />Brighter<br />Futures</figcaption>
-        </figure>
 
+      <div class="container pricing-hero-inner">
         <div class="pricing-hero-copy reveal">
-          <p class="hero-eyebrow">
+          <p class="pricing-eyebrow">
             <svg class="ic" aria-hidden="true"><use href="#i-tag"/></svg>
             Pricing
           </p>
-          <h1 id="p-hero-title">Flexible Plans for <br />Schools and Teachers</h1>
-          <p class="page-lead">
-            Start with free sample lessons — no credit card.<br />
-            Upgrade when you&rsquo;re ready, for yourself or your whole school.<br />
-            Cancel anytime.
-          </p>
+          <h1 id="p-hero-title">Flexible Plans for<br />Schools and Teachers</h1>
+          <p class="pricing-hero-lead">Powerful tools. Real progress. Affordable for every stage of your teaching journey.</p>
+          <div class="pricing-hero-actions">
+            <a class="btn btn-primary btn-lg" href="free-sample.html">
+              Start with Free Lessons
+              <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
+            <a class="btn btn-outline btn-lg" href="#plans">
+              View Plans
+              <svg class="ic pricing-arrow-down" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+            </a>
+          </div>
+          <ul class="pricing-hero-trust" aria-label="Subscription assurances">
+            <li><svg class="ic" aria-hidden="true"><use href="#i-credit-card"/></svg>No credit card required</li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-refresh"/></svg>Cancel anytime</li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-shield-check"/></svg>30-day guarantee</li>
+          </ul>
         </div>
 
-        <figure class="pricing-hero-media pricing-hero-media--school reveal" style="--reveal-delay:.1s">
-          <div class="pricing-photo-frame">
-            <img src="assets/images/lessons/classroom.webp" alt="Teacher and learners collaborating around a table" width="640" height="427" fetchpriority="high" decoding="async" />
+        <div class="pricing-hero-visual reveal" style="--reveal-delay:.1s">
+          <p class="pricing-handnote pricing-handnote--left" aria-hidden="true">Better Teachers.<br />Brighter Futures.</p>
+          <figure class="pricing-hero-photo pricing-hero-photo--main">
+            <img src="assets/images/lessons/teacher-laptop.webp" alt="Teacher planning an English lesson at her laptop" width="960" height="540" fetchpriority="high" decoding="async" />
+          </figure>
+          <figure class="pricing-hero-photo pricing-hero-photo--support">
+            <img src="assets/images/lessons/classroom.webp" alt="Learners collaborating together in class" width="640" height="427" loading="lazy" decoding="async" />
+          </figure>
+
+          <div class="pricing-float-card pricing-float-card--progress">
+            <span class="pricing-float-icon pricing-float-icon--lav" aria-hidden="true"><svg class="ic"><use href="#i-bar-chart"/></svg></span>
+            <span><strong>Progress you can see</strong><small>Clear learning insights</small></span>
           </div>
-          <span class="pricing-photo-icon" aria-hidden="true"><svg class="ic"><use href="#i-bar-chart"/></svg></span>
-          <figcaption class="pricing-photo-note">Real<br />Progress<br />Real<br />Possibilities</figcaption>
-        </figure>
+          <div class="pricing-float-card pricing-float-card--schools">
+            <span class="pricing-float-icon" aria-hidden="true"><svg class="ic"><use href="#i-heart"/></svg></span>
+            <span><strong>Built for schools</strong><small>Tools teams can rely on</small></span>
+          </div>
+
+          <p class="pricing-handnote pricing-handnote--right" aria-hidden="true">Real people.<br />Real progress.</p>
+          <svg class="pricing-hero-rays" aria-hidden="true" viewBox="0 0 54 48" fill="none">
+            <path d="M8 37 1 42M19 28l-1 12M31 23l7 8" />
+          </svg>
+        </div>
       </div>
     </section>
 
     <!-- ============================== PLANS ============================== -->
-    <section class="section pricing-plans" id="plans" aria-labelledby="plans-title">
+    <section class="section pricing-plans ambient-stage" id="plans" aria-labelledby="plans-title">
+      <span class="ambient-art ambient-art--cloud ambient-art--blue ambient-art--mid-right" aria-hidden="true"></span>
       <div class="container">
-        <h2 class="visually-hidden" id="plans-title">The three Remtoo plans</h2>
+        <div class="pricing-section-head reveal">
+          <p class="pricing-section-eyebrow">Simple &amp; Transparent Pricing</p>
+          <h2 id="plans-title">A Plan for Every Teaching Journey</h2>
+          <p>Whether you teach independently, lead a growing language center, or support a larger organization, choose a plan built for the way you work.</p>
+        </div>
 
         <div class="pricing-grid">
           <article class="pricing-card reveal">
+            <span class="pricing-plan-icon pricing-plan-icon--teacher" aria-hidden="true"><svg class="ic"><use href="#i-users"/></svg></span>
             <h3 class="plan-name">Teacher Plan</h3>
             <p class="plan-for">For individual teachers</p>
             <div class="price-row">
@@ -207,6 +290,7 @@
 
           <article class="pricing-card pricing-card--school reveal" style="--reveal-delay:.1s">
             <p class="popular-tag">Most Popular</p>
+            <span class="pricing-plan-icon pricing-plan-icon--school" aria-hidden="true"><svg class="ic"><use href="#i-users"/></svg></span>
             <h3 class="plan-name">School Plan</h3>
             <p class="plan-for">For schools &amp; language centers</p>
             <div class="price-row">
@@ -229,6 +313,7 @@
           </article>
 
           <article class="pricing-card pricing-card--custom reveal" style="--reveal-delay:.2s">
+            <span class="pricing-plan-icon pricing-plan-icon--custom" aria-hidden="true"><svg class="ic"><use href="#i-building"/></svg></span>
             <h3 class="plan-name">Custom Plan</h3>
             <p class="plan-for">For larger organizations</p>
             <div class="price-row">
@@ -241,21 +326,71 @@
               <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Dedicated account manager</li>
               <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Training &amp; webinars</li>
               <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Invoicing &amp; SLA</li>
+              <li class="check-item"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Flexible organization structure</li>
             </ul>
-            <a class="btn btn-outline btn-block" href="mailto:sales@remtoo.com?subject=Custom%20Plan%20Inquiry">
+            <a class="btn btn-outline btn-block" href="mailto:hello@remtoo.com?subject=Remtoo%20Enterprise%20Pricing">
               Contact Sales
               <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>
             </a>
           </article>
         </div>
 
-        <ul class="trust-strip pricing-trust reveal">
-          <li class="ts-item"><svg class="ic" aria-hidden="true"><use href="#i-refresh"/></svg>Cancel anytime</li>
-          <li class="ts-item"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Secure payment</li>
-          <li class="ts-item"><svg class="ic" aria-hidden="true"><use href="#i-shield-check"/></svg>30-day guarantee</li>
-          <li class="ts-item"><svg class="ic" aria-hidden="true"><use href="#i-percent"/></svg>Education discounts</li>
-          <li class="ts-item"><svg class="ic" aria-hidden="true"><use href="#i-headphones"/></svg>Human support</li>
+        <ul class="pricing-trust reveal" aria-label="Plan benefits">
+          <li><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg><span><strong>Secure payments</strong><small>Your data stays safe with us</small></span></li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-refresh"/></svg><span><strong>Cancel anytime</strong><small>No long-term contracts</small></span></li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-shield-check"/></svg><span><strong>30-day guarantee</strong><small>Love it or get a refund</small></span></li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-graduation-cap"/></svg><span><strong>Education discounts</strong><small>For qualifying institutions</small></span></li>
+          <li><svg class="ic" aria-hidden="true"><use href="#i-headphones"/></svg><span><strong>Human support</strong><small>Real people, real help</small></span></li>
         </ul>
+      </div>
+    </section>
+
+    <!-- ============================== TESTIMONIALS ============================== -->
+    <section class="section pricing-testimonials" aria-labelledby="p-testimonial-title">
+      <div class="decor" aria-hidden="true">
+        <span class="pricing-testimonial-glow pricing-testimonial-glow--mint"></span>
+        <span class="pricing-testimonial-glow pricing-testimonial-glow--blue"></span>
+      </div>
+      <div class="container pricing-testimonial-layout">
+        <div class="pricing-testimonial-intro reveal">
+          <p class="pricing-section-eyebrow">Trusted Worldwide</p>
+          <h2 id="p-testimonial-title">Loved by Teachers.<br />Trusted by Schools.</h2>
+          <p>Educators use Remtoo to save planning time, keep learners engaged, and make progress easier to see.</p>
+          <div class="pricing-review-summary">
+            <div class="pricing-review-faces" aria-hidden="true">
+              <img src="assets/images/people/sarah.webp" alt="" width="48" height="48" loading="lazy" decoding="async" />
+              <img src="assets/images/people/david.webp" alt="" width="48" height="48" loading="lazy" decoding="async" />
+              <img src="assets/images/people/amina.webp" alt="" width="48" height="48" loading="lazy" decoding="async" />
+            </div>
+            <span>Stories from classrooms around the world</span>
+          </div>
+        </div>
+
+        <div class="pricing-testimonial-carousel carousel reveal" role="region" aria-roledescription="carousel" aria-labelledby="p-testimonial-title" data-responsive-testimonials>
+          <div class="pricing-testimonial-track carousel-track" id="testimonials-track" role="group" tabindex="0" aria-label="Testimonials (use arrow keys to browse)">
+          <article class="pricing-testimonial-card" role="group" aria-roledescription="slide" aria-label="1 of 3">
+            <div class="t-stars" role="img" aria-label="Rated 5 out of 5 stars"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg></div>
+            <blockquote>&ldquo;The materials are amazing! They save me hours of preparation time and my students love the lessons.&rdquo;</blockquote>
+            <div class="t-person"><img src="assets/images/people/sarah.webp" alt="Portrait of Sarah K." width="60" height="60" loading="lazy" decoding="async" /><div class="who"><strong>Sarah K.</strong><span>English Teacher &middot; Canada</span></div></div>
+          </article>
+          <article class="pricing-testimonial-card" role="group" aria-roledescription="slide" aria-label="2 of 3">
+            <div class="t-stars" role="img" aria-label="Rated 5 out of 5 stars"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg></div>
+            <blockquote>&ldquo;Clear, engaging and well-structured. Exactly what we needed for our language program.&rdquo;</blockquote>
+            <div class="t-person"><img src="assets/images/people/david.webp" alt="Portrait of David M." width="60" height="60" loading="lazy" decoding="async" /><div class="who"><strong>David M.</strong><span>Program Director &middot; USA</span></div></div>
+          </article>
+          <article class="pricing-testimonial-card" role="group" aria-roledescription="slide" aria-label="3 of 3">
+            <div class="t-stars" role="img" aria-label="Rated 5 out of 5 stars"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg></div>
+            <blockquote>&ldquo;My students are more confident and speak more in class. The videos and activities are excellent.&rdquo;</blockquote>
+            <div class="t-person"><img src="assets/images/people/amina.webp" alt="Portrait of Amina R." width="60" height="60" loading="lazy" decoding="async" /><div class="who"><strong>Amina R.</strong><span>Language Center &middot; Morocco</span></div></div>
+          </article>
+          </div>
+          <div class="carousel-actions">
+            <button class="carousel-btn" id="t-prev" type="button" aria-label="Previous testimonial"><svg class="ic" style="transform:rotate(180deg)" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+            <div class="carousel-dots" id="t-dots" aria-label="Choose testimonial page"></div>
+            <button class="carousel-btn" id="t-next" type="button" aria-label="Next testimonial"><svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+          </div>
+          <p class="visually-hidden" id="testimonial-status" aria-live="polite" aria-atomic="true"></p>
+        </div>
       </div>
     </section>
 
@@ -268,22 +403,9 @@
       <div class="container pricing-why-inner">
         <div class="pricing-why-copy reveal">
           <p class="pricing-section-eyebrow">Why Remtoo</p>
-          <h2 id="pricing-why-title">More Than <br />Just Lessons</h2>
-          <p>A complete teaching solution that saves time, boosts engagement, and delivers real results.</p>
+          <h2 id="pricing-why-title">More Than<br />Just Lessons</h2>
+          <p>A complete teaching solution that saves time, boosts engagement, and delivers real results for every learner.</p>
           <a class="pricing-text-link" href="whats-included.html">See what&rsquo;s included <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-
-          <a class="pricing-lesson-preview" href="free-sample.html" aria-label="Preview the A1 Meet and Greet sample lesson">
-            <span class="pricing-lesson-preview__image">
-              <img src="assets/images/lessons/meet-greet-wave.webp" alt="" width="800" height="450" loading="lazy" decoding="async" />
-              <span aria-hidden="true"><svg class="ic ic-fill"><use href="#i-play"/></svg></span>
-            </span>
-            <span class="pricing-lesson-preview__copy">
-              <span class="pricing-lesson-preview__eyebrow">A1 sample lesson</span>
-              <strong>Meet &amp; Greet</strong>
-              <small>45 min &middot; 14 pages</small>
-            </span>
-            <svg class="ic pricing-lesson-preview__arrow" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-          </a>
         </div>
 
         <div class="pricing-benefit-grid">
@@ -302,38 +424,6 @@
           <article class="pricing-benefit pricing-benefit--cyan reveal" style="--reveal-delay:.24s">
             <span class="pricing-benefit-icon" aria-hidden="true"><svg class="ic"><use href="#i-heart"/></svg></span>
             <div><h3>Support When You Need It</h3><p>Get help from our education experts whenever you need it.</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================== TESTIMONIALS ============================== -->
-    <section class="section pricing-testimonials" aria-labelledby="p-testimonial-title">
-      <div class="decor" aria-hidden="true">
-        <span class="pricing-orb pricing-orb--testimonials"></span>
-      </div>
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="badge"><svg class="ic" aria-hidden="true"><use href="#i-message-circle"/></svg>Testimonials</p>
-          <h2 class="section-title" id="p-testimonial-title">Loved by Teachers. Trusted by Schools.</h2>
-          <p class="section-sub">Real stories from educators using Remtoo.</p>
-        </div>
-
-        <div class="pricing-testimonial-grid">
-          <article class="pricing-testimonial-card reveal">
-            <div class="t-stars" aria-label="Rated 5 out of 5 stars"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg></div>
-            <blockquote>&ldquo;The materials are amazing! They save me hours of preparation time and my students love the lessons.&rdquo;</blockquote>
-            <div class="t-person"><img src="assets/images/people/sarah.webp" alt="Portrait of Sarah K." width="54" height="54" loading="lazy" decoding="async" /><div class="who"><strong>Sarah K.</strong><span>English Teacher · Canada</span></div></div>
-          </article>
-          <article class="pricing-testimonial-card reveal" style="--reveal-delay:.1s">
-            <div class="t-stars" aria-label="Rated 5 out of 5 stars"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg></div>
-            <blockquote>&ldquo;Clear, engaging and well-structured. Exactly what we needed for our language program.&rdquo;</blockquote>
-            <div class="t-person"><img src="assets/images/people/david.webp" alt="Portrait of David M." width="54" height="54" loading="lazy" decoding="async" /><div class="who"><strong>David M.</strong><span>Program Director · USA</span></div></div>
-          </article>
-          <article class="pricing-testimonial-card reveal" style="--reveal-delay:.2s">
-            <div class="t-stars" aria-label="Rated 5 out of 5 stars"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic ic-fill" aria-hidden="true"><use href="#i-star"/></svg></div>
-            <blockquote>&ldquo;My students are more confident and speak more in class. The videos and activities are excellent.&rdquo;</blockquote>
-            <div class="t-person"><img src="assets/images/people/amina.webp" alt="Portrait of Amina L." width="54" height="54" loading="lazy" decoding="async" /><div class="who"><strong>Amina L.</strong><span>Language Center · Morocco</span></div></div>
           </article>
         </div>
       </div>
@@ -359,7 +449,7 @@
               <svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg>
             </button>
             <div class="accordion-panel" id="faq-1">
-              <div><p class="faq-answer">Yes — open complete sample lessons from every level on the Free Sample page. No signup, no credit card, no commitment. When you&rsquo;re ready for the full curriculum, choose a plan.</p></div>
+              <div><p class="faq-answer">Yes — explore complete A1 lessons plus A2–C1 roadmap previews on the Free Sample page. No signup, no credit card, no commitment. When you&rsquo;re ready for the full curriculum, choose a plan.</p></div>
             </div>
             </div>
 
@@ -419,162 +509,163 @@
       </div>
     </section>
 
-    <!-- ============================== CTA BANNER ============================== -->
-    <section class="section pricing-final-cta" aria-labelledby="p-cta-title">
-      <div class="container">
-        <div class="cta-banner reveal">
-          <div class="pricing-cta-copy">
-            <h2 id="p-cta-title">Start Teaching<br />Brighter Futures Today</h2>
-            <p>Explore sample lessons, or book a demo to see how Remtoo can work for your school.</p>
-          </div>
-          <div class="actions">
-            <a class="btn btn-primary btn-lg" href="free-sample.html">
-              Explore Free Samples
-              <svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>
-            </a>
-            <a class="btn btn-outline btn-lg" href="schools.html#demo">Book a Demo</a>
-          </div>
-          <div class="pricing-cta-note" aria-hidden="true">
-            <svg viewBox="0 0 62 36" fill="none"><path d="M58 5C49 24 32 29 9 25" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="m15 18-8 7 10 2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Small<br />Steps,<br />Big Futures</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+    <!-- ============================== CTA BANNER ============================== -->  </main>
   <!-- ============================== FOOTER ============================== -->
-  <footer class="site-footer site-footer--light">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="logo" href="index.html" aria-label="Remtoo — home">
-            <span class="logo-mark" aria-hidden="true">
-              <svg class="ic ic-fill"><use href="#i-logo"/></svg>
-            </span>
-            <span class="logo-word">Rem<em>too</em></span>
+  <!-- site-footer:start -->
+  <section class="global-footer-cta" aria-labelledby="global-footer-cta-title">
+    <div class="global-footer-cta__inner">
+      <div class="global-footer-cta__copy">
+        <h2 class="global-footer-cta__title" id="global-footer-cta-title">Ready to make a bigger impact with English education?</h2>
+        <p class="global-footer-cta__text">Join thousands of teachers and schools using Remtoo.</p>
+      </div>
+
+      <div class="global-footer-cta__action-wrap">
+        <a class="global-footer-cta__button" href="schools.html#demo">
+          <span>Book a 15-Minute Demo</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M4 10h11m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+        <p class="global-footer-cta__microcopy">No commitment. Just a better way to teach.</p>
+      </div>
+    </div>
+
+    <p class="global-footer-cta__note" aria-hidden="true">Better Teachers. Brighter Futures.</p>
+    <div class="global-footer-cta__waves" aria-hidden="true">
+      <svg viewBox="0 0 1600 120" preserveAspectRatio="none">
+        <path class="global-footer-cta__wave--back" d="M0 57c175-44 350 50 552 25 215-27 366-73 600-38 174 26 303 21 448-4v80H0Z" />
+        <path class="global-footer-cta__wave--front" d="M0 84c196-25 364 44 582 25 213-18 344-58 570-30 170 21 299 18 448-2v43H0Z" />
+      </svg>
+    </div>
+  </section>
+
+  <footer class="global-footer" id="site-footer">
+    <div class="global-footer__inner">
+      <div class="global-footer__grid">
+        <div class="global-footer__brand">
+          <a class="global-brand global-brand--footer" href="index.html" aria-label="Remtoo home">
+            <img class="global-brand__image" src="assets/logos/remtoo-logo.png" alt="" width="921" height="250" loading="lazy" decoding="async" />
           </a>
-          <p class="tagline">Open. Teach. Inspire.</p>
-          <p class="footer-desc">A complete, structured English curriculum for teachers and schools — from A1 to C1.</p>
-          <div class="footer-social">
-            <a href="https://linkedin.com/company/remtoo" aria-label="Remtoo on LinkedIn" target="_blank" rel="noopener"><svg class="ic"><use href="#i-linkedin"/></svg></a>
-            <a href="https://youtube.com/@remtoo" aria-label="Remtoo on YouTube" target="_blank" rel="noopener"><svg class="ic"><use href="#i-youtube"/></svg></a>
-            <a href="https://facebook.com/remtoo" aria-label="Remtoo on Facebook" target="_blank" rel="noopener"><svg class="ic"><use href="#i-facebook"/></svg></a>
-            <a href="https://instagram.com/remtoo" aria-label="Remtoo on Instagram" target="_blank" rel="noopener"><svg class="ic"><use href="#i-instagram"/></svg></a>
+          <p class="global-footer__tagline">Open. Teach. Inspire.</p>
+          <p class="global-footer__description">A complete, structured English curriculum for teachers and schools &mdash; from A1 to C1.</p>
+          <div class="global-footer__social" role="navigation" aria-label="Remtoo social media">
+            <a href="https://linkedin.com/company/remtoo" target="_blank" rel="noopener noreferrer" aria-label="Remtoo on LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.5V18M6.5 5.5v.01M10.5 18v-5.2c0-2.7 4.8-3 4.8.1V18M10.5 9v9M4 3h16v18H4z" /></svg>
+            </a>
+            <a href="https://youtube.com/@remtoo" target="_blank" rel="noopener noreferrer" aria-label="Remtoo on YouTube">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12c0 2.4-.3 4.1-.7 4.8-.4.7-1 1.1-1.8 1.3-1.2.3-3.4.4-6.5.4s-5.3-.1-6.5-.4c-.8-.2-1.4-.6-1.8-1.3C3.3 16.1 3 14.4 3 12s.3-4.1.7-4.8c.4-.7 1-1.1 1.8-1.3 1.2-.3 3.4-.4 6.5-.4s5.3.1 6.5.4c.8.2 1.4.6 1.8 1.3.4.7.7 2.4.7 4.8Z" /><path d="m10 9 5 3-5 3Z" /></svg>
+            </a>
+            <a href="https://facebook.com/remtoo" target="_blank" rel="noopener noreferrer" aria-label="Remtoo on Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 21v-8h3l.5-3H14V8.2c0-.9.3-1.7 1.8-1.7H18V3.8c-.4-.1-1.6-.2-2.8-.2-2.8 0-4.7 1.7-4.7 4.9V10H8v3h2.5v8" /></svg>
+            </a>
+            <a href="https://instagram.com/remtoo" target="_blank" rel="noopener noreferrer" aria-label="Remtoo on Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><path d="M17.5 6.5h.01" /></svg>
+            </a>
           </div>
         </div>
 
-        <!-- Desktop link columns -->
-        <nav class="footer-col" aria-label="Product">
-          <h3>Product</h3>
-          <ul>
-            <li><a href="curriculum.html">Curriculum</a></li>
-            <li><a href="whats-included.html">What&rsquo;s Included</a></li>
-            <li><a href="free-sample.html">Free Sample</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-          </ul>
-        </nav>
-        <nav class="footer-col" aria-label="Solutions">
-          <h3>Solutions</h3>
-          <ul>
-            <li><a href="schools.html">For Schools</a></li>
-            <li><a href="teachers.html">For Teachers</a></li>
-          </ul>
-        </nav>
-        <nav class="footer-col" aria-label="Resources">
-          <h3>Resources</h3>
-          <ul>
-            <li><a href="pricing.html#faq">FAQ</a></li>
-            <li><a href="index.html#how-it-works">How It Works</a></li>
-            <li><a href="curriculum.html">Curriculum Guide</a></li>
-            <li><a href="mailto:hello@remtoo.com">Contact Us</a></li>
-          </ul>
-        </nav>
-        <nav class="footer-col" aria-label="Legal">
-          <h3>Legal</h3>
-          <ul>
-            <li><a href="legal.html#privacy">Privacy Policy</a></li>
-            <li><a href="legal.html#terms">Terms of Use</a></li>
-          </ul>
-        </nav>
+        <div class="global-footer__columns">
+          <nav class="global-footer__column" aria-label="Product">
+            <h2 class="global-footer__heading">Product</h2>
+            <ul>
+              <li><a href="curriculum.html">Curriculum</a></li>
+              <li><a href="whats-included.html">What&rsquo;s Included</a></li>
+              <li><a href="free-sample.html">Free Sample</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+            </ul>
+          </nav>
+          <nav class="global-footer__column" aria-label="Solutions">
+            <h2 class="global-footer__heading">Solutions</h2>
+            <ul>
+              <li><a href="schools.html">For Schools</a></li>
+              <li><a href="teachers.html">For Teachers</a></li>
+              <li><a href="schools.html#demo">Book a Demo</a></li>
+            </ul>
+          </nav>
+          <nav class="global-footer__column" aria-label="Resources">
+            <h2 class="global-footer__heading">Resources</h2>
+            <ul>
+              <li><a href="pricing.html#faq">FAQ</a></li>
+              <li><a href="index.html#how-it-works">How It Works</a></li>
+              <li><a href="mailto:hello@remtoo.com">Contact Us</a></li>
+            </ul>
+          </nav>
+          <nav class="global-footer__column" aria-label="Legal">
+            <h2 class="global-footer__heading">Legal</h2>
+            <ul>
+              <li><a href="legal.html#privacy">Privacy Policy</a></li>
+              <li><a href="legal.html#terms">Terms of Use</a></li>
+            </ul>
+          </nav>
+        </div>
 
-        <!-- Mobile accordion groups -->
-        <div class="footer-accordion" aria-label="Footer navigation">
-          <div class="accordion-item">
-            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="fa-product">
-              Product <svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+        <div class="global-footer__accordion" data-footer-accordion role="navigation" aria-label="Footer navigation">
+          <div class="global-footer__accordion-item">
+            <button class="global-footer__trigger global-footer__accordion-trigger" id="global-footer-product-trigger" type="button" disabled aria-expanded="true" aria-controls="global-footer-product-panel">
+              <span>Product</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" /></svg>
             </button>
-            <div class="accordion-panel" id="fa-product">
-              <div>
-                <ul>
-                  <li><a href="curriculum.html">Curriculum</a></li>
-                  <li><a href="whats-included.html">What&rsquo;s Included</a></li>
-                  <li><a href="free-sample.html">Free Sample</a></li>
-                  <li><a href="pricing.html">Pricing</a></li>
-                </ul>
-              </div>
+            <div class="global-footer__panel" id="global-footer-product-panel" role="region" aria-labelledby="global-footer-product-trigger">
+              <ul>
+                <li><a href="curriculum.html">Curriculum</a></li>
+                <li><a href="whats-included.html">What&rsquo;s Included</a></li>
+                <li><a href="free-sample.html">Free Sample</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+              </ul>
             </div>
           </div>
-          <div class="accordion-item">
-            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="fa-solutions">
-              Solutions <svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+          <div class="global-footer__accordion-item">
+            <button class="global-footer__trigger global-footer__accordion-trigger" id="global-footer-solutions-trigger" type="button" disabled aria-expanded="true" aria-controls="global-footer-solutions-panel">
+              <span>Solutions</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" /></svg>
             </button>
-            <div class="accordion-panel" id="fa-solutions">
-              <div>
-                <ul>
-                  <li><a href="schools.html">For Schools</a></li>
-                  <li><a href="teachers.html">For Teachers</a></li>
-                </ul>
-              </div>
+            <div class="global-footer__panel" id="global-footer-solutions-panel" role="region" aria-labelledby="global-footer-solutions-trigger">
+              <ul>
+                <li><a href="schools.html">For Schools</a></li>
+                <li><a href="teachers.html">For Teachers</a></li>
+                <li><a href="schools.html#demo">Book a Demo</a></li>
+              </ul>
             </div>
           </div>
-          <div class="accordion-item">
-            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="fa-resources">
-              Resources <svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+          <div class="global-footer__accordion-item">
+            <button class="global-footer__trigger global-footer__accordion-trigger" id="global-footer-resources-trigger" type="button" disabled aria-expanded="true" aria-controls="global-footer-resources-panel">
+              <span>Resources</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" /></svg>
             </button>
-            <div class="accordion-panel" id="fa-resources">
-              <div>
-                <ul>
-                  <li><a href="pricing.html#faq">FAQ</a></li>
-                  <li><a href="index.html#how-it-works">How It Works</a></li>
-                  <li><a href="curriculum.html">Curriculum Guide</a></li>
-                  <li><a href="mailto:hello@remtoo.com">Contact Us</a></li>
-                </ul>
-              </div>
+            <div class="global-footer__panel" id="global-footer-resources-panel" role="region" aria-labelledby="global-footer-resources-trigger">
+              <ul>
+                <li><a href="pricing.html#faq">FAQ</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="mailto:hello@remtoo.com">Contact Us</a></li>
+              </ul>
             </div>
           </div>
-          <div class="accordion-item">
-            <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="fa-legal">
-              Legal <svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg>
+          <div class="global-footer__accordion-item">
+            <button class="global-footer__trigger global-footer__accordion-trigger" id="global-footer-legal-trigger" type="button" disabled aria-expanded="true" aria-controls="global-footer-legal-panel">
+              <span>Legal</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5" /></svg>
             </button>
-            <div class="accordion-panel" id="fa-legal">
-              <div>
-                <ul>
-                  <li><a href="legal.html#privacy">Privacy Policy</a></li>
-                  <li><a href="legal.html#terms">Terms of Use</a></li>
-                </ul>
-              </div>
+            <div class="global-footer__panel" id="global-footer-legal-panel" role="region" aria-labelledby="global-footer-legal-trigger">
+              <ul>
+                <li><a href="legal.html#privacy">Privacy Policy</a></li>
+                <li><a href="legal.html#terms">Terms of Use</a></li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p>&copy; <span id="year">2026</span> Remtoo. All rights reserved.</p>
-        <div class="lang-wrap">
-          <button class="footer-lang" id="lang-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="lang-menu">
-            <svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>
-            English
-            <svg class="ic" aria-hidden="true"><use href="#i-chevron-down"/></svg>
-          </button>
-          <ul class="lang-menu" id="lang-menu" role="menu" aria-label="Choose language">
-            <li><button type="button" role="menuitemradio" aria-checked="true">English</button></li>
-            <li><button type="button" role="menuitemradio" aria-checked="false">Fran&ccedil;ais <span class="soon">Coming soon</span></button></li>
-            <li><button type="button" role="menuitemradio" aria-checked="false">العربية <span class="soon">Coming soon</span></button></li>
-          </ul>
-        </div>
+      <div class="global-footer__bottom">
+        <label class="global-footer__language">
+          <span>Language</span>
+          <select aria-label="Language">
+            <option value="en" selected>English</option>
+            <option value="fr" disabled>Fran&ccedil;ais &mdash; Coming soon</option>
+            <option value="ar" disabled>العربية &mdash; Coming soon</option>
+          </select>
+        </label>
+        <p class="global-footer__copyright">&copy; <span data-current-year>2026</span> Remtoo. All rights reserved.</p>
+        <p class="global-footer__note" aria-hidden="true">Better Teachers. Brighter Futures.</p>
       </div>
     </div>
   </footer>
+  <!-- site-footer:end -->
 
   <!-- Floating contact bubble -->
   <a
@@ -588,5 +679,6 @@
   
 
   <script src="js/main.js" defer></script>
+  <script src="js/site-shell.js" defer></script>
 </body>
 </html>

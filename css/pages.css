@@ -2111,6 +2111,9 @@
 }
 
 .legal-toc a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   background: #fff;
   border: 1px solid var(--border-strong);
   border-radius: var(--r-pill);
@@ -2118,7 +2121,11 @@
   font-weight: 700;
   font-size: 0.88rem;
   color: var(--ink-2);
-  transition: all 0.18s ease;
+  transition:
+    border-color 0.18s ease,
+    color 0.18s ease,
+    background-color 0.18s ease,
+    transform 0.18s ease;
 }
 
 .legal-toc a:hover {
